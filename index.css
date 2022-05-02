@@ -6,19 +6,39 @@
 }
 
 header {
-    background-color;
-    height: 810px;
+    background-color:rgb(0, 0, 0);
     position: relative;
+    height:500px;
 }
 
-nav{
-    padding:0;
-    margin:0;
+ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+li {
+    list-style: none;
+    line-height: 100px;
+    background-color:rgb(3, 116, 12);
+    border: white solid 1px;
+    border-radius:1px 1px 1px 1px;
+    margin:15px;
+
+
+}
+
+a {
+    padding: 10px 1px 10px 1px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border-radius: 1px 0 1px 0;
+}
+
+h1{
+    color:green;
     background-color:black;
-}
+    font-size: 5.5rem;
+    text-align: center;
+    border-top:white solid 1px;
 
-li{
-    display:inline;
-    padding:20px;
-    
 }
