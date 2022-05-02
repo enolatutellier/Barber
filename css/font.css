@@ -1,9 +1,9 @@
 @font-face {
-    font-family: 'quattrocento';
-    src: url(../font/Quattrocento-Bold.ttf) format('ttf');
+    font-family: 'titre';
+    src: url(../font/Frijole/Frijole-Regular.ttf) format('ttf');
 }
 
 @font-face {
-    font-family: 'quattrocento';
-    src: url(../font/Quattrocento-Regular.ttf) format('ttf');
-}
+    font-family: 'police';
+    src: url(../font/Underdog/Underdog-Regular.ttf) format('ttf');}
+    
