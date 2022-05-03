@@ -1,0 +1,19 @@
+header, footer{
+    height : 300px;
+    background-color: black;
+}
+main{
+    background-color: #102907;
+    background-image: url(../Img/fond\ prestation.jpg);
+    background-repeat: no-repeat;
+    background-size: clamp(100px, 100%, 1200px) auto;
+    background-position: 75% top;
+}
+#premier{
+    background:radial-gradient(at 50% 0%, rgba(128,128,128,0.1) -100% , black 80%);
+    height : 750px;
+}
+#deuxieme{
+    height : 200px;
+    background:linear-gradient(to bottom right, black 50%, #102904 50%)
+}
