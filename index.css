@@ -7,24 +7,24 @@
 
 header {
     background-color:rgb(0, 0, 0);
-    position: relative;
-    height:500px;
+    position:relative;
+    height:672px;
+    background-size: no-repeat;
+    background-image: url(img/coupe8.jpg);
+    
 }
 
 ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    background:black;
+    padding:10px;
+
 }
 
 li {
     list-style: none;
-    line-height: 100px;
-    background-color:rgb(88, 151, 93);
-    border: white solid 1px;
-    border-radius:1px 1px 1px 1px;
-    margin:15px;
-
-
+    line-height: 70px;
 }
 
 a {
@@ -40,34 +40,71 @@ h1{
     font-size: 5.5rem;
     text-align: center;
     border-top:white solid 1px;
-
 }
+
 
 .section1{
-    background-color:black;
-    height:100px;
+    margin: 17px;
+    padding: 15px;
+    block-size: auto;
+    background:url(img/imgVecto1.PNG); /* regler l'image de fond */
+    height: 15px;
 }
 
-h2{
-    font-size:2.9rem;
-    color:white;
-}
-
-img{
-    width:auto;
-    height:100px;
-    padding:10px;
-    border-radius:13px 13px;
-
-}
 
 .conteneur{
     background: url(img/imgVecto3.jpg) no-repeat;
     display: flex;
-    justify-content: flex-start;
-    height:500px;
+    box-sizing: inherit;
+    padding:15px;
 
 }
+
+.carte{
+    background: white;
+    height: 297px;
+    padding: 10px;
+    border-radius: 9px 10px 8px 9px;
+}
+
+
+#carte1{
+    transform: rotate(8deg);
+    margin:65px;
+    
+}
+
+#carte2{
+    transform: rotate(2deg);
+    margin:65px
+    
+}
+
+#carte3{
+    transform: rotate(-8deg);
+    margin:65px;
+    
+}
+
+
+
+h2{
+    font-size: 2.9rem;
+    color: white;
+    position: absolute;
+    margin-left: 27px;
+    z-index: 1;
+    top: 916px;
+}
+
+img{
+    display:block;
+    width:500px;
+    border-radius:13px 13px;
+    max-width: 100%;
+    height:auto 
+}
+
 
 
 
