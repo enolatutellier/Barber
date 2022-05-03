@@ -19,7 +19,7 @@ ul {
 li {
     list-style: none;
     line-height: 100px;
-    background-color:rgb(3, 116, 12);
+    background-color:rgb(88, 151, 93);
     border: white solid 1px;
     border-radius:1px 1px 1px 1px;
     margin:15px;
@@ -42,3 +42,32 @@ h1{
     border-top:white solid 1px;
 
 }
+
+.section1{
+    background-color:black;
+    height:100px;
+}
+
+h2{
+    font-size:2.9rem;
+    color:white;
+}
+
+img{
+    width:auto;
+    height:100px;
+    padding:10px;
+    border-radius:13px 13px;
+
+}
+
+.conteneur{
+    background: url(img/imgVecto3.jpg) no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    height:500px;
+
+}
+
+
+
