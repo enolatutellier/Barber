@@ -10,8 +10,8 @@ main{
     background-position: 75% top;
 }
 #premier{
-    background:radial-gradient(at 50% 0%, rgba(128,128,128,0.1) -100% , black 80%);
-    height : 750px;
+    background:radial-gradient(at 80% 0%, rgba(128,128,128,0.1) -100% , black 60%);
+    height : 650px;
 }
 #deuxieme{
     height : 200px;

@@ -1,0 +1,45 @@
+html{
+    font-size: 5vw;
+}
+footer{
+    display :flex;
+    justify-content: center;
+    align-items: center;
+    position : relative;
+    background-color: black;
+    color : white;
+    font-size: clamp(12px, 0.3rem, 24px);
+}
+
+footer > *{
+    margin : 30px;
+    line-height: clamp(1em,1rem, 2em);
+}
+
+.logo{
+    width: clamp(300px, 30%, 500px);
+    padding : 30px;
+}
+
+.flex_col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titre{
+    font-size: clamp(16px, 0.4rem, 30px);
+}
+#trait_horizontal{
+    width:5px;
+    height : 200px;
+    background-color: white;
+}
+.reseaux_sociaux{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.petit_logo{
+    height:50px;
+    width:50px;
+}
