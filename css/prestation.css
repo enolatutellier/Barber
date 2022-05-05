@@ -2,7 +2,7 @@
 main{
     background-image: url(../Img/fond\ prestation.jpg);
     background-repeat: no-repeat;
-    background-size: clamp(100px, 100%, 1200px) auto;
+    background-size: clamp(100px, 120%, 1200px) auto;
     background-position: 75% top;
     font-size : clamp(18px, 0.4rem, 36px);
 }
@@ -17,18 +17,17 @@ main{
 }
 #sous-image{
     margin-top: -40px;
-    height : 200px;
+    height : 20vw;
     position:relative;
     background:linear-gradient(to bottom right, black 50%, white 50%);
     padding : 0 10%;
-    margin-bottom: 2rem;
 }
 
 .citation{
     position : absolute;
-    top : -40%;
+    top:2vw;
     left: 15%;
-    width: 40%;
+    width: 30%;
 }
 
 .blanc{
@@ -41,7 +40,7 @@ main{
     grid-template-columns: repeat(18,minmax(50px,1fr));
     justify-items: center;
     align-items: center;
-    padding : 0 5%;
+    padding : 0 5% 5%;
 }
 
 .carteInfo{
@@ -52,6 +51,14 @@ main{
     box-shadow: 4px 4px 60px rgba(0,0,0,0.25);
     font-size: 0.3rem;
     background-color: white;
+}
+
+.fleche{
+    transform: rotate(180deg);
+    width:5%;
+    position:absolute;
+    top:92%;
+    left:90%;
 }
 
 #soin{    
@@ -102,6 +109,10 @@ main{
   grid-row:8/14;
 }
 
+#forfait .fleche{
+    top:88%;
+}
+
 #img_forfait{
     position:absolute;
     top:-3.1rem;
@@ -128,5 +139,64 @@ main{
 }
 
 #separation{
-    background-image: url('img/');
+    background-image: url('../Img/separation.jpg');
+    background-repeat: repeat-x;
+    background-size: 10vw 10vw;
+    height:10vw;
+    opacity: 0.99;
+}
+
+#fin{
+    padding : 10vw 5vw 0;
+    background-image: url('../Img/dekowood.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -50px;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.petit_image{
+    width:30%;
+    border-radius: 10%;
+    box-shadow: 10px 10px 4px 0px rgba(0,0,0,0.5);
+}
+
+#barbe{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#coiffure{
+    grid-column:1/2;
+    grid-row:2/3;
+}
+
+#enseigne{
+    grid-column: 2/3;
+    grid-row: 1/3;
+    width:50%;
+    justify-self: end;
+}
+
+.titre_presentoir{
+    position:absolute;
+    left:0;
+    top:-25%;
+    font-size: 1.2rem;
+    font-family: 'police', cursive;
+}
+
+.presentoir{
+    display: flex;
+    position:relative;
+    justify-content: space-evenly;
+    padding:6vw 0;
+}
+
+.presentoir .fleche{
+    top:45%;
+    left:100%;
 }

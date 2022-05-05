@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'titre';
-    src: url(../font/Frijole/Frijole-Regular.ttf) format('ttf');
+    src: url(../font/Frijole/Frijole-Regular.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'police';
-    src: url(../font/Underdog/Underdog-Regular.ttf) format('ttf');}
+    src: url(../font/Underdog/Underdog-Regular.ttf) format('truetype');}
     
