@@ -13,6 +13,16 @@ header {
     
 }
 
+.logo{
+    background-color: green;
+    top:1vh;
+}
+
+#logo{
+    top:1vh;
+}
+
+
 ul {
     display: flex;
     justify-content: space-around;
@@ -34,13 +44,18 @@ a {
 }
 
 h1{
-    color:green;
+    color:rgba(78, 235, 104, 0.575);
     background-color:black;
     font-size: 5.5rem;
     text-align: center;
     padding:25px;
+    letter-spacing: 3px;
+    text-shadow: 2px 4px 3px rgba(255, 255, 255, 0.5);
+    }
+
 }
 
+/* Première section "nos prestation" */
 
 .section1{
     margin-top:15px;
@@ -62,6 +77,7 @@ h1{
     align-items: center;
 }
 
+
 h2{
     font-size: 2.9rem;
     color: white;
@@ -80,10 +96,11 @@ h2{
     width: 348px;
     align-items: center;
     box-shadow: black -1px 0px 20px 2px;
+    transform: rotate(8deg);
 }
 
 .carte p{
-    margin:8px 0 0 8px;
+    margin: 19px 0 0 26px;
     word-spacing: 1px;
 }
 
@@ -100,7 +117,8 @@ h2{
 
 #carte2{
     transform: rotate(0deg);
-    margin: 47px;
+    margin-top:380px;
+    
 }
 
 #carte3{
@@ -108,17 +126,60 @@ h2{
   
 }
 
- img{
+ .img1{
     display: block;
     width: 322px;
     height: 245px;
-    border-radius: 13px 13px;
+    border-radius: 5px 5px;
     max-width: 100%;
     margin:8px 0px 0px 8px;
     align-items: center;
-   
+    filter: contrast(90%) brightness(120%);
 }
 
+/* Deuxième section , carte en vrac */ 
 
+.section2{
+    margin:15px;
+    background-size:contain;
 
+}
+
+.conteneur2 {
+    display:flex;
+    position:relative;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    margin-top:10vw;
+    
+}
+
+#img1{
+    width:48vw;
+    position:relative;
+    
+}
+
+#img2{
+    width:33vw;
+   position:absolute;
+   left:39%;
+   top:15%;
+   z-index:1;
+}
+
+#img3{
+    width:466px;
+    
+    
+}
+
+#img4{
+    width:19vw;
+    position:absolute;
+    top:58%;
+    left:37%;
+    
+}
 
