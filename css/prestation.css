@@ -1,0 +1,132 @@
+@import url('reset.css');
+main{
+    background-image: url(../Img/fond\ prestation.jpg);
+    background-repeat: no-repeat;
+    background-size: clamp(100px, 100%, 1200px) auto;
+    background-position: 75% top;
+    font-size : clamp(18px, 0.4rem, 36px);
+}
+#presentation{
+    background:radial-gradient(at 60% 0%, rgba(128,128,128,0.1) 0%, black 60%);
+    height : 750px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: clamp(30px, 0.5rem, 58px);
+    color : white;
+}
+#sous-image{
+    margin-top: -40px;
+    height : 200px;
+    position:relative;
+    background:linear-gradient(to bottom right, black 50%, white 50%);
+    padding : 0 10%;
+    margin-bottom: 2rem;
+}
+
+.citation{
+    position : absolute;
+    top : -40%;
+    left: 15%;
+    width: 40%;
+}
+
+.blanc{
+    color:white;
+}
+
+
+#services{
+    display: grid;
+    grid-template-columns: repeat(18,minmax(50px,1fr));
+    justify-items: center;
+    align-items: center;
+    padding : 0 5%;
+}
+
+.carteInfo{
+    position : relative;
+    box-sizing: border-box;
+    padding: 1rem 0.5rem 0.5rem;
+    text-align: center;
+    box-shadow: 4px 4px 60px rgba(0,0,0,0.25);
+    font-size: 0.3rem;
+    background-color: white;
+}
+
+#soin{    
+    grid-column: 11/17;
+    grid-row: 1/5;
+}
+
+#shampoing{
+    position :absolute;
+    top: -4rem;
+    left:30%;
+    box-shadow: -6px 9px 5px 3px rgba(0,0,0,0.25);
+}
+
+#titre_soin{
+    position : absolute;
+    top:0px;
+    left:8%;
+}
+.image_moyenne{
+    width : 6rem;
+    filter:sepia(0.5) contrast(0.7) saturate(2);
+}
+
+#deco3{
+    grid-column:15/19;
+    grid-row:3/6;
+    width:100%;
+    height:80%;
+    transform:scaleX(-1)
+}
+
+#coloration{
+  grid-column: 2/9;
+  grid-row:4/10;
+}
+
+#img_coloration{
+    position : absolute;
+    top : -3rem;
+    left:7%;
+    box-shadow: -6px 9px 5px 3px rgba(0,0,0,0.25);
+}
+
+#forfait{
+    margin-top: 1rem;
+  grid-column:13/18;
+  grid-row:8/14;
+}
+
+#img_forfait{
+    position:absolute;
+    top:-3.1rem;
+    left:-60%;
+    box-shadow: 6px 9px 5px 3px rgba(0,0,0,0.25);
+}
+#titre_forfait{
+    position:absolute;
+    top:0;
+    left:68%;
+}
+
+#deco1{
+    grid-column: 3/13;
+    grid-row: 2/9;
+    width:100%;
+    height: 100%;
+}
+
+#deco2{
+    grid-column: 1/7;
+    grid-row:11/14;
+    width: 100%;
+}
+
+#separation{
+    background-image: url('img/');
+}
