@@ -8,26 +8,37 @@
 header {
     background-color:rgb(0, 0, 0);
     position:relative;
-    height:672px;
-    background-image: url(img/coupe8.jpg);
     
 }
 
-.logo{
-    background-color: green;
-    top:1vh;
+.section0{
+    block-size: auto;
 }
 
-#logo{
-    top:1vh;
+.coupe8{
+    background-size:cover;
+}
+
+#logoblanc{
+    display: flex;
+    background:green;
+    padding:10px;
+}
+
+
+.trait-vert{
+    background:green;
+    height:2px;
+    width:60px;
+    margin:15px;
 }
 
 
 ul {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background:black;
-    padding:10px;
 
 }
 
@@ -53,7 +64,7 @@ h1{
     text-shadow: 2px 4px 3px rgba(255, 255, 255, 0.5);
     }
 
-}
+
 
 /* Première section "nos prestation" */
 
@@ -90,7 +101,6 @@ h2{
 .carte{
     background: white;
     background-size: contain;
-    margin: 47px;
     border-radius: 9px 10px 8px 9px;
     height: 341px;
     width: 348px;
@@ -140,7 +150,6 @@ h2{
 /* Deuxième section , carte en vrac */ 
 
 .section2{
-    margin:15px;
     background-size:contain;
 
 }
@@ -158,28 +167,33 @@ h2{
 #img1{
     width:48vw;
     position:relative;
+    border-radius: 10px 10px 10px 10px;
     
 }
 
 #img2{
-    width:33vw;
-   position:absolute;
-   left:39%;
-   top:15%;
-   z-index:1;
+    width: 33vw;
+    position: absolute;
+    left: 39%;
+    top: 15%;
+    z-index: 1;
+    box-shadow: #ffffff5e -2px -2px 13px 0px;
+    border-radius: 10px 10px 10px 10px;
 }
 
 #img3{
-    width:466px;
+    width:35vw;
+    border-radius: 10px 10px 10px 10px;
     
     
 }
 
 #img4{
-    width:19vw;
+    width:38vw;
     position:absolute;
-    top:58%;
-    left:37%;
+    top:79%;
+    left:30%;
+    border-radius: 10px 10px 10px 10px;
     
 }
 
