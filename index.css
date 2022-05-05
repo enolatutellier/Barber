@@ -9,7 +9,6 @@ header {
     background-color:rgb(0, 0, 0);
     position:relative;
     height:672px;
-    background-size: no-repeat;
     background-image: url(img/coupe8.jpg);
     
 }
@@ -39,70 +38,85 @@ h1{
     background-color:black;
     font-size: 5.5rem;
     text-align: center;
-    border-top:white solid 1px;
+    padding:25px;
 }
 
 
 .section1{
-    margin: 17px;
-    padding: 15px;
+    margin-top:15px;
     block-size: auto;
-    background:url(img/imgVecto1.PNG); /* regler l'image de fond */
-    height: 15px;
+    background:url(img/imgVecto1.PNG);
+    height: 590px;
+   margin-bottom:15px;
+   position:relative;
 }
 
 
 .conteneur{
     background: url(img/imgVecto3.jpg) no-repeat;
+    background-size:cover;
     display: flex;
-    box-sizing: inherit;
-    padding:15px;
-
+    justify-content: center;
+    height:569px;
+    margin:0 20px 0 20px;
+    align-items: center;
 }
-
-.carte{
-    background: white;
-    height: 297px;
-    padding: 10px;
-    border-radius: 9px 10px 8px 9px;
-}
-
-
-#carte1{
-    transform: rotate(8deg);
-    margin:65px;
-    
-}
-
-#carte2{
-    transform: rotate(2deg);
-    margin:65px
-    
-}
-
-#carte3{
-    transform: rotate(-8deg);
-    margin:65px;
-    
-}
-
-
 
 h2{
     font-size: 2.9rem;
     color: white;
     position: absolute;
-    margin-left: 27px;
+    margin-left: 537px;
     z-index: 1;
-    top: 916px;
+    text-shadow: 1px 1px 1px 1px black ;
 }
 
-img{
-    display:block;
-    width:500px;
-    border-radius:13px 13px;
+.carte{
+    background: white;
+    background-size: contain;
+    margin: 47px;
+    border-radius: 9px 10px 8px 9px;
+    height: 341px;
+    width: 348px;
+    align-items: center;
+    box-shadow: black -1px 0px 20px 2px;
+}
+
+.carte p{
+    margin:8px 0 0 8px;
+    word-spacing: 1px;
+}
+
+.carte p:hover{
+    /*background:linear-gradient( to bottom, rgb(230, 1, 1), rgba(33, 163, 223, 0.527));*/
+    transition-duration: 0.1s;
+    transition-delay: 0.2s;
+}
+
+
+#carte1{
+    transform: rotate(8deg);
+}
+
+#carte2{
+    transform: rotate(0deg);
+    margin: 47px;
+}
+
+#carte3{
+    transform: rotate(-8deg);
+  
+}
+
+ img{
+    display: block;
+    width: 322px;
+    height: 245px;
+    border-radius: 13px 13px;
     max-width: 100%;
-    height:auto 
+    margin:8px 0px 0px 8px;
+    align-items: center;
+   
 }
 
 
