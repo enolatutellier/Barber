@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/font.css"/>
     <script src="js/carrousel.js" defer></script>
+    <script src="js/sous_menu_deroulant.js" defer></script>
     
     <title>
         Sylv'Barbe
@@ -18,17 +19,55 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li> 
-                    <a href="#">
-                        Catégorie
-                    </a>
+            <ul id="menu">
+                <li id="categorie"> 
+                    <div id="overlay"></div>
+                    <p>Catégorie</p>
+                    <ul id='sous_menu_categorie'>
+                        <li>
+                            <a href="prestation.php">Prestation</a>
+                        </li>
+                        <li>
+                            <a>Produits de soin</a>
+                        </li>
+                        <li>
+                            <a>Equipements et accessoires</a>
+                        </li>
+                    </ul>
                 </li>
 
-                <li>
-                    <a href="#">
-                        Recherche
-                    </a>
+                <li id="deroulant" onclick="derouler()"> 
+                    <ul id="sous_menu">
+                        <li>
+                            <a href="prestation.php">Prestation</a>
+                            <ul class="sous_menu2">
+                                <li>
+                                    <a>Soin</a>
+                                </li>
+                                <li>
+                                    <a>Coloration</a>
+                                </li>
+                                <li>
+                                    <a>Forfait</a>
+                                </li>
+                                <li>
+                                    <a>Barbe</a>
+                                </li>
+                                <li>
+                                    <a>Coiffure</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Produit de soin</a>
+                        </li>
+                        <li>
+                            <a>Equipements et accesoires</a>
+                        </li>
+                    </ul>
+                    <p>
+                        Nos produits
+                    </p>
                 </li>
 
                 <li>
@@ -56,9 +95,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
-                        A propos
-                    </a>
+                    <input id="recherche" type="text" placeholder="🔍 Recherche">
                 </li>
 
                 <li>
@@ -84,33 +121,43 @@
         </section>
 
     <section class="section1">
-                <h2>
-                    Nos préstations
-                </h2>
-                
+                          
             <div class="conteneur">
 
-               <div class="carte" id="carte1">
-                     <img src="img/coupe1.jpg" alt="première coupe"class="img1">
-                     <p>
-                         Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Delectus, minima!
-                     </p>
-                </div>
-               
-                <div class="carte" id="carte2">
-                    <img src="img/coupe2.jpg" alt="deuxième coupe" class="img1">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Delectus, minima!
-                    </p>
-                </div>
+                <h2 id="titre_cont">
+                    Nos prestations
+                </h2>
 
-                <div class="carte" id="carte3">
-                    <img src="img/coupe6.jpg" alt="troisième coupe"class="img1">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Delectus, minima!
-                    </p>
-                </div>
-            </div> 
+                <article class="carte" id="carte1">
+                    <img class="clou" src="img/clou.png" alt="clou">
+                    <figure>
+                        <img src="img/coupe1.jpg" alt="première coupe"class="img1">
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur
+                        </figcaption>
+                    </figure>
+                </article>
+               
+                <article class="carte" id="carte2">
+                    <img class="clou" src="img/clou.png" alt="clou">
+                    <figure>
+                        <img src="img/coupe2.jpg" alt="deuxième coupe" class="img1">
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur
+                        </figcaption>
+                    </figure>
+                </article>
+
+                <article class="carte" id="carte3">
+                    <img class="clou" id="clou3" src="img/clou.png" alt="clou">
+                    <figure>
+                        <img src="img/coupe6.jpg" alt="troisième coupe"class="img1">
+                        <figcaption>
+                            Lorem ipsum dolor sit amet consectetur
+                        </figcaption>
+                    </figure>
+                </article>
+
 
     </section>
 
@@ -132,12 +179,40 @@
 
     </section>
 
-    <section class="section3">
+    <div id="separation"></div>
 
+    <section class="section3">
+        <h2>Nos produits de soin</h2>
+        <div id="presentation_soin">
+            <article class="article">
+                <figure>
+                    <img src="img/pate modelante.jpg" alt="pate modelante">
+                    <figcaption>
+                        Pâte Modelante
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="article">
+                <figure>
+                    <img src="img/shampoing.jpg" alt="shampoing">
+                    <figcaption>
+                        Shampoing
+                    </figcaption>
+                </figure>
+            </article>
+            <article class="article">
+                <figure>
+                    <img src="img/face cream.jpg" alt="crême visage">
+                    <figcaption>
+                        Crême visage
+                    </figcaption>
+                </figure>
+            </article>
+        </div>
     </section>
     
  
 </main>
-<!-- <?php include_once ('footer.php');  -->
+<?php include_once ('footer.php');?>
 </body>
 </html>

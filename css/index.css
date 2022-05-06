@@ -45,30 +45,29 @@ header {
 
 #logoblanc{
     display: flex;
-    background:green;
+    background:#102907;
     padding:10px;
 }
 
 
 .trait-vert{
-    background:green;
+    background:#102907;
     height:2px;
     width:60px;
     margin:15px;
 }
 
 
-ul {
+#menu {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     background:black;
-
+    color:white;
 }
 
 li {
     list-style: none;
-    line-height: 70px;
 }
 
 a {
@@ -88,86 +87,167 @@ h1{
     text-shadow: 2px 4px 3px rgba(255, 255, 255, 0.5);
     }
 
+#deroulant > p:after, #categorie > p:after {
+    content: " ▼";
+}
+
+#categorie{
+    position : relative;
+}
+
+#categorie:hover #overlay{
+    display: block;
+    position :fixed;
+    height:20vh;
+    width: 17vw;
+    top :0;
+    left:0;
+}
+
+#categorie:hover #sous_menu_categorie{
+    display: block;
+}
+
+#sous_menu_categorie{
+    display: none;;
+    position :absolute;
+    top:200%;
+    left:-2vw;
+    width: 200%;
+    z-index: 10;
+}
+
+
+
+#sous_menu_categorie > li{
+    text-align: center;
+    border : 4px solid #102907;
+    box-sizing: border-box;
+    padding : 10%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+}
+
+#sous_menu_categorie > li > a{
+    color : black;
+}
+
+#sous_menu{
+    display : none;
+    flex-direction: column;
+    width: 100%;
+    left:0;
+    background-color: grey;
+    z-index: 10;
+    top:100%;
+    align-items: flex-start;
+    padding: 0 10%;
+    position:absolute;
+}
+
+.sous_menu2{
+    display : flex;
+    flex-wrap: wrap;
+    width: 50vw;
+    top:0;
+    left:35%;
+    background-color: grey;
+    z-index: 10;
+    position:absolute;
+}
+
+#sous_menu li{
+    width : 25%;
+    padding:20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
 
 
 /* Première section "nos prestation" */
 
 .section1{
-    margin-top:15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:5% 0;
     block-size: auto;
     background:url(../img/imgVecto1.PNG);
-    height: 590px;
-   margin-bottom:15px;
-   position:relative;
+    background-size: cover;
+    height: 40vw;
+    position:relative;
 }
 
 
 .conteneur{
     background: url(../img/imgVecto3.jpg) no-repeat;
     background-size:cover;
+    position:relative;
     display: flex;
     justify-content: center;
-    height:569px;
-    margin:0 20px 0 20px;
+    width:70%;
+    height:100%;
     align-items: center;
 }
 
 
-h2{
+main #titre_cont{
     font-size: 2.9rem;
     color: white;
     position: absolute;
-    margin-left: 537px;
-    z-index: 1;
+    top:0;
+    left: 15%;
     text-shadow: 1px 1px 1px 1px black ;
 }
 
 .carte{
     background: white;
-    background-size: contain;
-    border-radius: 9px 10px 8px 9px;
-    height: 341px;
-    width: 348px;
+    display: flex;
+    flex-direction: column;
+    position : relative;
     align-items: center;
+    text-align: center;
+    border-radius: 5%;
+    height: 50%;
+    width: 30%;
     box-shadow: black -1px 0px 20px 2px;
-    transform: rotate(8deg);
 }
 
-.carte p{
-    margin: 19px 0 0 26px;
-    word-spacing: 1px;
+.clou{
+    position:absolute;
+    top:-2%;
+    width:10%;
+    transform: rotate(-50deg);
 }
-
-.carte p:hover{
-    /*background:linear-gradient( to bottom, rgb(230, 1, 1), rgba(33, 163, 223, 0.527));*/
-    transition-duration: 0.1s;
-    transition-delay: 0.2s;
-}
-
 
 #carte1{
     transform: rotate(8deg);
+    top :10%;
+    left:-2%;
 }
 
 #carte2{
-    transform: rotate(0deg);
-    margin-top:380px;
-    
+    transform: rotate(-5deg);
+    left:1%;
+    top : 40%;
+
 }
 
 #carte3{
     transform: rotate(-8deg);
-  
+    top : -5%;
+}
+
+#clou3{
+    transform: rotate(210deg);
 }
 
  .img1{
-    display: block;
-    width: 322px;
-    height: 245px;
+    width:100%;
+    box-sizing: border-box;
+    padding:10% 3% 3%;
     border-radius: 5px 5px;
-    max-width: 100%;
-    margin:8px 0px 0px 8px;
-    align-items: center;
     filter: contrast(90%) brightness(120%);
 }
 
@@ -221,3 +301,33 @@ h2{
     
 }
 
+
+.section3 h2{
+    margin : 5%;
+    text-align: end;
+}
+#separation{
+    background-image: url('../Img/idk.jpg');
+    background-size: 400% 5vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    height:5vw;
+    margin-top: 20vw;
+}
+
+#presentation_soin{
+    display: flex;
+    width: 100%;
+    padding-right: 10%;
+    box-sizing: border-box;
+}
+
+#presentation_soin img{
+    width: 70%;
+}
+
+#presentation_soin figure{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
