@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'quattrocento' , sans-serif ;
+}
+
+header {
+    background-color:rgb(0, 0, 0);
+    position:relative;
+    
+}
+
+#logoblanc{
+    display: flex;
+    background:rgb(0, 0, 0);
+    padding:10px;
+}
+
+
+.trait-vert{
+    background:green;
+    height:2px;
+    width:60px;
+    margin:15px;
+}
+
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background:black;
+
+}
+
+li {
+    list-style: none;
+    line-height: 70px;
+}
+
+a {
+    padding: 10px 1px 10px 1px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border-radius: 1px 0 1px 0;
+}
+
+#presentation{
+    background:radial-gradient(at 40% 0%, rgba(128,128,128,0.1) -100%, black 60%);
+    height : 880px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: clamp(30px, 0.5rem, 58px);
+    color : white;
+}
+#sous-image{
+    margin-top: -40px;
+    height : 20vw;
+    position:relative;
+    background:linear-gradient(to bottom right, black 50%, white 50%);
+    padding : 0 10%;
+}
+
+.citation{
+    position : absolute;
+    top:2vw;
+    left: 15%;
+    width: 30%;
+}
+
+.blanc{
+    color:white;
+}
+
+/* Enola */
+
+main{
+    background-image: url(/Img/soinbarbe.jpg);
+    background-size: clamp(100px, 100%, 1280px) auto; /* donner une taille minimum , taille en pourcentage, et la taille maxim*/
+    background-repeat: no-repeat;
+}
+
+.section3{
+    
+}
+
+#deco2svg{
+ width: 25vw;
+}
