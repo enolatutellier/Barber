@@ -12,11 +12,35 @@ header {
 }
 
 .section0{
-    block-size: auto;
+    background-color: black;
+    height:50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.coupe8{
-    background-size:cover;
+#carrousel{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width:80%;
+    height: 60%;
+    position: relative;
+}
+
+.img_carrousel{
+    width:50%;
+    height: 100%;
+    position: relative;
+}
+
+@keyframes transition-left {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
 }
 
 #logoblanc{
@@ -71,7 +95,7 @@ h1{
 .section1{
     margin-top:15px;
     block-size: auto;
-    background:url(img/imgVecto1.PNG);
+    background:url(../img/imgVecto1.PNG);
     height: 590px;
    margin-bottom:15px;
    position:relative;
@@ -79,7 +103,7 @@ h1{
 
 
 .conteneur{
-    background: url(img/imgVecto3.jpg) no-repeat;
+    background: url(../img/imgVecto3.jpg) no-repeat;
     background-size:cover;
     display: flex;
     justify-content: center;
