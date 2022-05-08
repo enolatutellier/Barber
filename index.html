@@ -20,8 +20,8 @@
     <header>
         <nav>
             <ul id="menu">
-                <li id="categorie"> 
-                    <div id="overlay"></div>
+                <div id="overlay"></div>
+                <li id="categorie" class="bouton_menu"> 
                     <p>Catégorie</p>
                     <ul id='sous_menu_categorie'>
                         <li>
@@ -36,11 +36,14 @@
                     </ul>
                 </li>
 
-                <li id="deroulant" onclick="derouler()"> 
-                    <ul id="sous_menu">
-                        <li>
-                            <a href="prestation.php">Prestation</a>
-                            <ul class="sous_menu2">
+                <li id='deroulant_principal' class="deroulant"> 
+                    <p>
+                        Nos&nbsp;produits
+                    </p>
+                    <ul id='sous_menu_principal' class="sous_menu">
+                        <li class="deroulant">
+                            <p>Prestation</p>
+                            <ul id='prestation_sous_menu' class="sous_menu">
                                 <li>
                                     <a>Soin</a>
                                 </li>
@@ -56,18 +59,49 @@
                                 <li>
                                     <a>Coiffure</a>
                                 </li>
+                                <a href="prestation.php">Plus&nbsp;d'info&nbsp;>>></a>
                             </ul>
                         </li>
-                        <li>
-                            <a>Produit de soin</a>
+                        <li class="deroulant">
+                            <p>Produit de soin</p>
+                            <ul id='produit_sous_menu'class="sous_menu">
+                                <li>
+                                    <a>Baume à barbe</a>
+                                </li>
+                                <li>
+                                    <a>Shampoings</a>
+                                </li>
+                                <li>
+                                    <a>Huiles</a>
+                                </li>
+                                <li>
+                                    <a>Cire à barbe</a>
+                                </li>
+                                <a href="soinsbarbe.html">Plus&nbsp;d'info&nbsp;>>></a>
+                            </ul>
                         </li>
-                        <li>
-                            <a>Equipements et accesoires</a>
+                        <li class="deroulant">
+                            <p>Equipements et accesoires</p>
+                            <ul id='accessoire_sous_menu' class="sous_menu">
+                                <li>
+                                    <a>Soin</a>
+                                </li>
+                                <li>
+                                    <a>Coloration</a>
+                                </li>
+                                <li>
+                                    <a>Forfait</a>
+                                </li>
+                                <li>
+                                    <a>Barbe</a>
+                                </li>
+                                <li>
+                                    <a>Coiffure</a>
+                                </li>
+                                <a href="prestation.php">Plus&nbsp;d'info&nbsp;>>></a>
+                            </ul>
                         </li>
                     </ul>
-                    <p>
-                        Nos produits
-                    </p>
                 </li>
 
                 <li>
@@ -99,8 +133,8 @@
                 </li>
 
                 <li>
-                    <a href="#">
-                        Se connecter
+                    <a href="#" class="bouton_menu">
+                        Se&nbsp;connecter
                     </a>
                 </li>
             </ul>
