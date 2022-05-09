@@ -74,7 +74,7 @@ a {
     color:white;
 }
 
-/* Enola */
+                            /* Enola */
 
 main{
     background-image: url(/Img/soinbarbe.jpg);
@@ -82,10 +82,84 @@ main{
     background-repeat: no-repeat;
 }
 
-.section3{
-    
-}
 
 #deco2svg{
- width: 25vw;
+    position: absolute;
+    width: 29vw;
+    transform: rotate(360deg);
+    right: -21vw;
+    top: 99vh;
+    overflow: hidden;
+}
+
+#para1{
+    position: absolute;
+    right: 15vw;
+    top: 116vh;
+}
+ 
+
+                        /* section4 = BAUME */
+#para2{
+    position: absolute;
+    right: 79vw;
+    top: 128vh;
+    font-size: 1.3rem;
+}
+
+.conteneur{
+    display: flex;
+}
+
+.ligneGauche{
+    background:black;
+    width:3px;
+    margin-left:5vw;
+}
+
+button{
+    border: none;
+    background-color: white;
+}
+
+#fleche1{
+    width: 38px;
+}
+
+#fleche2{
+    width:38px;
+    transform: rotate(177deg);
+}
+
+/* Section 5 SHAMPOING */ 
+
+#para3{
+    position: absolute;
+    right: 18vw;
+    top: 170vh;
+    font-size: 1.3rem;
+}
+
+#fleche3{
+    width: 38px;
+}
+
+#fleche4{
+    width:38px;
+    transform: rotate(177deg);
+}
+
+.conteneur1{
+    display: flex;
+    margin-left:15vw;
+}
+
+.imgshamp{
+    width:22vw;
+}
+
+.ligneDroite{
+    background:black;
+    width:3px;
+    margin-left:12px;
 }
