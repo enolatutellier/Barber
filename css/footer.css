@@ -25,6 +25,7 @@ footer .flex_col{
 }
 footer .titre{
     font-size: clamp(16px, 0.4rem, 30px);
+    margin: 27.8px 0;
 }
 footer #trait_horizontal{
     width:5px;
