@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/font.css"/>
     <script src="js/carrousel.js" defer></script>
-    <script src="js/sous_menu_deroulant.js" defer></script>
     
     <title>
         Sylv'Barbe
@@ -17,95 +16,7 @@
 
 </head>
 <body>
-    <header>
-        <nav>
-            <ul id="menu">
-                <li id="categorie"> 
-                    <div id="overlay"></div>
-                    <p>Catégorie</p>
-                    <ul id='sous_menu_categorie'>
-                        <li>
-                            <a href="prestation.php">Prestation</a>
-                        </li>
-                        <li>
-                            <a>Produits de soin</a>
-                        </li>
-                        <li>
-                            <a>Equipements et accessoires</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li id="deroulant" onclick="derouler()"> 
-                    <ul id="sous_menu">
-                        <li>
-                            <a href="prestation.php">Prestation</a>
-                            <ul class="sous_menu2">
-                                <li>
-                                    <a>Soin</a>
-                                </li>
-                                <li>
-                                    <a>Coloration</a>
-                                </li>
-                                <li>
-                                    <a>Forfait</a>
-                                </li>
-                                <li>
-                                    <a>Barbe</a>
-                                </li>
-                                <li>
-                                    <a>Coiffure</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a>Produit de soin</a>
-                        </li>
-                        <li>
-                            <a>Equipements et accesoires</a>
-                        </li>
-                    </ul>
-                    <p>
-                        Nos produits
-                    </p>
-                </li>
-
-                <li>
-                    <div class="trait-vert">
-                    </div>
-
-                    <div class="trait-vert">
-                    </div>
-
-                </li>
-
-                <li id="logoblanc">
-                    <img src="img/logo.svg" alt="logo">
-                </li>
-
-                <li>
-                    <div class="trait-vert">
-
-                    </div>
-
-                    <div class="trait-vert">
-
-                    </div>
-
-                </li>
-
-                <li>
-                    <input id="recherche" type="text" placeholder="🔍 Recherche">
-                </li>
-
-                <li>
-                    <a href="#">
-                        Se connecter
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <?php include_once ('header.php');?>
     <main>
 
         <section class="section0">

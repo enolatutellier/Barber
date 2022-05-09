@@ -15,13 +15,14 @@
 
 </head>
 <body>
+    <?php include_once ('header.php');?>
     <main>
         <section id="presentation">
             <h1>Nos Prestations</h1>
         </section>
         <section id="sous-image">
             <p class="blanc citation">
-                Nous vous proposons diférents services dans nos salons répartis à travers l'Europe.
+                Nous vous proposons différents services dans nos salons répartis à travers l'Europe.
             </p>
         </section> 
         <section id="services">
@@ -37,7 +38,7 @@
             </div>
             <div id="coloration" class="carteInfo">
                 <img id="img_coloration" class="image_moyenne" src="img/coloration.jpg" alt="coloration">
-                <h2>Coloration</h2>
+                <h2 id="titre_coloration" >Coloration</h2>
                 <p>3 types de colorations :<br>
                     – Fashionista : vous vibrez pour les tendances couleur les plus osées ? Décoloration, effet de couleur, pastellisation… cette prestation est faite pour vous !<br>
                     – Surfeur cool : vous aimez l’effet soleil dans vos cheveux comme si vous reveniez de vacances toute l’année ? The Barber Company vous propose une décoloration subtile sur les pointes.<br>

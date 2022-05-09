@@ -66,6 +66,10 @@ main{
     grid-row: 1/5;
 }
 
+#soin h3{
+    margin : 5% 0;
+}
+
 #shampoing{
     position :absolute;
     top: -4rem;
@@ -76,6 +80,7 @@ main{
 #titre_soin{
     position : absolute;
     top:0px;
+    margin : 5% 0 ;
     left:8%;
 }
 .image_moyenne{
@@ -89,6 +94,10 @@ main{
     width:100%;
     height:80%;
     transform:scaleX(-1)
+}
+
+#titre_coloration{
+    margin : 5% 0;
 }
 
 #coloration{
@@ -122,6 +131,7 @@ main{
 #titre_forfait{
     position:absolute;
     top:0;
+    margin : 5% 0;
     left:68%;
 }
 
@@ -148,7 +158,7 @@ main{
 
 #fin{
     padding : 10vw 5vw 0;
-    background-image: url('../Img/dekowood.jpg');
+    background-image: url('../Img/dekowood.png');
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: -50px;
@@ -183,6 +193,7 @@ main{
 
 .titre_presentoir{
     position:absolute;
+    margin : 5% 0;
     left:0;
     top:-25%;
     font-size: 1.2rem;
