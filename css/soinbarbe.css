@@ -74,7 +74,7 @@ a {
     color:white;
 }
 
-/* Enola */
+                            /* Enola */
 
 main{
     background-image: url(/Img/soinbarbe.jpg);
@@ -82,10 +82,143 @@ main{
     background-repeat: no-repeat;
 }
 
-.section3{
-    
-}
 
 #deco2svg{
- width: 25vw;
+    position: absolute;
+    width: 29vw;
+    transform: rotate(360deg);
+    right: -21vw;
+    top: 99vh;
+    overflow: hidden;
 }
+
+#para1{
+    position: absolute;
+    right: 15vw;
+    top: 116vh;
+}
+ 
+
+                        /* section4 = BAUME */
+#para2{
+    position: absolute;
+    right: 79vw;
+    top: 128vh;
+    font-size: 1.5rem;
+}
+
+.conteneur{
+    display: flex;
+}
+
+.ligneGauche{
+    background:black;
+    width:3px;
+    margin-left:5vw;
+}
+
+button{
+    border: none;
+    background: none;
+}
+
+#fleche1{
+    width: 38px;
+}
+
+#fleche2{
+    width:38px;
+    transform: rotate(177deg);
+}
+
+/* Section 5 SHAMPOING */ 
+
+#para3{
+    position: absolute;
+    right: 18vw;
+    top: 181vh;
+    font-size: 1.5rem;
+}
+
+#fleche3{
+    width: 38px;
+}
+
+#fleche4{
+    width:38px;
+    transform: rotate(177deg);
+}
+
+.conteneur1{
+    display: flex;
+    margin-left:15vw;
+    margin-top:12vw;
+}
+
+.imgshamp{
+    width:22vw;
+}
+
+.ligneDroite{
+    background:black;
+    width:3px;
+    margin-left:12px;
+}
+
+/* section 6 : huiles */ 
+
+.huiles{
+    padding:0;
+}
+
+#imgDeco2PNG{
+    position: absolute;
+    width: 45vh;
+    right: 80vw;
+    top: 266vh;
+    transform: rotate(90deg);
+}
+
+#para4{
+    position: absolute;
+    right: 47vw;
+    top: 23vh;
+    font-size: 1.5rem;
+}
+
+.conteneur2{
+    box-sizing: content-box;
+    display: flex;
+    margin-top: 18vh;
+    justify-content: space-around;
+}
+
+#fleche5{
+    top: -13vw;
+    width: 38px;
+}
+
+.cartehuile{
+    display: flex;
+    box-shadow: black -1px 0px 7px 0px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+#fleche6{
+    width:38px;
+    transform: rotate(177deg);
+}
+
+figcaption{
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+figcaption:hover{
+    color:orange;
+}
+
+
+
+
+
