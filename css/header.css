@@ -1,53 +1,27 @@
 header {
     background-color:rgb(0, 0, 0);
-    position:relative;
+    top:0;
     font-size: 0.25rem;
-    
-}
-
-nav{
     position:fixed;
-    width: 100vw;
+    height: 15vh;
     z-index : 15;
+}
+
+nav{  
+    width: 100vw;
     text-align: center;
-}
-
-.section0{
-    background-color: black;
-    height:50vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#carrousel{
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    width:80%;
-    height: 60%;
-    position: relative;
-}
-
-.img_carrousel{
-    width:50%;
     height: 100%;
-    position: relative;
 }
 
-@keyframes transition-left {
-    from{
-        transform: translateX(0);
-    }
-    to{
-        transform: translateX(-100%);
-    }
+#index_retour{
+    height:100%;
 }
 
 #logoblanc{
     display: flex;
     background:#102907;
     padding:10px;
+    height: 100%;
 }
 
 
@@ -62,6 +36,7 @@ nav{
 #menu {
     display: flex;
     justify-content: space-evenly;
+    height: 100%;
     align-items: center;
     background:black;
     color:white;
@@ -76,7 +51,7 @@ header li {
     list-style: none;
 }
 
-header a {
+#monCompte, #sous_menu_categorie a {
     padding: 10px 1px 10px 1px;
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -153,6 +128,8 @@ header a {
     border-radius: 20px;
     padding:10px;
     background-color: rgba(61, 23, 23, 0.5);
+    color:white;
+    text-decoration: none;
 }
 
 #sous_menu_principal{

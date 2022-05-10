@@ -2,9 +2,6 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="./css/font.css"/>
     <script src="js/sous_menu_deroulant.js" defer></script>
@@ -109,9 +106,11 @@
 
                 </li>
 
-                <li id="logoblanc">
-                    <img src="img/logo.svg" alt="logo">
-                </li>
+                <a href="index.php" id='index_retour'>
+                    <li id="logoblanc">
+                        <img src="img/logo.svg" alt="logo">
+                    </li>
+                </a>
 
                 <li>
                     <div class="trait-vert">
@@ -130,8 +129,8 @@
                 </li>
 
                 <li>
-                    <a href="#" class="bouton_menu">
-                        Se&nbsp;connecter
+                    <a id='monCompte' href="compte.php" class="bouton_menu">
+                        Mon&nbsp;compte
                     </a>
                 </li>
             </ul>

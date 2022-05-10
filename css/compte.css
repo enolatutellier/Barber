@@ -1,0 +1,16 @@
+@import url('reset.css');
+
+main{
+    margin-top: 15vh;
+    padding : 5%;
+    background-color: #102907;
+    font-size: 0.3rem;
+    color : white;
+}
+button{
+    padding : 10px 20px;
+    border-radius: 20px;
+}
+#tableau_ajout, #tableau_modif, #tableau_supp{
+    display: none;
+}
