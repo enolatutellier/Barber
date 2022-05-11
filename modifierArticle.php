@@ -6,10 +6,18 @@ try{
         $new_name = $_POST["nouveau_nom"];
         if($_POST["nouvelle_description"] != ''){
             $new_desc = $_POST["nouvelle_description"];
-            $sql = $con->prepare('UPDATE '.$_POST["type"].'
+            if($_POST["nouvelle_image"] != ''){
+                $new_img = $_POST["nouvelle_image"];
+                $sql = $con->prepare('UPDATE '.$_POST["type"].'
+                                  SET Nom = \''.$new_name.'\', Description = \''.$new_desc.'\', Photo = \''.$new_img.'\'
+                                  WHERE Nom = \''.$_POST['nom'].'\'');
+                $sql->execute();
+            }else{
+                $sql = $con->prepare('UPDATE '.$_POST["type"].'
                                   SET Nom = \''.$new_name.'\', Description = \''.$new_desc.'\'
                                   WHERE Nom = \''.$_POST['nom'].'\'');
-            $sql->execute();
+                $sql->execute();
+            }   
         }else{
             $new_desc = $_POST["nouvelle_description"];
             $sql = $con->prepare('UPDATE '.$_POST["type"].'
@@ -19,10 +27,24 @@ try{
         }
     }else if($_POST["nouvelle_description"] !=''){
         $new_desc = $_POST["nouvelle_description"];
-        $sql = $con->prepare('UPDATE '.$_POST["type"].'
+        if($_POST["nouvelle_image"] != ''){
+            $new_img = $_POST["nouvelle_image"];
+            $sql = $con->prepare('UPDATE '.$_POST["type"].'
+                              SET Description = \''.$new_desc.'\', Photo = \''.$new_img.'\'
+                              WHERE Nom = \''.$_POST['nom'].'\'');
+            $sql->execute();
+        }else{
+            $sql = $con->prepare('UPDATE '.$_POST["type"].'
                               SET Description = \''.$new_desc.'\'
                               WHERE Nom = \''.$_POST['nom'].'\'');
-        $sql->execute();
+            $sql->execute();
+        }
+    }else if($_POST["nouvelle_image"] != ''){
+        $new_img = $_POST["nouvelle_image"];
+        $sql = $con->prepare('UPDATE '.$_POST["type"].'
+                          SET Photo = \''.$new_img.'\'
+                          WHERE Nom = \''.$_POST['nom'].'\'');
+        $sql->execute();    
     }
     header('Location:compte.php');
 }

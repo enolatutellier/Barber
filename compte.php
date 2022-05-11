@@ -5,9 +5,10 @@
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/compte.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/font.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/gestionArticles.js" defer></script>
     
     <title>
@@ -16,99 +17,28 @@
 
 </head>
 <body>
-    <?php include_once ('header.php');?>
-    <main>
-        <button id="ajouter" onclick="ajouter()">Ajouter des articles</button>  
-        <button id="modifier" onclick="modifier()">Modifier des articles</button>
-        <button id="supprimer" onclick="supprimer()">Supprimer des articles</button>
-        <section id='tableau_ajout'>
-            <form method="post" action="ajouterArticle.php">
-                <div>
-                    <label for="type">
-                        Type d'article
-                    </label>
-                    <select id="type" name="type">
-                        <option value="soin">Soin</option>
-                        <option value="coloration">Coloration</option>
-                        <option value="forfait">Forfait</option>
-                        <option value="barbe">Barbe</option>
-                        <option value="coiffure">Coiffure</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="nom">
-                        Nom de l'article
-                    </label>
-                    <input type="text" id="nom" name="nom">    
-                </div>
-                <div>
-                    <label for="description">
-                        Description de l'article
-                    </label>
-                    <textarea name="description"></textarea>
-                </div>
+    <div class='container-fluid'>
+        <div class='row'>
+            <a class='nav-link' href="index.php">Retour au site</a>
+        </div>
+        <div class='row justify-content-center'>
+            <p>Gestionnaire d'articles</p>
+        </div>
+        <div class='row justify-content-center'>
+            <form method="post" onsubmit="return GetData();">
+                <select id="type_principal" name="type">
+                    <option>Choisissez le type d'article</option>
+                    <option value="soin">Soin</option>
+                    <option value="coloration">Coloration</option>
+                    <option value="forfait">Forfait</option>
+                    <option value="barbe">Barbe</option>
+                    <option value="coiffure">Coiffure</option>
+                </select>
                 <input type="submit" value="Envoyer">
-            </form>
-        </section>
-        <section id='tableau_modif'>
-            <form method="post" action="modifierArticle.php">
-                <div>
-                    <label for="type">
-                        Type d'article
-                    </label>
-                    <select id="type" name="type">
-                        <option value="soin">Soin</option>
-                        <option value="coloration">Coloration</option>
-                        <option value="forfait">Forfait</option>
-                        <option value="barbe">Barbe</option>
-                        <option value="coiffure">Coiffure</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="nom">
-                        Nom de l'article
-                    </label>
-                    <input type="text" id="nom" name="nom">    
-                </div>
-                <div>
-                    <label for="nouveau_nom">
-                        Nouveau nom de l'article
-                    </label>
-                    <input type="text" id="nouveau_nom" name="nouveau_nom">    
-                </div>
-                <div>
-                    <label for="nouvelle_description">
-                        Nouvelle description de l'article
-                    </label>
-                    <textarea name="nouvelle_description"></textarea>
-                </div>
-                <input type="submit" value="Envoyer">
-            </form>
-        </section>
-        <section id="tableau_supp">
-            <form method="post" action="supprimerArticle.php">
-                <div>
-                    <label for="type">
-                        Type d'article
-                    </label>
-                    <select id="type" name="type">
-                        <option value="soin">Soin</option>
-                        <option value="coloration">Coloration</option>
-                        <option value="forfait">Forfait</option>
-                        <option value="barbe">Barbe</option>
-                        <option value="coiffure">Coiffure</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="nom">
-                        Nom de l'article
-                    </label>
-                    <input type="text" id="nom" name="nom">    
-                </div>
-                <input type="submit" value="Envoyer">
-            </form>
-        </section>
-    </main>
-    <?php include_once ('footer.php');?>
+            <form>
+        </div>
+        <div id="articles" class='containeur-fluid mb-3'></div>
+    </div>    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

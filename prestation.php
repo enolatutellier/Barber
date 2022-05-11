@@ -1,3 +1,14 @@
+<?php
+try{
+    $con=new PDO("mysql:host=localhost;dbname=barber;charset=utf8", "root", "root");
+    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+}
+catch(PDOException $e){
+    echo "Erreur : ".$e->getMessage();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -56,16 +67,40 @@
         <section id='fin'>
             <div id="barbe" class="presentoir">
                 <h2 class="titre_presentoir">Barbe</h2>
-                <img class='petit_image' src="img/coupe1.jpg" alt="coupe1">
-                <img class='petit_image' src="img/coupe1.jpg" alt="coupe1">
-                <img class='petit_image' src="img/coupe1.jpg" alt="coupe1">
+                <?php
+                $sql = $con->prepare('SELECT * from barbe
+                                      ORDER BY Id_barbe DESC
+                                      LIMIT 3');
+                $sql->execute();
+                $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                foreach($articles as $article){
+                    echo '  <article class=\'carte\'>
+                                <figure>
+                                    <img class=\'petit_image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
+                                    <figcaption>'.$article["Nom"].'</figcaption>
+                                </figure>
+                            </article>';
+                }
+                ?>
                 <img class='fleche' src="img/fleche.png">
             </div>
             <div id="coiffure" class="presentoir">
                 <h2 class="titre_presentoir">Coiffure</h2>
-                <img class='petit_image' src="img/coupe1.jpg" alt="coupe1">
-                <img class='petit_image' src="img/coupe1.jpg" alt="coupe1">
-                <img class='petit_image' src="img/coupe1.jpg" alt="coupe1">
+                <?php
+                $sql = $con->prepare('SELECT * from coiffure
+                                      ORDER BY Id_coiffure DESC
+                                      LIMIT 3');
+                $sql->execute();
+                $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                foreach($articles as $article){
+                    echo '  <article class=\'carte\'>
+                                <figure>
+                                    <img class=\'petit_image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
+                                    <figcaption><p>'.$article["Nom"].'</p></figcaption>
+                                </figure>
+                            </article>
+                }
+                ?>
                 <img class='fleche' src="img/fleche.png">
             </div>
             <img id='enseigne' src="img/enseigne.png" alt="enseigne barbier">           

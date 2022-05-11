@@ -1,5 +1,3 @@
-@import url('reset.css');
-
 main{
     margin-top: 15vh;
     padding : 5%;
@@ -13,4 +11,9 @@ button{
 }
 #tableau_ajout, #tableau_modif, #tableau_supp{
     display: none;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
 }
