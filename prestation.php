@@ -98,7 +98,7 @@ catch(PDOException $e){
                                     <img class=\'petit_image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
                                     <figcaption><p>'.$article["Nom"].'</p></figcaption>
                                 </figure>
-                            </article>
+                            </article>';
                 }
                 ?>
                 <img class='fleche' src="img/fleche.png">

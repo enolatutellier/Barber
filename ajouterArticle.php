@@ -6,8 +6,9 @@ try{
                           VALUES(:nom, :description, :image)');
     $sql->bindParam(':nom', $_POST['nom']);
     $sql->bindParam(':description', $_POST['description']);
-    $sql->bindParam(':image', $_POST['photo']);
+    $sql->bindParam(':image', $_FILES['photo']['name']);
     $sql->execute();
+    move_uploaded_file($_FILES['photo']['tmp_name'], 'img/'.$_FILES['photo']['name']);
     echo $_POST['nom'];
 }
 catch(PDOException $e){

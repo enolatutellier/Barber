@@ -13,12 +13,14 @@ try{
                             <button type=\'button\' class=\'btn btn-danger bt-sm rounded-circle\' onclick=\'confirmation(this)\'>X</button>
                         </div>
                         <div class=\'card-body d-flex flex-column align-items-center\'>
-                            <h2 class=\'card-title text-align-center\'>'.$article['Nom'].'</h2>
-                            <img class=\'card-img rounded w-75\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
+                            <h2 class=\'card-title text-center\'>'.$article['Nom'].'</h2>
+                            <div class=\'w-75\'>
+                                <img class=\'card-img rounded w-100\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
+                            </div>
                             <p class=\'card-text w-100 text-justify\'>'.$article["Description"].'</p>
                         </div>
-                        <div class=\'card-footer d-flex justify-content-center\'>
-                            <button type=\'button\' class=\'btn btn-warning btn-lg\'>Modifier l\'article</button>
+                        <div class=\'card-footer d-flex justify-content-around\'>
+                            <button type=\'button\' class=\'btn btn-warning btn-lg\' onclick=\'modifierArticle(this)\'>Modifier l\'article</button>
                         </div>
                     </div>
                 </div>';
@@ -46,7 +48,7 @@ try{
                                 </div>
                                 <div class=\'form-group\'>
                                     <label for=\'nouvelle_photo\'>Entrez la photo de l\'article</label>
-                                    <input type=\'text\' class=\'form-control\' id=\'nouvelle_photo\' name=\'nouvelle_photo\'>
+                                    <input type=\'file\' class=\'form-control\' id=\'nouvelle_photo\' name=\'nouvelle_photo\'>
                                 </div>
                             </div>
                             <div class=\'modal-footer\'>
