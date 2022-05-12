@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 12 mai 2022 à 12:33
+-- Généré le : jeu. 12 mai 2022 à 14:55
 -- Version du serveur : 5.7.33
 -- Version de PHP : 7.4.19
 
@@ -93,6 +93,15 @@ CREATE TABLE `coloration` (
   `Photo` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `coloration`
+--
+
+INSERT INTO `coloration` (`Id_coloration`, `Nom`, `Description`, `Photo`) VALUES
+(1, 'Coloration barbe', 'Coloration', 'coloration barbe.jpg'),
+(2, 'Coloration cheveux', 'Coloration', 'coloration cheveux.jpg'),
+(3, 'Coloration cheveux et barbe', 'Coloration', 'coloration barbe et cheveux.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -101,9 +110,21 @@ CREATE TABLE `coloration` (
 
 CREATE TABLE `forfait` (
   `Id_forfait` int(10) UNSIGNED NOT NULL,
-  `Nom` varchar(20) NOT NULL,
-  `Description` text NOT NULL
+  `Nom` varchar(40) NOT NULL,
+  `Description` text NOT NULL,
+  `Photo` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `forfait`
+--
+
+INSERT INTO `forfait` (`Id_forfait`, `Nom`, `Description`, `Photo`) VALUES
+(1, 'Soin complet', 'Soin cheveux, barbe et massage', 'forfait par defaut.webp'),
+(2, 'Coupe cheveux et barbe', '', 'forfait par defaut.webp'),
+(3, 'Forfait coupe cheveux barbe soin', '', 'forfait par defaut.webp'),
+(4, 'Forfait coloration et soin', '', 'forfait par defaut.webp'),
+(5, 'Forfait cheveux soin', '', 'forfait par defaut.webp');
 
 -- --------------------------------------------------------
 
@@ -113,9 +134,25 @@ CREATE TABLE `forfait` (
 
 CREATE TABLE `soin` (
   `Id_soin` int(10) UNSIGNED NOT NULL,
-  `Nom` varchar(20) NOT NULL,
-  `Description` text NOT NULL
+  `Nom` varchar(40) NOT NULL,
+  `Description` text NOT NULL,
+  `Photo` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `soin`
+--
+
+INSERT INTO `soin` (`Id_soin`, `Nom`, `Description`, `Photo`) VALUES
+(1, 'FUSIO-DOSE DE KÉRASTASE', 'Après un vrai diagnostic au cours duquel il détermine la nature du cheveu et ses besoins, le coiffeur crée un mélange personnalisé à partir de quatre concentrés et cinq boosters. Vingt mélanges différents sont dont possibles pour élaborer un petit cocktail magique parfaitement adapté. Après le shampoing, les cheveux sont bien essorés pour que le produit pénètre au maximum, le mélange est appliqué mèche-à-mèche, les mèches sont twistées et le mélange émulsionné. S’en suit un rinçage rapide car il n’y a pas de temps de pose.', 'soin fusio-dose.jpg'),
+(2, 'SOIN DE BONHEUR DE LISSFACTOR', 'Ce soin se déroule en pas moins de cinq étapes. Il restaure et revitalise pour deux mois les cheveux longs ou mi-longs sensibilisés et ternis par les traitements capillaires ou les changements de saison, grâce à un cocktail de protéines, d’acides aminés et de kératine. En salon, le coiffeur réalise deux shampoings, sèche les cheveux, applique le soin et le laisse poser sous cellophane et sous appareil chauffant pendant vingt minutes. Après un rinçage, il applique un deuxième soin, masse le cuir chevelu et vaporise les pointes avec le spray Ô de bonheur avant de passer au brushing.', 'soin lissfactor.jfif'),
+(3, 'PRO FIBER DE L’ORÉAL PRO', 'Ce soin nourrit et reconstruit à la fois. Il s’adresse aux cheveux très longs, en manque de brillance, fourchus ou colorés. Réactivé à la maison par la cliente, il conserve ses effets pendant deux à trois mois. En salon, le coiffeur réalise un diagnostic via une application iPad pour déterminer laquelle des trois gammes Pro Fiber est la plus adaptée en fonction des habitudes de sa cliente, de son profil capillaire et du niveau de sensibilisation du cheveu. Le soin concentré est ensuite appliqué et un temps de pose respecté. La cliente repart ensuite avec son set de produits pour entretenir le soin : un shampoing, un après-shampoing ou un masque et une recharge pour réactiver le soin au bout du quatrième shampoing.', 'soin pro fiber.jpg'),
+(4, 'Le soin profond', 'Cette méthode en plusieurs étapes et avec des produits adaptés à chaque étape, permet d’hydrater ou de nourrir en profondeur la fibre de vos cheveux. C’est-à-dire que contrairement aux produits capillaires qui restent à la surface des cheveux, votre tige capillaire va ici être nourrie et hydratée de l’intérieur. Ce soin agit sur le cheveu à la fois en surface et en profondeur, ce qui lui vaut ce nom de « soin profond ».', 'soin profond.jpg'),
+(5, 'Massage du cuir chevelu', 'Masser son cuir chevelu a des vertus bien plus importantes que vous ne pourriez le penser. Hormis le bien-être que cela vous procure, ce massage permet de faire du bien à vos cheveux. Alors, pas question de s\'en priver. ', 'soin massage.jpg'),
+(6, 'Masque charbon noir', 'La peau de l’homme a besoin de soins particuliers. Nous mettons tout en œuvre pour protéger votre épiderme. Tout au long de la journée, diverses saletés s’accumulent sur le visage. Grâce à un nettoyant et des soins hydratants, nous veillons à ce qu’il reste sain et doux à chaque instant.', 'soin masque charbon.jpg'),
+(7, 'Masque argile jaune', 'Le visage est soumis à des agressions au quotidien. Pollution, soleil, produits cosmétiques, poussière sont autant d’éléments invisibles et qui pourtant se déposent sur notre peau et viennent l’étouffer et la fragiliser. Le résultat ? La peau devient terne, parfois trop grasse ou trop sèche (les deux à la fois !) et présente des irrégularités telles que des rougeurs, des irritations, des points noirs… Le masque peau parfaite à l’argile jaune est conçu pour prévenir ces désagréments et redonner à votre peau une seconde jeunesse.', 'soin masque argile.jpg'),
+(8, 'Application baume à barbe', 'Notre baume à barbe agit à 3 niveaux: il la nourrit, aide à contrôler les poils rebelles et la protège. Délogez une noisette de baume, frottez-la entre vos paumes et appliquez sur la barbe. Le baume pénètre et transmet ses propriétés nutritives à la barbe, tout en aidant à lui donner une forme harmonieuse. De plus, ses ingrédients contribuent à lui offrir une protection naturelle contre les éléments.', 'soin baume.jpg'),
+(9, 'Application huile pour barbe', 'Tu souhaites une jolie barbe entretenue et qui sent bon ? Ne cherche plus, la solution se trouve dans les ingrédients de ce petit flacon miracle qui t’offrira de nombreux bénéfices. N’as-tu jamais rêvé d’avoir un poil fort et soyeux, bien nourri, une peau hydratée et pour couronner le tout : une odeur agréable qui émane de ta belle toison ? Ce sont tous ces rôles que jouent les huiles pour barbes !  Elles représentent le point indispensable d’un bon entretien pour barbu, un soin homme premium pour le groomer exceptionnel que tu es. N’est-ce pas un somptueux avantage que de laisser une trace agréable sur son passage ? Avec notre large choix d’huiles pour barbe, tu trouveras forcément ton bonheur !', 'soin huile barbe.png');
 
 -- --------------------------------------------------------
 
@@ -198,19 +235,19 @@ ALTER TABLE `coiffure`
 -- AUTO_INCREMENT pour la table `coloration`
 --
 ALTER TABLE `coloration`
-  MODIFY `Id_coloration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_coloration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `forfait`
 --
 ALTER TABLE `forfait`
-  MODIFY `Id_forfait` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_forfait` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `soin`
 --
 ALTER TABLE `soin`
-  MODIFY `Id_soin` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_soin` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `users`

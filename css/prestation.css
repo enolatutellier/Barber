@@ -1,6 +1,5 @@
 @import url('reset.css');
 main{
-    margin-top: 15vh;
     background-image: url(../Img/fond\ prestation.jpg);
     background-repeat: no-repeat;
     background-size: clamp(100px, 120%, 1200px) auto;

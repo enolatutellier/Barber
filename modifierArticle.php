@@ -2,10 +2,6 @@
 try{
     $con=new PDO("mysql:host=localhost;dbname=barber;charset=utf8", "root", "root");
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    /*$sql = $con->prepare('UPDATE '.$_POST["table"].'
-                          SET Nom = \''.$_POST['nom'].'\', Description = \''.$_POST['description'].'\', Photo = \''.$_POST['photo']']
-                          WHERE Nom = \''.$_POST['oldName'].'\'');
-    $sql->execute();  */
     $nom = $_POST['nom'];
     $description = $_POST['description'];
     $table = $_POST["table"];
