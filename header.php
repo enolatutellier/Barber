@@ -1,10 +1,16 @@
+<?php
+try{
+    $con=new PDO("mysql:host=localhost;dbname=barber;charset=utf8", "root", "root");
+    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch(PDOException $e){
+    echo "Erreur : ".$e->getMessage();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="./css/font.css"/>
     <script src="js/sous_menu_deroulant.js" defer></script>
@@ -20,13 +26,19 @@
                     <p>Catégorie</p>
                     <ul id='sous_menu_categorie'>
                         <li>
-                            <a href="prestation.php">Prestation</a>
+                            <a href="prestation.php">
+                                <p>Prestation</p>
+                            </a>
                         </li>
                         <li>
-                            <a>Produits de soin</a>
+                            <a>
+                                <p>Produits de soin</p>
+                            </a>
                         </li>
                         <li>
-                            <a>Equipements et accessoires</a>
+                            <a>
+                                <p>Equipements et accessoires</p>
+                            </a>
                         </li>
                     </ul>
                 </li>
@@ -41,19 +53,84 @@
                             <p>Prestation</p>
                             <ul id='prestation_sous_menu' class="sous_menu">
                                 <li>
-                                    <a>Soin</a>
+                                    <a>
+                                        <p>Soin</p>
+                                        <?php
+                                            $sql = $con->prepare('SELECT Photo FROM soin
+                                                                  ORDER BY Id_soin DESC
+                                                                  LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image soin'>
+                                            <?php }
+                                        ?>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a>Coloration</a>
+                                    <a>
+                                        <p>Coloration</p>
+                                        <?php
+                                            $sql = $con->prepare('SELECT Photo FROM coloration
+                                                                  ORDER BY Id_coloration DESC
+                                                                  LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image coloration'>
+                                            <?php }
+                                        ?>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a>Forfait</a>
+                                    <a>
+                                        <p>Forfait</p>
+                                        <?php
+                                            $sql = $con->prepare('SELECT Photo FROM forfait
+                                                                  ORDER BY Id_forfait DESC
+                                                                  LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image forfait'>
+                                            <?php }
+                                        ?>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a>Barbe</a>
+                                    <a>
+                                        <p>Barbe</p>
+                                        <?php
+                                            $sql = $con->prepare('SELECT Photo FROM barbe
+                                                                  ORDER BY Id_barbe DESC
+                                                                  LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image barbe'>
+                                            <?php }
+                                        ?>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a>Coiffure</a>
+                                    <a>
+                                        <p>Coiffure</p>
+                                        <?php
+                                            $sql = $con->prepare('SELECT Photo FROM coiffure
+                                                                  ORDER BY Id_coiffure DESC
+                                                                  LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image coiffure'>
+                                            <?php }
+                                        ?>
+                                    </a>
                                 </li>
                                 <a href="prestation.php">Plus&nbsp;d'info&nbsp;>>></a>
                             </ul>
@@ -109,9 +186,11 @@
 
                 </li>
 
-                <li id="logoblanc">
-                    <img src="img/logo.svg" alt="logo">
-                </li>
+                <a href="index.php" id='index_retour'>
+                    <li id="logoblanc">
+                        <img src="img/logo.svg" alt="logo">
+                    </li>
+                </a>
 
                 <li>
                     <div class="trait-vert">
@@ -130,8 +209,8 @@
                 </li>
 
                 <li>
-                    <a href="#" class="bouton_menu">
-                        Se&nbsp;connecter
+                    <a id='monCompte' href="compte.php" class="bouton_menu">
+                        Mon&nbsp;compte
                     </a>
                 </li>
             </ul>

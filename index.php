@@ -16,9 +16,10 @@
 
 </head>
 <body>
-    <?php include_once ('header.php');?>
+    <header>
+        <?php include_once ('header.php');?>
+    </header>
     <main>
-
         <section class="section0">
             <div id="carrousel">
                 <img class='img_carrousel' src="img/coupe8.jpg" alt="homme avec une moustache">

@@ -1,4 +1,37 @@
 @import url('reset.css');
+
+.section0{
+    background-color: black;
+    height:50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#carrousel{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width:80%;
+    height: 60%;
+    position: relative;
+}
+
+.img_carrousel{
+    width:50%;
+    height: 100%;
+    position: relative;
+}
+
+@keyframes transition-left {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
 /* Première section "nos prestation" */
 
 .section1{
