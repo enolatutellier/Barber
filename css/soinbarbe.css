@@ -8,7 +8,11 @@
 header {
     background-color:rgb(0, 0, 0);
     position:relative;
-    
+
+}
+
+html{
+    font-size:5vw;
 }
 
 #logoblanc{
@@ -17,6 +21,11 @@ header {
     padding:10px;
 }
 
+h1{
+    font-size: 0.80rem;
+    font-family: 'titre';
+    letter-spacing: 2px;
+}
 
 .trait-vert{
     background:green;
@@ -55,6 +64,7 @@ a {
     font-size: clamp(30px, 0.5rem, 58px);
     color : white;
 }
+
 #sous-image{
     margin-top: -40px;
     height : 20vw;
@@ -72,6 +82,7 @@ a {
 
 .blanc{
     color:white;
+    font-family: 'police';
 }
 
                             /* Enola */
@@ -80,46 +91,62 @@ main{
     background-image: url(/Img/soinbarbe.jpg);
     background-size: clamp(100px, 100%, 1280px) auto; /* donner une taille minimum , taille en pourcentage, et la taille maxim*/
     background-repeat: no-repeat;
+    font-size:0.3rem;
 }
 
+.section3{
+  position:relative;
+  height:25vh;
+  overflow: hidden;
+}
 
 #deco2svg{
     position: absolute;
     width: 29vw;
     transform: rotate(360deg);
-    right: -21vw;
-    top: 99vh;
-    overflow: hidden;
+    top:-8vw;
+    right:0;
 }
 
 #para1{
     position: absolute;
     right: 15vw;
     top: 116vh;
+    font-family:'titre';
 }
  
 
                         /* section4 = BAUME */
 #para2{
-    position: absolute;
-    right: 79vw;
-    top: 128vh;
-    font-size: 1.5rem;
+    position: relative;
+    right: -20vw;
+    padding: 8px;
+    font-size: rem;
+    font-family: 'titre';
 }
 
 .conteneur{
     display: flex;
+    box-sizing: content-box;
+    margin-left: 15vw;
+}
+
+.carteBaume{
+    box-shadow: 11px 7px 12px 0px;
+    display:flex;
 }
 
 .ligneGauche{
-    background:black;
-    width:3px;
-    margin-left:5vw;
+    background: black;
+    width: 3px;
+    margin-left: 5vw;
+    position: relative;
+    left: -3vh;
 }
 
 button{
     border: none;
-    background: none;
+    background: white;
 }
 
 #fleche1{
@@ -134,15 +161,17 @@ button{
 /* Section 5 SHAMPOING */ 
 
 #para3{
-    position: absolute;
-    right: 18vw;
-    top: 181vh;
+    position: relative;
+    right: -67vw;
+    top: 7vh;
+    padding:8px;
     font-size: 1.5rem;
+    font-family: 'titre';
 }
 
-#fleche3{
+ /*#fleche3{
     width: 38px;
-}
+}*/ 
 
 #fleche4{
     width:38px;
@@ -151,8 +180,8 @@ button{
 
 .conteneur1{
     display: flex;
-    margin-left:15vw;
-    margin-top:12vw;
+    margin-left: 12vw;
+    margin-top: 7vw;
 }
 
 .imgshamp{
@@ -169,34 +198,41 @@ button{
 
 .huiles{
     padding:0;
+    margin-top: 47vh;
 }
 
-#imgDeco2PNG{
-    position: absolute;
-    width: 45vh;
-    right: 80vw;
-    top: 266vh;
+#imgDeco2SVG{
+    position: relative;
+    width: 49vh;
+    right: 9vw;
+    top:18vw;
     transform: rotate(90deg);
 }
 
+
 #para4{
-    position: absolute;
+    position: relative;
     right: 47vw;
-    top: 23vh;
+    top: 269vh;
     font-size: 1.5rem;
 }
 
 .conteneur2{
     box-sizing: content-box;
     display: flex;
-    margin-top: 18vh;
     justify-content: space-around;
+    margin-top:-60vh;
 }
 
-#fleche5{
+.carteshamp{
+    display:flex;
+    box-shadow: 11px 7px 12px 0px;
+}
+
+/* #fleche5{
     top: -13vw;
     width: 38px;
-}
+}*/ 
 
 .cartehuile{
     display: flex;
@@ -210,14 +246,57 @@ button{
 }
 
 figcaption{
-    font-size: 1.1rem;
-    text-align: center;
+    background:white;
+    font-size: 1.3rem;
+    text-align: center; 
+    margin-top:-1vh;
+    font-family:'police';
 }
 
 figcaption:hover{
+    background:white;
     color:orange;
+    margin-top:-1vh;
+   
 }
 
+/* Section 7 Cire a barbe */ 
+
+.cireBarbe{
+    position: relative;
+  margin-top:14vw;
+  overflow: hidden; /* ???*/ 
+}
+
+#imgBois{
+    position: relative;
+    width: 166vw;
+    height: 30vw;
+    top: 11vw;
+   
+}
+
+.carteCire{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    position: relative;
+    top: -30vw;
+    margin-left: 34vw;
+    box-shadow:black 1px 0px 12px 0px;
+    border-radius: 10px 10px 10px 10px; 
+    width: fit-content;
+}
+
+.imgCire{
+    width:33vw;
+}
+
+#para5{
+    position:relative;
+    left:41vw;
+    font-size: 1.5rem;
+}
 
 
 
