@@ -6,9 +6,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/soinbarbe.css" />
+    <link rel="stylesheet" href="css/pageconnexion.css" />
     <link rel="stylesheet" href="css/font.css"/>
-    <script src="js/carrousel.js" defer></script>
+    <script src="js/carrousel.js" defer>
+    </script>
     
     <title>
         Sylv'Barbe
@@ -22,5 +23,31 @@
     </header>
 
 <main>
-    
+    <img src="/img/idk2.jpg" alt="image en fond avec une lampe" id="background">
+   
+    <form action="#" method="get" class="formulaire">
+    <p> Veuillez vous connecter</p>
+        <div class="champ">
+            <label for="mail">Mail :</label>
+            <input type="text" name="mail" placeholder="votremail@hotmail.fr"/>
+        </div>
+
+       <br>
+
+       <div class="champ">
+           <label for="pass"> Votre mot de passe :</label>
+           <input type="password" name="pass"/>
+       </div>
+       <div class="champ">
+           <span> Mail / Mot de passe oublié ? </span>
+       </div>
+
+       <div class="champ">
+           <input type="button" value="Envoyez" id="envoyez">
+       </div>
+    </form>
+
 </main>
+<?php include_once ('footer.php');?> 
+</body>
+</html>

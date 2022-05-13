@@ -1,0 +1,79 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+#background{
+    height: 74vw;
+    width: auto;
+}
+
+form{
+    position:relative;
+    background:gray;
+    top:-38vw;
+    background-color: rgba(192, 175, 175, 0.678);
+}
+
+.formulaire{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 35%;
+    margin-left: 32vw;
+    border-radius: 45px 45px 45px 45px;
+    padding:44px;
+}
+
+p{
+    position:relative;
+    color:wheat;
+    bottom:22px;
+    text-align: center;
+    font-family: 'police';
+    font-size: 1.4rem;
+}
+
+.champ{
+    display: flex;
+    justify-content: space-between;
+}
+
+#envoyez{
+    margin:15px;
+    font-family: 'police';
+    background-color: brown;
+    color: antiquewhite;
+}
+
+#envoyez:hover{
+    transform: rotateY(35deg);
+    transition: 0.5s;
+}
+
+label{
+    font-size: 1.1rem;
+    font-family: 'police';
+    padding:12px;
+    color:antiquewhite;
+}
+
+input{
+    border-radius: 18px 18px 18px 18px;
+    padding:8px;
+    border:none;
+}
+
+input:hover{
+   
+    background: blanchedalmond;
+    border: none;
+}
+
+span{
+    color:antiquewhite;
+    padding:7px;
+    font-family: 'police';
+    font-size: 0.8rem;
+}
