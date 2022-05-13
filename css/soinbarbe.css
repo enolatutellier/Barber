@@ -21,11 +21,7 @@ html{
     padding:10px;
 }
 
-h1{
-    font-size: 0.80rem;
-    font-family: 'titre';
-    letter-spacing: 2px;
-}
+
 
 .trait-vert{
     background:green;
@@ -53,16 +49,24 @@ a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     border-radius: 1px 0 1px 0;
+    font-size:0.3rem;
+    font-family: 'police';
 }
-
+ /* background noir avc photo*/
 #presentation{
     background:radial-gradient(at 40% 0%, rgba(128,128,128,0.1) -100%, black 60%);
-    height : 880px;
+    height : 830px;
     display: flex;
     justify-content:center;
     align-items: center;
     font-size: clamp(30px, 0.5rem, 58px);
     color : white;
+}
+
+h1{
+    font-size: 0.80rem;
+    font-family: 'titre';
+    letter-spacing: 3px;
 }
 
 #sous-image{
@@ -119,16 +123,18 @@ main{
                         /* section4 = BAUME */
 #para2{
     position: relative;
-    right: -20vw;
-    padding: 8px;
-    font-size: rem;
+    left:20%;
+    top:-68px;
+    z-index: -1;
+    font-size: 0.4rem;
     font-family: 'titre';
 }
 
 .conteneur{
     display: flex;
     box-sizing: content-box;
-    margin-left: 15vw;
+    height: 26vw;
+    width: auto;
 }
 
 .carteBaume{
@@ -139,12 +145,12 @@ main{
 .ligneGauche{
     background: black;
     width: 3px;
-    margin-left: 5vw;
+    margin-left: -4vw;
     position: relative;
     left: -3vh;
 }
 
-button{
+input{
     border: none;
     background: white;
 }
@@ -158,14 +164,22 @@ button{
     transform: rotate(177deg);
 }
 
+#coiffant2{
+    width: 382px;
+}
+
+#coiffant{
+    width:300px;
+}
+
 /* Section 5 SHAMPOING */ 
 
 #para3{
     position: relative;
-    right: -67vw;
-    top: 7vh;
-    padding:8px;
-    font-size: 1.5rem;
+    left: 20%;
+    top: -7vh;
+    font-size: 0.4rem;
+   z-index: -1;
     font-family: 'titre';
 }
 
@@ -180,48 +194,15 @@ button{
 
 .conteneur1{
     display: flex;
-    margin-left: 12vw;
+    position:relative;
     margin-top: 7vw;
+    height:26vw;
+    width: auto;
 }
 
 .imgshamp{
-    width:22vw;
-}
-
-.ligneDroite{
-    background:black;
-    width:3px;
-    margin-left:12px;
-}
-
-/* section 6 : huiles */ 
-
-.huiles{
-    padding:0;
-    margin-top: 47vh;
-}
-
-#imgDeco2SVG{
-    position: relative;
-    width: 49vh;
-    right: 9vw;
-    top:18vw;
-    transform: rotate(90deg);
-}
-
-
-#para4{
-    position: relative;
-    right: 47vw;
-    top: 269vh;
-    font-size: 1.5rem;
-}
-
-.conteneur2{
-    box-sizing: content-box;
-    display: flex;
-    justify-content: space-around;
-    margin-top:-60vh;
+    width:14vw;
+    display: block;
 }
 
 .carteshamp{
@@ -229,15 +210,68 @@ button{
     box-shadow: 11px 7px 12px 0px;
 }
 
+.ligneDroite{
+    background:black;
+    width:3px;
+    margin-left:-1083px;
+}
+
+#shampoing2{
+    width: 149px;
+}
+
+#shampnoir{
+    width:294px;
+}
+
+/* section 6 : huiles */ 
+
+.huiles{
+
+}
+
+#imgDeco2SVG{
+    position: relative;
+    width: 49vh;
+    right: 9vw;
+    top:62vw;
+    transform: rotate(90deg);
+}
+
+img{
+    margin:auto;
+} 
+
+#para4{
+    position: relative;
+    left: 46vw;
+    top:5%;
+    font-size: 0.4rem;
+    font-family: 'titre';
+}
+
+.conteneur2{
+    box-sizing: content-box;
+    display: flex;
+    justify-content: space-around;
+}
+
 /* #fleche5{
     top: -13vw;
     width: 38px;
 }*/ 
 
+
+
 .cartehuile{
     display: flex;
     box-shadow: black -1px 0px 7px 0px;
     border-radius: 3px 3px 3px 3px;
+}
+
+.imghuile{
+    display:flex;
+    align-items: center;
 }
 
 #fleche6{
@@ -247,16 +281,18 @@ button{
 
 figcaption{
     background:white;
-    font-size: 1.3rem;
+    font-size: 0.3rem;
     text-align: center; 
     margin-top:-1vh;
     font-family:'police';
+    padding:2vh;
 }
 
 figcaption:hover{
     background:white;
     color:orange;
     margin-top:-1vh;
+    padding:2vh;
    
 }
 
@@ -294,10 +330,15 @@ figcaption:hover{
 
 #para5{
     position:relative;
-    left:41vw;
-    font-size: 1.5rem;
+    left:11vw;
+    top: -40vh;
+    font-size: 0.4rem;
+    font-family: 'police' ;
 }
 
+figure{
+    width:333px;
 
+}
 
 
