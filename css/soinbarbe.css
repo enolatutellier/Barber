@@ -150,7 +150,7 @@ main{
     left: -3vh;
 }
 
-input{
+button{
     border: none;
     background: white;
 }
@@ -285,15 +285,13 @@ figcaption{
     text-align: center; 
     margin-top:-1vh;
     font-family:'police';
-    padding:2vh;
+    width:33vw;
 }
 
 figcaption:hover{
     background:white;
     color:orange;
     margin-top:-1vh;
-    padding:2vh;
-   
 }
 
 /* Section 7 Cire a barbe */ 
