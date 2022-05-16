@@ -37,6 +37,11 @@
                     <option value="Cires">Cires</option>
                     <option value="Shampoings">Shampoings</option>
                     <option value="Baumes">Baumes</option>
+                    <option value="rasoirs">Rasoirs</option>
+                    <option value="blaireaux">Blaireaux</option>
+                    <option value="supports">Supports</option>
+                    <option value="brosses/peignes">Brosses/Peignes</option>
+                    <option value="bijoux">Bijoux</option>
                 </select>
                 <input type="submit" value="Envoyer">
             <form>

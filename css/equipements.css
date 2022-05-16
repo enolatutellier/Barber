@@ -94,54 +94,56 @@ main{
 
 #deco3{
     grid-column:15/19;
-    grid-row:3/6;
+    grid-row:4/6;
     width:100%;
     height:80%;
     transform:scaleX(-1)
 }
 
-#titre_coloration{
-    margin : 5% 0;
+#titre_blaireau{
+    margin-bottom : 5%;
 }
 
-#coloration{
+#blaireau{
   grid-column: 2/9;
-  grid-row:4/10;
+  grid-row:4/12;
 }
 
-#img_coloration{
+#img_blaireau{
     position : absolute;
-    top : -3rem;
-    left:7%;
+    top : -4rem;
+    left:15%;
     box-shadow: -6px 9px 5px 3px rgba(0,0,0,0.25);
 }
 
-#forfait{
-    margin-top: 1rem;
-  grid-column:13/18;
-  grid-row:8/14;
+#support{
+    grid-column:12/18;
+    grid-row:9/13;
 }
 
-#forfait .fleche{
+#support .fleche{
     top:88%;
 }
 
-#img_forfait{
+#img_support{
     position:absolute;
-    top:-3.4rem;
-    left:-60%;
+    top:-2rem;
+    left:-40%;
     box-shadow: 6px 9px 5px 3px rgba(0,0,0,0.25);
 }
-#titre_forfait{
+#titre_support{
     position:absolute;
-    top:0;
-    margin : 5% 0;
-    left:68%;
+    top:8%;
+    left:64%;
+}
+
+#support p {
+    margin-top : 7%;
 }
 
 #deco1{
-    grid-column: 3/13;
-    grid-row: 2/9;
+    grid-column: 6/13;
+    grid-row: 3/8;
     width:100%;
     height: 100%;
 }
@@ -161,15 +163,9 @@ main{
 }
 
 #fin{
-    padding : 10vw 5vw 0;
-    background-image: url('../Img/dekowood.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-top: -50px;
-    display: grid;
-    grid-template-columns: 5fr 1fr;
-    justify-items: center;
-    align-items: center;
+    padding : 0 5vw;
+    margin-top: 5%;
+    position : relative;
 }
 
 .petit_image{
@@ -178,21 +174,21 @@ main{
     border-radius: 10%;
 }
 
-#barbe{
-    grid-column: 1/2;
-    grid-row: 1/2;
+#brosses\/peignes{
+    width : 60%;
+    margin-left: 20%;
 }
 
-#coiffure{
-    grid-column:1/2;
-    grid-row:2/3;
+#bijoux{
+    width : 60%;
 }
 
 #enseigne{
-    grid-column: 2/3;
-    grid-row: 1/3;
-    width:50%;
-    justify-self: end;
+    width:30%;
+    position:absolute;
+    top : -10%;
+    right : 0;
+    transform: rotateY(180deg);
 }
 
 .titre_presentoir{
@@ -200,8 +196,11 @@ main{
     margin : 5% 0;
     left:0;
     top:-25%;
-    font-size: 1.2rem;
     font-family: 'police', cursive;
+}
+
+#bijoux > .titre_presentoir{
+    left : 80%;
 }
 
 .presentoir{
