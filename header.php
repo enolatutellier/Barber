@@ -36,7 +36,7 @@ catch(PDOException $e){
                             </a>
                         </li>
                         <li>
-                            <a>
+                            <a href="equipements.php">
                                 <p>Equipements et accessoires</p>
                             </a>
                         </li>
@@ -53,12 +53,13 @@ catch(PDOException $e){
                             <p>Prestation</p>
                             <ul id='prestation_sous_menu' class="sous_menu">
                                 <li>
-                                    <a>
+                                    <a href='recherche.php?categorie=soin'>
                                         <p>Soin</p>
                                         <?php
-                                            $sql = $con->prepare('SELECT Photo FROM soin
-                                                                  ORDER BY Id_soin DESC
-                                                                  LIMIT 1');
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Soin\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
                                             $sql->execute();
                                             $image = $sql->fetchAll(PDO::FETCH_ASSOC);
                                             foreach($image as $img){
@@ -69,12 +70,13 @@ catch(PDOException $e){
                                     </a>
                                 </li>
                                 <li>
-                                    <a>
+                                    <a href='recherche.php?categorie=coloration'>
                                         <p>Coloration</p>
                                         <?php
-                                            $sql = $con->prepare('SELECT Photo FROM coloration
-                                                                  ORDER BY Id_coloration DESC
-                                                                  LIMIT 1');
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Coloration\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
                                             $sql->execute();
                                             $image = $sql->fetchAll(PDO::FETCH_ASSOC);
                                             foreach($image as $img){
@@ -85,12 +87,13 @@ catch(PDOException $e){
                                     </a>
                                 </li>
                                 <li>
-                                    <a>
+                                    <a href='recherche.php?categorie=forfait'>
                                         <p>Forfait</p>
                                         <?php
-                                            $sql = $con->prepare('SELECT Photo FROM forfait
-                                                                  ORDER BY Id_forfait DESC
-                                                                  LIMIT 1');
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Forfait\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
                                             $sql->execute();
                                             $image = $sql->fetchAll(PDO::FETCH_ASSOC);
                                             foreach($image as $img){
@@ -101,12 +104,13 @@ catch(PDOException $e){
                                     </a>
                                 </li>
                                 <li>
-                                    <a>
+                                    <a href='recherche.php?categorie=barbe'>
                                         <p>Barbe</p>
                                         <?php
-                                            $sql = $con->prepare('SELECT Photo FROM barbe
-                                                                  ORDER BY Id_barbe DESC
-                                                                  LIMIT 1');
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Barbe\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
                                             $sql->execute();
                                             $image = $sql->fetchAll(PDO::FETCH_ASSOC);
                                             foreach($image as $img){
@@ -117,12 +121,13 @@ catch(PDOException $e){
                                     </a>
                                 </li>
                                 <li>
-                                    <a>
+                                    <a href='recherche.php?categorie=coiffure'>
                                         <p>Coiffure</p>
                                         <?php
-                                            $sql = $con->prepare('SELECT Photo FROM coiffure
-                                                                  ORDER BY Id_coiffure DESC
-                                                                  LIMIT 1');
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Coiffure\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
                                             $sql->execute();
                                             $image = $sql->fetchAll(PDO::FETCH_ASSOC);
                                             foreach($image as $img){

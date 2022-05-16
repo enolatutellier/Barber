@@ -1,6 +1,6 @@
 @import url('reset.css');
 main{
-    background-image: url(../Img/fond\ prestation.jpg);
+    background-image: url(../Img/fond\ equipements.jpg);
     background-repeat: no-repeat;
     background-size: clamp(100px, 120%, 1200px) auto;
     background-position: 75% top;
@@ -35,7 +35,7 @@ main{
 }
 
 
-#services{
+#equipements{
     display: grid;
     grid-template-columns: repeat(18,minmax(50px,1fr));
     justify-items: center;

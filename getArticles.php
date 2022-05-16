@@ -2,7 +2,8 @@
 try{
     $con=new PDO("mysql:host=localhost;dbname=barber;charset=utf8", "root", "root");
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = $con->prepare('SELECT * from '.$_POST['table']);
+    $sql = $con->prepare('SELECT a.* from articles as a, categories as c
+                          WHERE a.Id_categorie = c.Id_categorie && c.Nom = \''.$_POST['type'].'\'');
     $sql->execute();
     $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
     echo '  <div class=\'card-columns\'>';
@@ -40,7 +41,7 @@ try{
                             <div class=\'modal-body\'>                                
                                 <div class=\'form-group\'>
                                     <label for=\'nouveau_nom\'>Entrez le nom de l\'article</label>
-                                    <input type=\'text\' class=\'form-control\' id=\'nouveau_nom\' name=\'nouveau_nom\' placeholder=\''.$_POST['table'].' xxx\'>
+                                    <input type=\'text\' class=\'form-control\' id=\'nouveau_nom\' name=\'nouveau_nom\' placeholder=\''.$_POST['type'].' xxx\'>
                                 </div>
                                 <div class=\'form-group\'>
                                     <label for=\'nouvelle_description\'>Entrez la description de l\'article</label>

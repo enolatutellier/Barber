@@ -17,7 +17,7 @@ catch(PDOException $e){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/prestation.css"/>
+    <link rel="stylesheet" href="css/equipements.css"/>
     <link rel="stylesheet" href="css/font.css"/>
 
     <title>
@@ -29,20 +29,20 @@ catch(PDOException $e){
     <?php include_once ('header.php');?>
     <main>
         <section id="presentation">
-            <h1>Nos Prestations</h1>
+            <h1>Nos Equipements et accessoires</h1>
         </section>
         <section id="sous-image">
             <p class="blanc citation">
-                Nous vous proposons différents services dans nos salons répartis à travers l'Europe.
+                Rasoirs droits, blaireaux, lames ou encore perles pour barbes.<br>Notre choix est large pour vous satisfaire au mieux.
             </p>
         </section> 
-        <section id="services">
+        <section id="equipements">
             <img id="deco3" src="img/deco3.jpg">
             <img id="deco1" src="img/deco1.svg">
             <img id="deco2" src="img/deco2.svg">
-            <div id="soin" class="carteInfo">
+            <div id="rasoirs-lames" class="carteInfo">
                 <img id='shampoing' class="image_moyenne" src="img/soin.jpg" alt="soin">
-                <h2 id="titre_soin">Soin</h2>
+                <h2 id="titre_soin">Rasoirs et lames</h2>
                 <h3>RELAXATION TÊTE COMPLÈTE</h3>
                 <p>Surtout dédié aux chevelures épaisses ou longues, ce soin est un masque relaxant. Il redonnera fière allure à vos pointes et détendra l’ensemble de votre crâne. Il est défini en fonction de votre problématique cheveu : nutrition ou hydratation, puis est appliqué avec massage au bac. De vous à nous, les moments douceur ne sont pas réservés qu’aux femmes. Chez The Barber Company, tout est fait pour vous rendre beau et bien dans votre peau.</p>
                 <a href='recherche.php?categorie=soin' class="fleche">

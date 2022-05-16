@@ -5,7 +5,7 @@ function GetData()
     type: 'post',
     url: 'getArticles.php',
     data: {
-      table:typeCat
+      type:typeCat
     },
     success: function (response) {
       $('#articles').html(response);
@@ -25,12 +25,11 @@ function confirmation(e){
 function suppArticle(e)
 {
     let name = e.parentElement.nextElementSibling.firstElementChild.innerHTML;
-    let typeCat = document.getElementById("type_principal").value;
     $.ajax({
         type: 'post',
         url: 'supprimerArticle.php',
         data: {
-          table:typeCat,
+          type:typeCat,
           nom:name
         },
         success: function (response) {
@@ -50,7 +49,7 @@ function ajouterArticle()
     let formData = new FormData();
     formData.append('nom', name);
     formData.append('description', description);
-    formData.append('table', typeCat);
+    formData.append('type', typeCat);
     formData.append('photo', document.getElementById('nouvelle_photo').files[0]);
     $.ajax({
         type: 'post',
@@ -67,7 +66,6 @@ function ajouterArticle()
 }
 
 function confirmerModificationArticle(e){
-  let typeCat = document.getElementById("type_principal").value;
   let name = document.getElementById('new_name');
   let oldName = name.placeholder;
   if (name.value == ''){
@@ -78,11 +76,10 @@ function confirmerModificationArticle(e){
   let description = document.getElementById('new_desc').value;
   let formData = new FormData();
   if (document.getElementById('new_photo').value == ''){
-    formData.append('photo', e.parentElement.parentElement.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.title);
+    formData.append('photo', '');
   } else {
     formData.append('photo', document.getElementById('new_photo').files[0]);
   }
-  formData.append('table', typeCat);  
   formData.append('nom', name);
   formData.append('oldName', oldName);
   formData.append('description', description);

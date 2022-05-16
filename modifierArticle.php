@@ -4,15 +4,13 @@ try{
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $nom = $_POST['nom'];
     $description = $_POST['description'];
-    $table = $_POST["table"];
     $oldName = $_POST["oldName"];
     $description = htmlspecialchars(stripslashes($description));
     $nom = htmlspecialchars(stripslashes($nom));
-    $table = htmlspecialchars(stripslashes($table));
     if(isset($_FILES['photo'])){
         $photo = $_FILES['photo'];
         if(is_uploaded_file($photo['tmp_name'])){
-            $sql = $con->prepare("UPDATE $table
+            $sql = $con->prepare("UPDATE articles
                                   SET   Nom = :nom,
                                         Description = :description,
                                         Photo = :photo
@@ -29,15 +27,12 @@ try{
         }
     }
     else{
-        $photo = $_POST['photo'];
-        $sql = $con->prepare("UPDATE $table
-                                  SET   Nom = :nom,
-                                        Description = :description,
-                                        Photo = :photo
-                                  WHERE Nom = :oldName");
+        $sql = $con->prepare("  UPDATE articles
+                                SET Nom = :nom,
+                                    Description = :description
+                                WHERE Nom = :oldName");
             $sql -> bindParam(':nom', $nom);
             $sql -> bindParam(':description', $description);
-            $sql -> bindParam(':photo', $photo['name']);
             $sql -> bindParam(':oldName', $oldName);
             $sql->execute();
             echo $oldName;

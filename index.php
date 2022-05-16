@@ -16,9 +16,7 @@
 
 </head>
 <body>
-    <header>
-        <?php include_once ('header.php');?>
-    </header>
+    <?php include_once ('header.php');?>
     <main>
         <section class="section0">
             <div id="carrousel">
