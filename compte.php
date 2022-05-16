@@ -33,6 +33,10 @@
                     <option value="forfait">Forfait</option>
                     <option value="barbe">Barbe</option>
                     <option value="coiffure">Coiffure</option>
+                    <option value="huiles">Huiles</option>
+                    <option value="Cires">Cires</option>
+                    <option value="Shampoings">Shampoings</option>
+                    <option value="Baumes">Baumes</option>
                 </select>
                 <input type="submit" value="Envoyer">
             <form>

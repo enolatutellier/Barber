@@ -5,10 +5,11 @@ header {
     position:sticky;
     height: 15vh;
     z-index : 15;
+    width : 100%;
 }
 
 nav{  
-    width: 100vw;
+    width: 100%;
     text-align: center;
     height: 100%;
 }
@@ -181,6 +182,11 @@ header li {
     background-color: rgba(46, 21, 21,0.6);
     border-radius: 20%/10%;
     margin : 0 10px;
+}
+
+#sous_menu_principal a{
+    color : white;
+    text-decoration: none; 
 }
 
 #sous_menu_principal .petite_image{

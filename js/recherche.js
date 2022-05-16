@@ -3,7 +3,7 @@ let tooltip = document.getElementById("longueur_minimum");
 
 recherche.addEventListener("keypress", function (e){
     if(e.key === "Enter" && recherche.value.length >= 3){
-        window.location.href = 'prestation.php?recherche='.concat(recherche.value);
+        window.location.href = 'recherche.php?recherche='.concat(recherche.value);
     } else{
         if (e.key === "Enter" && recherche.value.length < 3){
             tooltip.style.visibility = 'visible';

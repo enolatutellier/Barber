@@ -4,7 +4,7 @@ function GetData() {
     type: 'post',
     url: 'getArticles.php',
     data: {
-      table: typeCat
+      type:typeCat
     },
     success: function (response) {
       $('#articles').html(response);
@@ -39,32 +39,50 @@ function suppArticle(e) {
   return false;
 }
 
-function ajouterArticle() {
-  let name = document.getElementById('nouveau_nom').value;
-  let description = document.getElementById('nouvelle_description').value;
-  let photo = document.getElementById('nouvelle_photo').value;
-  let typeCat = document.getElementById("type_principal").value;
-  let formData = new FormData();
-  formData.append('nom', name);
-  formData.append('description', description);
-  formData.append('table', typeCat);
-  formData.append('photo', document.getElementById('nouvelle_photo').files[0]);
-  $.ajax({
-    type: 'post',
-    url: 'ajouterArticle.php',
-    data: formData,
-    processData: false,
-    contentType: false,
-    success: function (response) {
-      alert('L\'article '.concat(response, ' a bien été ajouté !'));
-      GetData();
-    }
-  });
-  return false;
+function suppArticle(e)
+{
+    let name = e.parentElement.nextElementSibling.firstElementChild.innerHTML;
+    $.ajax({
+        type: 'post',
+        url: 'supprimerArticle.php',
+        data: {
+          type:typeCat,
+          nom:name
+        },
+        success: function (response) {
+          alert('element supprimé');          
+          GetData();
+        }
+    });
+    return false;
 }
 
-function confirmerModificationArticle(e) {
-  let typeCat = document.getElementById("type_principal").value;
+function ajouterArticle()
+{
+    let name = document.getElementById('nouveau_nom').value;
+    let description = document.getElementById('nouvelle_description').value;
+    let photo = document.getElementById('nouvelle_photo').value;
+    let typeCat = document.getElementById("type_principal").value;
+    let formData = new FormData();
+    formData.append('nom', name);
+    formData.append('description', description);
+    formData.append('type', typeCat);
+    formData.append('photo', document.getElementById('nouvelle_photo').files[0]);
+    $.ajax({
+        type: 'post',
+        url: 'ajouterArticle.php',
+        data: formData,
+        processData: false,
+        contentType : false,
+        success: function (response) {
+          alert('L\'article '.concat(response,' a bien été ajouté !'));
+          GetData();
+        }
+    });
+    return false;
+}
+
+function confirmerModificationArticle(e){
   let name = document.getElementById('new_name');
   let oldName = name.placeholder;
   if (name.value == '') {
@@ -74,12 +92,11 @@ function confirmerModificationArticle(e) {
   }
   let description = document.getElementById('new_desc').value;
   let formData = new FormData();
-  if (document.getElementById('new_photo').value == '') {
-    formData.append('photo', e.parentElement.parentElement.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.title);
+  if (document.getElementById('new_photo').value == ''){
+    formData.append('photo', '');
   } else {
     formData.append('photo', document.getElementById('new_photo').files[0]);
   }
-  formData.append('table', typeCat);
   formData.append('nom', name);
   formData.append('oldName', oldName);
   formData.append('description', description);
