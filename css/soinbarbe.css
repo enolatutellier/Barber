@@ -8,7 +8,11 @@
 header {
     background-color:rgb(0, 0, 0);
     position:relative;
-    
+
+}
+
+html{
+    font-size:5vw;
 }
 
 #logoblanc{
@@ -16,6 +20,7 @@ header {
     background:rgb(0, 0, 0);
     padding:10px;
 }
+
 
 
 .trait-vert{
@@ -44,17 +49,26 @@ a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     border-radius: 1px 0 1px 0;
+    font-size:0.3rem;
+    font-family: 'police';
 }
-
+ /* background noir avc photo*/
 #presentation{
     background:radial-gradient(at 40% 0%, rgba(128,128,128,0.1) -100%, black 60%);
-    height : 880px;
+    height : 830px;
     display: flex;
     justify-content:center;
     align-items: center;
     font-size: clamp(30px, 0.5rem, 58px);
     color : white;
 }
+
+h1{
+    font-size: 0.80rem;
+    font-family: 'titre';
+    letter-spacing: 3px;
+}
+
 #sous-image{
     margin-top: -40px;
     height : 20vw;
@@ -72,6 +86,7 @@ a {
 
 .blanc{
     color:white;
+    font-family: 'police';
 }
 
                             /* Enola */
@@ -80,46 +95,65 @@ main{
     background-image: url(/Img/soinbarbe.jpg);
     background-size: clamp(100px, 100%, 1280px) auto; /* donner une taille minimum , taille en pourcentage, et la taille maxim*/
     background-repeat: no-repeat;
+    font-size:0.3rem;
 }
 
+.section3{
+  position:relative;
+  height:25vh;
+  overflow: hidden;
+}
 
 #deco2svg{
     position: absolute;
     width: 29vw;
     transform: rotate(360deg);
-    right: -21vw;
-    top: 99vh;
-    overflow: hidden;
+    top:-8vw;
+    right:0;
 }
 
 #para1{
     position: absolute;
     right: 15vw;
     top: 116vh;
+    font-family:'titre';
 }
  
 
                         /* section4 = BAUME */
 #para2{
-    position: absolute;
-    right: 79vw;
-    top: 128vh;
-    font-size: 1.5rem;
+    position: relative;
+    left:20%;
+    top:-68px;
+    z-index: -1;
+    font-size: 0.4rem;
+    font-family: 'titre';
 }
 
 .conteneur{
     display: flex;
+    position:relative;
+    margin-top: 7vw;
+    height:26vw;
+    width: auto;
+}
+
+.carteBaume{
+    box-shadow: 11px 7px 12px 0px;
+    display:flex;
 }
 
 .ligneGauche{
-    background:black;
-    width:3px;
-    margin-left:5vw;
+    background: black;
+    width: 3px;
+    margin-left: -4vw;
+    position: relative;
+    left: -3vh;
 }
 
 button{
     border: none;
-    background: none;
+    background: white;
 }
 
 #fleche1{
@@ -128,21 +162,33 @@ button{
 
 #fleche2{
     width:38px;
-    transform: rotate(177deg);
+    transform: rotate(180deg);
+}
+
+#coiffant2{
+    position:relative;
+    height : 100%; 
+    width : auto;
+}
+
+#coiffant{
+    width:300px;
 }
 
 /* Section 5 SHAMPOING */ 
 
 #para3{
-    position: absolute;
-    right: 18vw;
-    top: 181vh;
-    font-size: 1.5rem;
+    position: relative;
+    left: 20%;
+    top: -7vh;
+    font-size: 0.4rem;
+   z-index: -1;
+    font-family: 'titre';
 }
 
-#fleche3{
+ /*#fleche3{
     width: 38px;
-}
+}*/ 
 
 #fleche4{
     width:38px;
@@ -151,57 +197,85 @@ button{
 
 .conteneur1{
     display: flex;
-    margin-left:15vw;
-    margin-top:12vw;
+    position:relative;
+    margin-top: 7vw;
+    height:26vw;
+    width: auto;
 }
 
 .imgshamp{
-    width:22vw;
+    width:14vw;
+    display: block;
+}
+
+.carteshamp{
+    display:flex;
+    box-shadow: 11px 7px 12px 0px;
 }
 
 .ligneDroite{
     background:black;
     width:3px;
-    margin-left:12px;
+    margin-left:-1083px;
+}
+
+#shampoing2{
+    width: 149px;
+}
+
+#shampnoir{
+    width:294px;
 }
 
 /* section 6 : huiles */ 
 
 .huiles{
-    padding:0;
+position:relative;
+height : 100%; 
+width : auto;
 }
 
-#imgDeco2PNG{
-    position: absolute;
-    width: 45vh;
-    right: 80vw;
-    top: 266vh;
+#imgDeco2SVG{
+    position: relative;
+    width: 49vh;
+    right: 9vw;
+    top:62vw;
     transform: rotate(90deg);
 }
 
+img{
+    margin:auto;
+} 
+
 #para4{
-    position: absolute;
-    right: 47vw;
-    top: 23vh;
-    font-size: 1.5rem;
+    position: relative;
+    font-size: 0.4rem;
+    font-family: 'titre';
+    margin-left:44vw;
 }
 
 .conteneur2{
     box-sizing: content-box;
     display: flex;
-    margin-top: 18vh;
     justify-content: space-around;
 }
 
-#fleche5{
+/* #fleche5{
     top: -13vw;
     width: 38px;
-}
+}*/ 
+
+
 
 .cartehuile{
     display: flex;
     box-shadow: black -1px 0px 7px 0px;
     border-radius: 3px 3px 3px 3px;
+}
+
+.imghuile{
+    display:flex;
+    align-items: center;
 }
 
 #fleche6{
@@ -210,15 +284,64 @@ button{
 }
 
 figcaption{
-    font-size: 1.1rem;
-    text-align: center;
+    background:white;
+    font-size: 0.3rem;
+    text-align: center; 
+    margin-top:-1vh;
+    font-family:'police';
+    width:22vw;
+    display: flex;
 }
 
 figcaption:hover{
+    background:white;
     color:orange;
+    margin-top:-1vh;
 }
 
+/* Section 7 Cire a barbe */ 
 
+.cireBarbe{
+    position: relative;
+  margin-top:14vw;
+  overflow: hidden; /* ???*/ 
+}
 
+#imgBois{
+    position: relative;
+    width: 100%;
+    height: 30vw;
+    top: 11vw;
+   
+}
+
+.carteCire{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    position: relative;
+    top: -30vw;
+    margin-left: 34vw;
+    box-shadow:black 1px 0px 12px 0px;
+    border-radius: 10px 10px 10px 10px; 
+    width: fit-content;
+}
+
+.imgCire{
+    width:33vw;
+}
+
+#para5{
+    position:relative;
+    left:41vw;
+    top: -46vh;
+    font-size: 0.4rem;
+    font-family: 'titre' ;
+}
+
+figure{
+    width:333px;
+
+}
 
 

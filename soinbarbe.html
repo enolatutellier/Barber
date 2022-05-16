@@ -18,57 +18,7 @@
 
 <body>
     <header>
-        <nav>
-            <ul>
-                <li> 
-                    <a href="#">
-                        Catégorie
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Recherche
-                    </a>
-                </li>
-
-                <li>
-                    <div class="trait-vert">
-                    </div>
-
-                    <div class="trait-vert">
-                    </div>
-
-                </li>
-
-                <li id="logoblanc">
-                    <img src="img/logo.svg" alt="logo">
-                </li>
-
-                <li>
-                    <div class="trait-vert">
-
-                    </div>
-
-                    <div class="trait-vert">
-
-                    </div>
-
-                </li>
-
-                <li>
-                    <a href="#">
-                        A propos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Se connecter
-                    </a>
-                </li>
-            </ul>
-        </nav>
+      <?php include_once ('header.php');?>
     </header>
 
 <main>
@@ -97,47 +47,82 @@
 
 
     <section class="Baume">
-        <p id="para2">
+       
+    <div class="conteneur">
+ <p id="para2">
             Baume à barbe
         </p>
-    <div class="conteneur">
-
         <div class="ligneGauche">
         </div>
 
-            <button type="button">
+           <!--  <button type="button">
                 <img src="img/fleche.png" alt="fleche noir" id="fleche1">
-            </button>
+            </button>--> 
 
         <div class="carteBaume">
+            <figure>
+                <img src="img/coiffant.jpg" alt="baume coiffant barbe" id="coiffant">
+                <figcaption>
+                    Baume "Tech Art" <br> Fix Design L'Oréal
+                </figcaption>
+            </figure>
 
-            <img src="img/coiffant.jpg" alt="baume coiffant barbe">
-            <img src="img/coiffant.jpg" alt="baume coiffant barbe">
-            <img src="img/coiffant.jpg" alt="baume coiffant barbe">
+            <figure>
+                <img src="img/coiffant1.png" alt="baume coiffant barbe">
+                <figcaption>
+                    Baume "GoldenBeards" <br> HEARD BALM
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="img/coiffant2.png" alt="baume coiffant barbe" id="coiffant2">
+                <figcaption>
+                    Baume "Poraso" <br> Baume pour la barbe
+                </figcaption>
+            </figure>
         </div> 
 
-        <button type="button">
+        <input type="button">
             <img src="img/fleche.png" alt="fleche noir" id="fleche2">
-        </button>
+    </input>
     </div>                         
     </section>  
                             <br>
                             
     <section class="shampoing">
-        <p id="para3"> 
-            Shampoings
-        </p>
+      
 
      <div class="conteneur1">
-
-        <button>
+  <p id="para3"> 
+            Shampoings
+        </p>
+        <!-- <button>
             <img src="img/fleche.png" alt="fleche noir" id="fleche3">
-        </button>
+        </button> -->
 
             <div class="carteshamp">
-                <img src="img/shampoing.jpg" alt="shampoing noir" class="imgshamp">
-                <img src="img/shampoing.jpg" alt="shampoing noir" class="imgshamp">
-                <img src="img/shampoing.jpg" alt="shampoing noir" class="imgshamp">
+
+                <figure>
+                    <img src="img/shampoing.jpg" alt="shampoing noir" class="imgshamp" id="shampnoir">
+                    <figcaption>
+                        Shampoing <br> "The barber Company"
+                    </figcaption>
+                </figure>
+                
+                <figure>
+                    <img src="img/shampoing1.png" alt="shampoing noir" class="imgshamp">
+                    <figcaption>
+                        Shampoing <br> "The barber Company"
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/shampoing2.png" alt="shampoing noir" class="imgshamp" id="shampoing2">
+                    <figcaption>
+                        Shampoing <br>"The barber Company"
+                    </figcaption>
+                </figure>
+              
             </div>
 
         <button>
@@ -153,38 +138,62 @@
 
 
     <section class="huiles">
-        <img src="img/deco2.jpg" alt="image de décoration orange" id="imgDeco2PNG">
+
+        <img src="img/deco2.svg" alt="image de décoration orange" id="imgDeco2SVG">
 
         <p id="para4"> 
             Huiles
         </p>
 
     <div class="conteneur2">
-
             <div class="cartehuile">
-                  <button>
+
+               <!--    <button>
             <img src="img/fleche.png" alt="fleche noir" id="fleche5">
-                  </button>
+                  </button> --> 
+
                 <figure>
                     <img src="img/huile.PNG" alt="huiles" class="imghuile">
-                    <figcaption>Huile de rasage KEUNE<br> traitement au satin</figcaption>
+                    <figcaption>Huile de rasage KEUNE<br> traitement au satin 95ml</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="img/huile.PNG" alt="huiles" class="imghuile">
-                    <figcaption>Huile de rasage KEUNE<br> traitement au satin</figcaption>
+                    <img src="img/huile2.PNG" alt="huiles" class="imghuile">
+                    <figcaption>Huile de rasage AZBANE<br> Beard Oil 30ml</figcaption>
                 </figure>
                 
                 <button>
             <img src="img/fleche.png" alt="fleche noir" id="fleche6">
                 </button>
             </div>
-
-        
-
     </div>
     </section>
-
 <BR>
+
+    <section class="cireBarbe">
+        <img src="/img/bois.jpg" alt="planche en bois" id="imgBois">
+        <p id="para5">
+            Cire à Barbe
+        </p>
+
+        <div class="carteCire">
+            <figure>
+                <img src="/img/cire1.PNG" alt="cire 1" class="imgCire">
+                <figcaption>
+                    Cire Cheveux/Barbe<br> "Le père Lucien" 15g
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img src="/img/cire2.PNG" alt="cire 1" class="imgCire" >
+                <figcaption>
+                    Moustache WAX <br> "Dr.K's 100% Natural Handmade Stylin" 15g
+                </figcaption>
+            </figure>
+        </div>
+    </section>
 </main>
+<!-- <?php include_once ('footer.php');?> -->
+</body>
+</html>
     
