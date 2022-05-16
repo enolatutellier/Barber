@@ -167,7 +167,7 @@ button{
 
 #coiffant2{
     position:relative;
-    height : 100%; 
+    height : 85%; 
     width : auto;
 }
 
@@ -289,8 +289,7 @@ figcaption{
     text-align: center; 
     margin-top:-1vh;
     font-family:'police';
-    width:22vw;
-    display: flex;
+    width:25vw;
 }
 
 figcaption:hover{
@@ -334,7 +333,7 @@ figcaption:hover{
 #para5{
     position:relative;
     left:41vw;
-    top: -46vh;
+    top: -44vh;
     font-size: 0.4rem;
     font-family: 'titre' ;
 }
