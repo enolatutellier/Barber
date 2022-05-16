@@ -52,33 +52,30 @@ catch(PDOException $e){
                     <img src="img/fleche.png">
                 </a>
             </div>
-            <div id="coloration" class="carteInfo">
-                <img id="img_coloration" class="image_moyenne" src="img/coloration.jpg" alt="coloration">
-                <h2 id="titre_coloration" >Coloration</h2>
-                <p>3 types de colorations :<br>
-                    – Fashionista : vous vibrez pour les tendances couleur les plus osées ? Décoloration, effet de couleur, pastellisation… cette prestation est faite pour vous !<br>
-                    – Surfeur cool : vous aimez l’effet soleil dans vos cheveux comme si vous reveniez de vacances toute l’année ? The Barber Company vous propose une décoloration subtile sur les pointes.<br>
-                    – Discret mais efficace : vous avez envie de camoufler vos cheveux blancs sans vous sentir coloré et totalement transformé ? Le coiffeur réalise une coloration subtile sur vos cheveux pour un résultat discret mais parfait.</p>
-                <a href='recherche.php?categorie=coloration' class="fleche">
+            <div id="blaireau" class="carteInfo">
+                <img id="img_blaireau" class="image_moyenne" src="img/blaireau.webp" alt="blaireau">
+                <h2 id="titre_blaireau" >Blaireaux</h2>
+                <p>Le blaireau de rasage, garni d'authentiques poils de blaireaux ou soies de sanglier, de porc, mais aussi de cheval, est un accessoire qui vous garantit un rasage traditionnel réussi. Le blaireau de rasage est utilisé pour faire mousser le savon à barbe et l'appliquer sur le visage.</p>
+                <a href='recherche.php?categorie=blaireaux' class="fleche">
                     <img src="img/fleche.png">
                 </a>
             </div>
-            <div id="forfait" class="carteInfo">
-                <img id="img_forfait" class="image_moyenne" src="img/forfait.jpg" alt="forfait">
-                <h2 id="titre_forfait">Forfait</h2>
+            <div id="support" class="carteInfo">
+                <img id="img_support" class="image_moyenne" src="img/support.jpg" alt="support">
+                <h2 id="titre_support">Supports</h2>
                 <p>Pourquoi ne pas s’accorder un relooking complet ? Avec les forfaits disponibles chez The Barber Company, on s’occupe de votre barbe et de vos cheveux. Vous verrez, les deux services s’accordent à la perfection.</p>
-                <a href='recherche.php?categorie=forfait' class="fleche">
+                <a href='recherche.php?categorie=supports' class="fleche">
                     <img src="img/fleche.png">
                 </a>
             </div>
         </section>
-        <div id="separation"></div>
         <section id='fin'>
-            <div id="barbe" class="presentoir">
-                <h2 class="titre_presentoir">Barbe</h2>
+            <img id='enseigne' src="img/enseigne avec accroche murale.png" alt="enseigne barbier">  
+            <div id="brosses/peignes" class="presentoir">
+                <h2 class="titre_presentoir">Brosses/Peignes</h2>
                 <?php
                 $sql = $con->prepare('  SELECT * FROM articles as a, categories as c
-                                        WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Barbe\'
+                                        WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Brosses/Peignes\'
                                         ORDER BY Id_article DESC
                                         LIMIT 3');
                 $sql->execute();
@@ -96,11 +93,11 @@ catch(PDOException $e){
                     <img src="img/fleche.png">
                 </a>
             </div>
-            <div id="coiffure" class="presentoir">
-                <h2 class="titre_presentoir">Coiffure</h2>
+            <div id="bijoux" class="presentoir">
+                <h2 class="titre_presentoir">Bijoux</h2>
                 <?php
                 $sql = $con->prepare('  SELECT * FROM articles as a, categories as c
-                                        WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Coiffure\'
+                                        WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Bijoux\'
                                         ORDER BY Id_article DESC
                                         LIMIT 3');
                 $sql->execute();
@@ -118,7 +115,7 @@ catch(PDOException $e){
                     <img src="img/fleche.png">
                 </a>
             </div>
-            <img id='enseigne' src="img/enseigne.png" alt="enseigne barbier">           
+                     
         </section>
     </main>
     <?php
