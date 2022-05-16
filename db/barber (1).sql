@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 16 mai 2022 à 07:04
+-- Généré le : lun. 16 mai 2022 à 07:54
 -- Version du serveur : 5.7.33
 -- Version de PHP : 7.4.19
 
@@ -103,7 +103,16 @@ INSERT INTO `categories` (`Id_categorie`, `Nom`, `Parent`) VALUES
 (5, 'Coloration', 1),
 (6, 'Forfait', 1),
 (7, 'Barbe', 1),
-(8, 'Coiffure', 1);
+(8, 'Coiffure', 1),
+(9, 'Huiles', 2),
+(10, 'Cires', 2),
+(11, 'Shampoings', 2),
+(12, 'Baumes', 2),
+(17, 'Rasoirs', 3),
+(18, 'Blaireaux', 3),
+(19, 'Supports', 3),
+(20, 'Brosses/Peignes', 3),
+(21, 'Bijoux', 3);
 
 -- --------------------------------------------------------
 
@@ -177,7 +186,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT pour la table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `Id_categorie` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Id_categorie` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT pour la table `status`

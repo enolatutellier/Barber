@@ -57,7 +57,6 @@ main{
     transform: rotate(180deg);
     width:5%;
     position:absolute;
-    top:92%;
     left:90%;
 }
 
@@ -65,28 +64,29 @@ main{
     width: 100%;
 }
 
-#soin{    
+#rasoirs-lames{    
     grid-column: 11/17;
     grid-row: 1/5;
 }
 
-#soin h3{
-    margin : 5% 0;
-}
-
-#shampoing{
+#rasoirs{
     position :absolute;
-    top: -4rem;
-    left:30%;
+    top: -3.5rem;
+    left:15%;
     box-shadow: -6px 9px 5px 3px rgba(0,0,0,0.25);
 }
 
-#titre_soin{
+#titre_rasoirs{
     position : absolute;
-    top:0px;
+    top:10%;
+    left:35%;
     margin : 5% 0 ;
-    left:8%;
 }
+
+#rasoirs-lames p{
+    margin-top: 10%;
+}
+
 .image_moyenne{
     width : 6rem;
     filter:sepia(0.5) contrast(0.7) saturate(2);

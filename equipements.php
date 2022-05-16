@@ -41,11 +41,14 @@ catch(PDOException $e){
             <img id="deco1" src="img/deco1.svg">
             <img id="deco2" src="img/deco2.svg">
             <div id="rasoirs-lames" class="carteInfo">
-                <img id='shampoing' class="image_moyenne" src="img/soin.jpg" alt="soin">
-                <h2 id="titre_soin">Rasoirs et lames</h2>
-                <h3>RELAXATION TÊTE COMPLÈTE</h3>
-                <p>Surtout dédié aux chevelures épaisses ou longues, ce soin est un masque relaxant. Il redonnera fière allure à vos pointes et détendra l’ensemble de votre crâne. Il est défini en fonction de votre problématique cheveu : nutrition ou hydratation, puis est appliqué avec massage au bac. De vous à nous, les moments douceur ne sont pas réservés qu’aux femmes. Chez The Barber Company, tout est fait pour vous rendre beau et bien dans votre peau.</p>
-                <a href='recherche.php?categorie=soin' class="fleche">
+                <img id='rasoirs' class="image_moyenne" src="img/rasoirs.jpg" alt="rasoirs">
+                <h2 id="titre_rasoirs">Rasoirs et lames</h2>
+                <p>
+                    Notre sélection de rasoirs Thiers Issard, Dovo Solingen, Giesen und Forsthoff, Timor, Razolution, Puma , Böker , Merkur Solingen.
+                    Coupes choux, rasoirs de sûreté, lame de rasoirs double tranchants. Venez trouver votre bonheur!
+
+                </p>
+                <a href='recherche.php?categorie=rasoirs' class="fleche">
                     <img src="img/fleche.png">
                 </a>
             </div>
