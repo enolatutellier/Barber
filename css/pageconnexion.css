@@ -38,18 +38,21 @@ p{
 .champ{
     display: flex;
     justify-content: space-between;
+    padding:10px;
 }
 
-#envoyez{
+button{
     margin:15px;
     font-family: 'police';
-    background-color: brown;
+    background-color: rgb(92, 66, 41);
     color: antiquewhite;
+    width:6vw;
 }
 
-#envoyez:hover{
+button:hover{
     transform: rotateY(35deg);
-    transition: 0.5s;
+    transition: 0.3s;
+    background-color:antiquewhite;
 }
 
 label{
@@ -59,20 +62,25 @@ label{
     color:antiquewhite;
 }
 
-button{
+input{
     border-radius: 18px 18px 18px 18px;
     padding:8px;
     border:none;
 }
 
-button:hover{
+input:hover{
     background: blanchedalmond;
     border: none;
 }
 
-span{
+a{
     color:antiquewhite;
     padding:7px;
     font-family: 'police';
     font-size: 0.8rem;
+    padding:6px;
+}
+
+a::after{
+    color:rgba(124, 114, 114, 0.678)
 }

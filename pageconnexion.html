@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/pageconnexion.css" />
     <link rel="stylesheet" href="css/font.css"/>
-    <script src="js/carrousel.js" defer>
-    </script>
     
     <title>
         Sylv'Barbe
@@ -27,9 +25,10 @@
    
 
 
-    <form action="" method="post" class="formulaire">
+    <form action="log.php" method="post" class="formulaire">
     <p> Veuillez vous connecter</p>
         <div class="champ">
+
             <label for="mail">Mail :</label>
             <input type="text" name="mail" placeholder="votremail@hotmail.fr"/>
         </div>
@@ -37,21 +36,32 @@
        <br>
 
        <div class="champ">
-           <label for="pass"> Votre mot de passe :</label>
+
+           <label for="pass"> 
+               Votre mot de passe :
+            </label>
            <input type="password" name="pass"/>
-       </div>
-       <div class="champ">
-           <span> Mail / Mot de passe oublié ? </span>
+
        </div>
 
        <div class="champ">
+
+           <a href="#"> 
+               Mail / Mot de passe oublié ? 
+           </a>
+       </div>
+
+       <div class="champ">
+
            <button type="submit" name="envoyez">
                Envoyez
            </button>
+
        </div>
+
     </form>
 
 </main>
-<?php include_once ('footer.php');?> 
+    <?php include_once ('footer.php');?> 
 </body>
 </html>
