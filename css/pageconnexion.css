@@ -59,14 +59,13 @@ label{
     color:antiquewhite;
 }
 
-input{
+button{
     border-radius: 18px 18px 18px 18px;
     padding:8px;
     border:none;
 }
 
-input:hover{
-   
+button:hover{
     background: blanchedalmond;
     border: none;
 }
