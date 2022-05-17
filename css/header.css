@@ -233,3 +233,21 @@ header li {
     border-style: solid;
     border-color: transparent transparent white transparent;
 }
+
+@media screen and (max-width:1023px){
+    #quitter_menu{
+        border:1px solid black;
+        border-radius: 25px;
+        background-color: rgba(201, 29, 29, 0.5);
+    }
+    .style{
+        display: none;
+    }
+    header{
+        font-size: 0.6rem;
+    }
+
+    .bouton_menu{
+        padding : 30px 10px;
+    }
+}

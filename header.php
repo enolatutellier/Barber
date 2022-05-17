@@ -308,7 +308,7 @@ catch(PDOException $e){
                     </ul>
                 </li>
 
-                <li>
+                <li class='style'>
                     <div class="trait-vert">
                     </div>
 
@@ -323,7 +323,7 @@ catch(PDOException $e){
                     </li>
                 </a>
 
-                <li>
+                <li class='style'>
                     <div class="trait-vert">
 
                     </div>
