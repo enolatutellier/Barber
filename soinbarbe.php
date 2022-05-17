@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/soinbarbe.css" />
     <link rel="stylesheet" href="css/font.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src='js/consulterArticle.js' defer></script>
 
     <title>
         Sylv'Barbe
@@ -19,6 +21,7 @@
         <?php include_once ('header.php');?>
 
     <main>
+        <div id="modal" class="modal"> </div>
 
         <section id="presentation">
 
@@ -43,48 +46,44 @@
             <img src="img/deco2.svg" alt="decorationn en carré coloré" id="deco2svg">
         </section>
 
-
         <section class="Baume">
 
             <div class="conteneur">
                 <p id="para2">
-                    Baume à barbe
+                    Baume à Barbe
                 </p>
                 <div class="ligneGauche">
                 </div>
 
                 <div class="carteBaume">
-                    <figure>
-                        <div class='img-centre'>
-                            <img class="petite-image" src="img/coiffant.jpg" alt="baume coiffant barbe" id="coiffant">
-                        </div>
-                        <figcaption>
-                            Baume "Tech Art" <br> Fix Design L'Oréal
-                        </figcaption>
-                    </figure>
 
-                    <figure>
-                        <div class='img-centre'>
-                            <img class="petite-image" src="img/coiffant1.png" alt="baume coiffant barbe">
-                        </div>
-                        <figcaption>
-                            Baume "GoldenBeards" <br> HEARD BALM
-                        </figcaption>
-                    </figure>
+                <?php
+                $sql = $con->prepare('  SELECT a.Nom, a.Description, a.Photo FROM articles as a, categories as c
+                                        WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Baumes\'
+                                        ORDER BY Id_article DESC
+                                        LIMIT 3');
+                $sql->execute();
+                $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                foreach($articles as $article)
+                {
+                    echo ' 
+                                <figure onclick=\'recupererArticle(this.lastElementChild);\'>
+                                <div class=\'img-centre\'> 
+                                <img class=\'petite-image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
+                                </div>
+                                    <figcaption>'.$article["Nom"].'</figcaption>
+                                </figure> ';
+                }
+                ?>
 
-                    <figure>
-                        <div class='img-centre'>
-                            <img class="petite-image" src="img/coiffant2.png" alt="baume coiffant barbe" id="coiffant2">
-                        </div>
-                        <figcaption>
-                            Baume "Poraso" <br> Baume pour la barbe
-                        </figcaption>
-                    </figure>
                 </div>
+
                 <img src="img/fleche.png" alt="fleche noir" id="fleche2">
-                </input>
             </div>
         </section>
+
+                    
+        
 
         <section class="shampoing">
 
@@ -97,32 +96,23 @@
 
                 <div class="carteBaume">
 
-                    <figure>
-                        <div class='img-centre'>
-                            <img class="petite-image" src="img/shampoing.jpg" alt="shampoing noir" class="imgshamp" id="shampnoir">
-                        </div>
-                        <figcaption>
-                            Shampoing <br> "The barber Company" 250 ml
-                        </figcaption>
-                    </figure>
-
-                    <figure>
-                        <div class='img-centre'>
-                            <img class="petite-image" src="img/shampoing1.png" alt="shampoing noir" class="imgshamp">
-                        </div>
-                        <figcaption>
-                            Shampoing Cheveux Sec au Miel<br>"Osma Tradition Since 1957" 200 ml
-                        </figcaption>
-                    </figure>
-
-                    <figure>
-                        <div class='img-centre'>
-                            <img class="petite-image" src="img/shampoing2.png" alt="shampoing noir" class="imgshamp" id="shampoing2">
-                        </div>
-                        <figcaption>
-                            Shampoing Grey de la marque espagnole Beardburys. <br> Spécialement conçu pour les cheveux blancs et gris
-                        </figcaption>
-                    </figure>
+                <?php
+                $sql = $con->prepare('  SELECT a.Nom, a.Description, a.Photo FROM articles as a, categories as c
+                                        WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Shampoings\'
+                                        ORDER BY Id_article DESC
+                                        LIMIT 3');
+                $sql->execute();
+                $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                foreach($articles as $article){
+                    echo ' 
+                                <figure onclick=\'recupererArticle(this.lastElementChild);\'>
+                                <div class=\'img-centre\'> 
+                                <img class=\'petite-image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
+                                </div>
+                                    <figcaption>'.$article["Nom"].'</figcaption>
+                                </figure> ';
+                }
+                ?>
 
                 </div>
 
@@ -144,21 +134,29 @@
             <div class="conteneur2">
                 <div class="cartehuile">
 
-                    <figure>
-                        <div class='img-centre'>
-                            <img class="petite-image" src="img/huile.PNG" alt="huiles" class="imghuile">
-                        </div>    
-                        <figcaption>Huile à barbe KEUNE<br> traitement au satin 95ml</figcaption>
-                    </figure>
-
-                    <figure>
-                        <div class='img-centre'>
-                            <img class="petite-image" src="img/huile2.PNG" alt="huiles" class="imghuile">
-                        </div>
-                            <figcaption>Huile à barbe AZBANE<br> Beard Oil 30ml</figcaption>
-                    </figure>
-                    <img src="img/fleche.png" alt="fleche noir" id="fleche4">
+                <?php
+                $sql = $con->prepare('  SELECT a.Nom, a.Description, a.Photo FROM articles as a, categories as c
+                                        WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Huiles\'
+                                        ORDER BY Id_article DESC
+                                        LIMIT 2');
+                $sql->execute();
+                $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                foreach($articles as $article)
+                {
+                    echo ' 
+                                <figure onclick=\'recupererArticle(this.lastElementChild);\'>
+                                <div class=\'img-centre\'> 
+                                <img class=\'petite-image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
+                                </div>
+                                    <figcaption>'.$article["Nom"].'</figcaption>
+                                </figure> ';
+                }
+                ?> 
+                <img src="img/fleche.png" alt="fleche noir" id="fleche4">
                 </div>
+                   
+                </div>
+                
                 
         </section>
 
@@ -172,23 +170,25 @@
             
 
             <div class="carteCire">
-                <figure>
-                    <div class='img-centre'>
-                        <img class="petite-image" src="/img/cire1.PNG" alt="cire 1" class="imgCire">
-                    </div>
-                    <figcaption>
-                        Cire Cheveux/Barbe<br> "Le père Lucien" 15g
-                    </figcaption>
-                </figure>
-
-                <figure>
-                    <div class='img-centre'>
-                        <img class="petite-image" src="/img/cire2.PNG" alt="cire 1" class="imgCire">
-                    </div>    
-                    <figcaption>
-                        Moustache WAX <br> "Dr.K's 100% Natural Handmade Stylin" 15g
-                    </figcaption>
-                </figure>
+            <?php
+                $sql = $con->prepare('  SELECT a.Nom, a.Description, a.Photo FROM articles as a, categories as c
+                                        WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Cires\'
+                                        ORDER BY Id_article DESC
+                                        LIMIT 2');
+                $sql->execute();
+                $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                foreach($articles as $article)
+                {
+                    echo ' 
+                                <figure onclick=\'recupererArticle(this.lastElementChild);\'>
+                                <div class=\'img-centre\'> 
+                                <img class=\'petite-image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
+                                </div>
+                                    <figcaption>'.$article["Nom"].'</figcaption>
+                                </figure> ';
+                }
+                ?> 
+                <img src="img/fleche.png" alt="fleche noir" id="fleche5"> 
             </div>
         </section>
     </main>
