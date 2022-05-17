@@ -4,7 +4,7 @@ main{
     background-repeat: no-repeat;
     background-size: clamp(100px, 120%, 1200px) auto;
     background-position: 75% top;
-    font-size : clamp(18px, 0.4rem, 36px);
+    font-size : 0.3rem;
 }
 #presentation{
     background:radial-gradient(at 60% 0%, rgba(128,128,128,0.1) 0%, black 60%);
@@ -154,13 +154,6 @@ main{
     width: 100%;
 }
 
-#separation{
-    background-image: url('../Img/separation.jpg');
-    background-repeat: repeat-x;
-    background-size: 10vw 10vw;
-    height:10vw;
-    opacity: 0.99;
-}
 
 #fin{
     padding : 0 5vw;
@@ -169,19 +162,16 @@ main{
 }
 
 .petit_image{
-    height:4rem;
+    max-height:3rem;
+    max-width:3rem;
     position : relative;    
     border-radius: 10%;
 }
 
-#brosses\/peignes{
-    width : 60%;
-    margin-left: 20%;
+#bijoux{
+    margin-left: 10%;
 }
 
-#bijoux{
-    width : 60%;
-}
 
 #enseigne{
     width:30%;
@@ -195,8 +185,9 @@ main{
     position:absolute;
     margin : 5% 0;
     left:0;
-    top:-25%;
+    top:-10%;
     font-family: 'police', cursive;
+    font-size: 0.6rem;
 }
 
 #bijoux > .titre_presentoir{
@@ -205,11 +196,11 @@ main{
 
 .presentoir{
     display: flex;
-    width: 100%;
+    width: 70%;
     position:relative;
     justify-content: space-evenly;
     align-items: center;
-    padding:6vw 0;
+    padding:5vw 0;
 }
 
 .presentoir .fleche{
@@ -231,3 +222,57 @@ main{
     display: flex;
     justify-content: center;
 }
+
+main .modal{
+    display:none;
+    position:fixed;
+    z-index:1000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    background-color:rgba(0,0,0,0.4);
+}
+
+main .modal-content{
+    background-color:#fefefe;
+    margin:15% auto;
+    padding:20px;
+    border:1px solid #888;
+    width:80%;
+    color : black;
+    text-align: center;
+}
+
+main .close{
+    color:#aaa;
+    float : right;
+    font-size:0.6rem;
+    font-weight:bold;
+    padding : 10px 20px;
+}
+
+main .close:hover{
+    color : white;
+    background-color: red;
+    border-radius: 50%;
+    cursor:pointer;
+}
+
+main .modal-content img{
+    max-width: 30vw;
+    max-height: 50vh;
+}
+
+main .flex{
+    display: flex;
+    align-items: center;
+    margin : 5% 0;
+}
+
+main .flex p{
+    text-align: justify;
+    margin: 5% 4%;
+}
+

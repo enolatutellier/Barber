@@ -19,6 +19,8 @@ catch(PDOException $e){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/equipements.css"/>
     <link rel="stylesheet" href="css/font.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src='js/consulterArticle.js' defer></script>
 
     <title>
         Sylv'Barbe
@@ -70,18 +72,19 @@ catch(PDOException $e){
             </div>
         </section>
         <section id='fin'>
+            <div id='modal' class='modal'></div>
             <img id='enseigne' src="img/enseigne avec accroche murale.png" alt="enseigne barbier">  
             <div id="brosses/peignes" class="presentoir">
                 <h2 class="titre_presentoir">Brosses/Peignes</h2>
                 <?php
-                $sql = $con->prepare('  SELECT * FROM articles as a, categories as c
+                $sql = $con->prepare('  SELECT a.Nom, a.Description, a.Photo FROM articles as a, categories as c
                                         WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Brosses/Peignes\'
                                         ORDER BY Id_article DESC
                                         LIMIT 3');
                 $sql->execute();
                 $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
                 foreach($articles as $article){
-                    echo '  <article class=\'carte\'>
+                    echo '  <article class=\'carte\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
                                 <figure>
                                     <img class=\'petit_image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
                                     <figcaption>'.$article["Nom"].'</figcaption>
@@ -89,29 +92,29 @@ catch(PDOException $e){
                             </article>';
                 }
                 ?>
-                <a href='recherche.php?categorie=barbe' class="fleche">
+                <a href='recherche.php?categorie=Brosses\/Peignes' class="fleche">
                     <img src="img/fleche.png">
                 </a>
             </div>
             <div id="bijoux" class="presentoir">
                 <h2 class="titre_presentoir">Bijoux</h2>
                 <?php
-                $sql = $con->prepare('  SELECT * FROM articles as a, categories as c
+                $sql = $con->prepare('  SELECT a.Nom, a.Description, a.Photo FROM articles as a, categories as c
                                         WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Bijoux\'
                                         ORDER BY Id_article DESC
                                         LIMIT 3');
                 $sql->execute();
                 $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
                 foreach($articles as $article){
-                    echo '  <article class=\'carte\'>
+                    echo '  <article class=\'carte\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
                                 <figure>
                                     <img class=\'petit_image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
-                                    <figcaption><p>'.$article["Nom"].'</p></figcaption>
+                                    <figcaption>'.$article["Nom"].'</figcaption>
                                 </figure>
                             </article>';
                 }
                 ?>
-                <a href='recherche.php?categorie=coiffure' class="fleche">
+                <a href='recherche.php?categorie=bijoux' class="fleche">
                     <img src="img/fleche.png">
                 </a>
             </div>
