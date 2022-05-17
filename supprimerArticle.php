@@ -2,8 +2,9 @@
 try{
     $con=new PDO("mysql:host=localhost;dbname=barber;charset=utf8", "root", "root");
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = $con->prepare('DELETE FROM articles
-                          WHERE Nom = \''.$_POST['nom'].'\'');
+    $sql = $con->prepare("DELETE FROM articles
+                          WHERE Nom LIKE '{$_POST['nom']}'");
+    $sql -> bindParam(':nom', );
     $sql->execute();
 }
 catch(PDOException $e){

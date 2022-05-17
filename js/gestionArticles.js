@@ -15,38 +15,20 @@ function GetData() {
 }
 
 function confirmation(e) {
-  resultat = window.confirm("Etes-vous sûr(e) de vouloir supprimer cet article ?");
+  let resultat = window.confirm("Etes-vous sûr(e) de vouloir supprimer cet article ?");
   if (resultat) {
     suppArticle(e);
   }
 }
 
-function suppArticle(e) {
-  let name = e.parentElement.nextElementSibling.firstElementChild.innerHTML;
-  let typeCat = document.getElementById("type_principal").value;
-  $.ajax({
-    type: 'post',
-    url: 'supprimerArticle.php',
-    data: {
-      table: typeCat,
-      nom: name
-    },
-    success: function (response) {
-      alert('element supprimé');
-      GetData();
-    }
-  });
-  return false;
-}
-
 function suppArticle(e)
 {
     let name = e.parentElement.nextElementSibling.firstElementChild.innerHTML;
+    console.log(name);
     $.ajax({
         type: 'post',
         url: 'supprimerArticle.php',
         data: {
-          type:typeCat,
           nom:name
         },
         success: function (response) {
