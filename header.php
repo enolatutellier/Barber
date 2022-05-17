@@ -31,7 +31,7 @@ catch(PDOException $e){
                             </a>
                         </li>
                         <li>
-                            <a>
+                            <a href ="soinbarbe.php">
                                 <p>Produits de soin</p>
                             </a>
                         </li>
@@ -137,46 +137,172 @@ catch(PDOException $e){
                                         ?>
                                     </a>
                                 </li>
-                                <a href="prestation.php">Plus&nbsp;d'info&nbsp;>>></a>
+                                <a href="recherche.php?grandecategorie=prestation">Plus&nbsp;d'articles&nbsp;>>></a>
                             </ul>
                         </li>
                         <li class="deroulant">
                             <p>Produit de soin</p>
                             <ul id='produit_sous_menu'class="sous_menu">
                                 <li>
-                                    <a>Baume à barbe</a>
+                                    <a href='recherche.php?categorie=Baumes'>
+                                        <p>Baume à barbe</p>
+                                        <?php
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Baumes\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image baume'>
+                                            <?php }
+                                        ?>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a>Shampoings</a>
+                                    <a href='recherche.php?categorie=Shampoings'>
+                                        <p>Shampoings</p>
+                                        <?php
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Shampoings\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image shampoings'>
+                                            <?php }
+                                        ?>
+                                        </a>
                                 </li>
                                 <li>
-                                    <a>Huiles</a>
+                                    <a href='recherche.php?categorie=Huiles'>
+                                        <p>Huiles</p>
+                                        <?php
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Huiles\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image huile'>
+                                            <?php }
+                                        ?>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a>Cire à barbe</a>
+                                    <a href='recherche.php?categorie=Cires'>
+                                        </p>Cire à barbe</p>
+                                        <?php
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Cires\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image cires'>
+                                            <?php }
+                                        ?>
+                                    </a>
                                 </li>
-                                <a href="soinsbarbe.html">Plus&nbsp;d'info&nbsp;>>></a>
+                                <a href="recherche.php?grandecategorie=produit de soin">Plus&nbsp;d'articles&nbsp;>>></a>
                             </ul>
                         </li>
                         <li class="deroulant">
                             <p>Equipements et accesoires</p>
                             <ul id='accessoire_sous_menu' class="sous_menu">
                                 <li>
-                                    <a>Rasoir/Lame</a>
+                                    <a href='recherche.php?categorie=Rasoirs'>
+                                        <p>Rasoir/Lame</p>
+                                        <?php
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Rasoirs\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image rasoir'>
+                                            <?php }
+                                        ?>
+                                        </a>
                                 </li>
                                 <li>
-                                    <a>Blaireau</a>
+                                    <a href='recherche.php?categorie=Blaireaux'>
+                                        <p>Blaireau</p>                                    
+                                        <?php
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Blaireaux\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image blaireau'>
+                                            <?php }
+                                        ?>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a>Support</a>
+                                    <a href='recherche.php?categorie=Supports'>
+                                        <p>Support</p>
+                                        <?php
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Supports\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image support'>
+                                            <?php }
+                                        ?>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a>Brosse/Peigne</a>
+                                    <a href='recherche.php?categorie=Brosses/Peignes'>
+                                        <p>Brosse/Peigne</p>
+                                        <?php
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Brosses\/Peignes\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image brosse\/peigne'>
+                                            <?php }
+                                        ?>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a>Bijoux</a>
+                                    <a href='recherche.php?categorie=Bijoux'>
+                                        <p>Bijoux</p>
+                                        <?php
+                                            $sql = $con->prepare('  SELECT a.Photo FROM articles as a, categories as c
+                                                                    WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Bijoux\'
+                                                                    ORDER BY Id_article DESC
+                                                                    LIMIT 1');
+                                            $sql->execute();
+                                            $image = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                            foreach($image as $img){
+                                                ?>
+                                            <img class='petite_image' src='img/<?=$img['Photo']?>' alt='image bijou'>
+                                            <?php }
+                                        ?>
+                                    </a>
                                 </li>
-                                <a href="prestation.php">Plus&nbsp;d'info&nbsp;>>></a>
+                                <a href="recherche.php?grandecategorie=Equipement et accessoire">Plus&nbsp;d'articles&nbsp;>>></a>
                             </ul>
                         </li>
                     </ul>

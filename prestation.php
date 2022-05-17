@@ -19,6 +19,8 @@ catch(PDOException $e){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/prestation.css"/>
     <link rel="stylesheet" href="css/font.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src='js/consulterArticle.js' defer></script>
 
     <title>
         Sylv'Barbe
@@ -71,17 +73,18 @@ catch(PDOException $e){
         </section>
         <div id="separation"></div>
         <section id='fin'>
+            <div id='modal' class='modal'></div>
             <div id="barbe" class="presentoir">
                 <h2 class="titre_presentoir">Barbe</h2>
                 <?php
-                $sql = $con->prepare('  SELECT * FROM articles as a, categories as c
+                $sql = $con->prepare('  SELECT a.Nom, a.Description, a.Photo FROM articles as a, categories as c
                                         WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Barbe\'
                                         ORDER BY Id_article DESC
                                         LIMIT 3');
                 $sql->execute();
                 $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
                 foreach($articles as $article){
-                    echo '  <article class=\'carte\'>
+                    echo '  <article class=\'carte\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
                                 <figure>
                                     <img class=\'petit_image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
                                     <figcaption>'.$article["Nom"].'</figcaption>
@@ -96,17 +99,17 @@ catch(PDOException $e){
             <div id="coiffure" class="presentoir">
                 <h2 class="titre_presentoir">Coiffure</h2>
                 <?php
-                $sql = $con->prepare('  SELECT * FROM articles as a, categories as c
+                $sql = $con->prepare('  SELECT a.Nom, a.Description, a.Photo FROM articles as a, categories as c
                                         WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Coiffure\'
                                         ORDER BY Id_article DESC
                                         LIMIT 3');
                 $sql->execute();
                 $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
                 foreach($articles as $article){
-                    echo '  <article class=\'carte\'>
+                    echo '  <article class=\'carte\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
                                 <figure>
                                     <img class=\'petit_image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
-                                    <figcaption><p>'.$article["Nom"].'</p></figcaption>
+                                    <figcaption>'.$article["Nom"].'</figcaption>
                                 </figure>
                             </article>';
                 }

@@ -8,23 +8,23 @@ try{
     $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
     echo '  <div class=\'card-columns\'>';
     foreach($articles as $article){
-        echo '  <div class=\'\'>
-                    <div class=\'card\'>
-                        <div class=\'card-header d-flex justify-content-end\'>
-                            <button type=\'button\' class=\'btn btn-danger bt-sm rounded-circle\' onclick=\'confirmation(this)\'>X</button>
-                        </div>
-                        <div class=\'card-body d-flex flex-column align-items-center\'>
-                            <h2 class=\'card-title text-center\'>'.$article['Nom'].'</h2>
-                            <div class=\'w-75\'>
-                                <img class=\'card-img rounded w-100\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
-                            </div>
-                            <p class=\'card-text w-100 text-justify\'>'.$article["Description"].'</p>
-                        </div>
-                        <div class=\'card-footer d-flex justify-content-around\'>
-                            <button type=\'button\' class=\'btn btn-warning btn-lg\' onclick=\'modifierArticle(this)\'>Modifier l\'article</button>
-                        </div>
+        ?>
+                <div class='card'>
+                    <div class='card-header d-flex justify-content-end'>
+                        <button type='button' class='btn btn-danger bt-sm rounded-circle' onclick='confirmation(this)'>X</button>
                     </div>
-                </div>';
+                    <div class='card-body d-flex flex-column align-items-center'>
+                        <h2 class='card-title text-center'><?=$article['Nom']?></h2>
+                        <div class='w-75'>
+                            <img class='card-img rounded w-100' title="<?=$article['Nom']?>" src="img/<?=$article['Photo']?>" alt="<?=$article['Nom']?>"/>
+                        </div>
+                        <p class='card-text w-100 text-justify'><?=$article['Description']?></p>
+                    </div>
+                    <div class='card-footer d-flex justify-content-around'>
+                        <button type='button' class='btn btn-warning btn-lg' onclick='modifierArticle(this)'>Modifier l'article</button>
+                    </div>
+                </div>
+                <?php
     }
     echo '  </div>
             <div class=\'row\'>
