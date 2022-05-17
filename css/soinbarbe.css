@@ -1,57 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:'quattrocento' , sans-serif ;
-}
+@import url('reset.css');
 
-header {
-    background-color:rgb(0, 0, 0);
-    position:relative;
-
-}
-
-html{
-    font-size:5vw;
-}
-
-#logoblanc{
-    display: flex;
-    background:rgb(0, 0, 0);
-    padding:10px;
-}
-
-
-
-.trait-vert{
-    background:green;
-    height:2px;
-    width:60px;
-    margin:15px;
-}
-
-
-ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background:black;
-
-}
-
-li {
-    list-style: none;
-    line-height: 70px;
-}
-
-a {
-    padding: 10px 1px 10px 1px;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    border-radius: 1px 0 1px 0;
-    font-size:0.3rem;
-    font-family: 'police';
-}
  /* background noir avc photo*/
 #presentation{
     background:radial-gradient(at 40% 0%, rgba(128,128,128,0.1) -100%, black 60%);
@@ -63,7 +11,7 @@ a {
     color : white;
 }
 
-h1{
+main h1{
     font-size: 0.80rem;
     font-family: 'titre';
     letter-spacing: 3px;
@@ -93,6 +41,7 @@ h1{
 
 main{
     background-image: url(/Img/soinbarbe.jpg);
+    background-position: 40% top;
     background-size: clamp(100px, 100%, 1280px) auto; /* donner une taille minimum , taille en pourcentage, et la taille maxim*/
     background-repeat: no-repeat;
     font-size:0.3rem;
@@ -100,32 +49,34 @@ main{
 
 .section3{
   position:relative;
-  height:25vh;
-  overflow: hidden;
 }
 
 #deco2svg{
-    position: absolute;
-    width: 29vw;
-    transform: rotate(360deg);
-    top:-8vw;
-    right:0;
+    position: relative;
+    width: 30vw;
+    transform: rotate(180deg);
+    left:69%;
+    margin : 5% 0;
 }
 
 #para1{
     position: absolute;
-    right: 15vw;
-    top: 116vh;
+    left : 40%;
+    top : 70%;
     font-family:'titre';
 }
  
 
                         /* section4 = BAUME */
+.Baume{
+    width : 100%;
+    position : relative;
+}
+
 #para2{
-    position: relative;
+    position: absolute;
     left:20%;
-    top:-68px;
-    z-index: -1;
+    top:-15%;
     font-size: 0.4rem;
     font-family: 'titre';
 }
@@ -133,79 +84,66 @@ main{
 .conteneur{
     display: flex;
     position:relative;
-    margin-top: 7vw;
-    height:26vw;
-    width: auto;
+    margin-top: 10vw;
+    height: 40vh;
+    width : 90%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.img-centre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height : 60%;
+    max-width: 30vw;
+    max-height: 30vh;
+}
+
+.petite-image{
+    max-width: 100%;
+    max-height : 100%;
+}
+
+figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .carteBaume{
+    display :flex;
+    height: 100%;
+    width : 80%;
+    justify-content: space-around;
     box-shadow: 11px 7px 12px 0px;
-    display:flex;
 }
 
 .ligneGauche{
     background: black;
     width: 3px;
-    margin-left: -4vw;
-    position: relative;
-    left: -3vh;
-}
-
-button{
-    border: none;
-    background: white;
-}
-
-#fleche1{
-    width: 38px;
+    align-self: stretch;
 }
 
 #fleche2{
-    width:38px;
+    width:5vw;
     transform: rotate(180deg);
-}
-
-#coiffant2{
-    position:relative;
-    height : 85%; 
-    width : auto;
-}
-
-#coiffant{
-    width:300px;
 }
 
 /* Section 5 SHAMPOING */ 
 
-#para3{
-    position: relative;
-    left: 20%;
-    top: -7vh;
-    font-size: 0.4rem;
-   z-index: -1;
-    font-family: 'titre';
+.shampoing{
+    width : 100%;
+    position : relative;
 }
 
- /*#fleche3{
-    width: 38px;
-}*/ 
-
-#fleche4{
-    width:38px;
-    transform: rotate(177deg);
+#conteneur2{
+    left:10%;
 }
 
-.conteneur1{
-    display: flex;
-    position:relative;
-    margin-top: 7vw;
-    height:26vw;
-    width: auto;
-}
-
-.imgshamp{
-    width:14vw;
-    display: block;
+#fleche3{
+    width:5vw;
 }
 
 .carteshamp{
@@ -213,134 +151,107 @@ button{
     box-shadow: 11px 7px 12px 0px;
 }
 
-.ligneDroite{
-    background:black;
-    width:3px;
-    margin-left:-1083px;
+
+figcaption{
+    width: 80%;
+    margin : 0 auto;
+    background:white;
+    font-size: 0.3rem;
+    font-family:'police';
+    text-align: center;
 }
 
-#shampoing2{
-    width: 149px;
-}
-
-#shampnoir{
-    width:294px;
-}
 
 /* section 6 : huiles */ 
 
 .huiles{
 position:relative;
-height : 100%; 
-width : auto;
+width : 100%;
+margin-top: 12vh;
+text-align: center;
 }
 
-#imgDeco2SVG{
-    position: relative;
-    width: 49vh;
-    right: 9vw;
-    top:62vw;
-    transform: rotate(90deg);
-}
-
-img{
-    margin:auto;
-} 
 
 #para4{
     position: relative;
     font-size: 0.4rem;
     font-family: 'titre';
-    margin-left:44vw;
+    margin-bottom: 2vh;
 }
 
 .conteneur2{
     box-sizing: content-box;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-/* #fleche5{
-    top: -13vw;
-    width: 38px;
-}*/ 
-
-
+#fleche4{
+    width : 5vw;
+    transform: rotate(180deg);
+    left : 70%;
+    top : 47.5%;
+    position : absolute;
+}
 
 .cartehuile{
     display: flex;
+    justify-content: space-around;
     box-shadow: black -1px 0px 7px 0px;
     border-radius: 3px 3px 3px 3px;
 }
 
-.imghuile{
-    display:flex;
-    align-items: center;
-}
-
-#fleche6{
-    width:38px;
-    transform: rotate(177deg);
-}
-
-figcaption{
-    background:white;
-    font-size: 0.3rem;
-    text-align: center; 
-    margin-top:-1vh;
-    font-family:'police';
-    width:25vw;
-}
 
 figcaption:hover{
     background:white;
     color:orange;
-    margin-top:-1vh;
 }
 
 /* Section 7 Cire a barbe */ 
 
+#imgDeco2SVG{
+    position: absolute;
+    width: 30%;
+    top : 0;
+    left:-15%;
+    transform: rotate(90deg);
+}
+
 .cireBarbe{
     position: relative;
-  margin-top:14vw;
-  overflow: hidden; /* ???*/ 
+    display: flex;
+    justify-content: center;
+    margin:20vh 0 10vh;
+    height : 80vh;
+    text-align: center;
+}
+
+#para5{
+    position:absolute;
+    top : -10vh;
+    font-size: 0.4rem;
+    font-family: 'titre' ;
 }
 
 #imgBois{
-    position: relative;
+    position: absolute;
     width: 100%;
-    height: 30vw;
-    top: 11vw;
-   
+    height: 40%;
+    top: 30%;
+    left : 0;
 }
 
 .carteCire{
     display: flex;
     flex-direction: column-reverse;
+    justify-content: space-around;
     align-items: center;
     position: relative;
-    top: -30vw;
-    margin-left: 34vw;
     box-shadow:black 1px 0px 12px 0px;
-    border-radius: 10px 10px 10px 10px; 
-    width: fit-content;
+    border-radius: 10px 10px 10px 10px;
+    background-color: white;
 }
 
 .imgCire{
     width:33vw;
 }
-
-#para5{
-    position:relative;
-    left:41vw;
-    top: -44vh;
-    font-size: 0.4rem;
-    font-family: 'titre' ;
-}
-
-figure{
-    width:333px;
-
-}
-
 
