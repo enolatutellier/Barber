@@ -94,30 +94,24 @@
     <section class="section3">
         <h2>Nos produits de soin</h2>
         <div id="presentation_soin">
-            <article class="article">
-                <figure>
-                    <img src="img/pate modelante.jpg" alt="pate modelante">
-                    <figcaption>
-                        Pâte Modelante
-                    </figcaption>
-                </figure>
-            </article>
-            <article class="article">
-                <figure>
-                    <img src="img/shampoing.jpg" alt="shampoing">
-                    <figcaption>
-                        Shampoing
-                    </figcaption>
-                </figure>
-            </article>
-            <article class="article">
-                <figure>
-                    <img src="img/face cream.jpg" alt="crême visage">
-                    <figcaption>
-                        Crême visage
-                    </figcaption>
-                </figure>
-            </article>
+        <?php
+                $sql = $con->prepare('  SELECT a.Nom, a.Photo FROM articles as a, categories as c
+                                        WHERE a. = 
+                                        ORDER BY Id_article DESC
+                                        LIMIT 3');
+                                //demande sql pour récupérer les articles exclusifs
+
+                $sql->execute();
+                $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                foreach($articles as $article){
+                    echo '  <article class=\'carte\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
+                                <figure>
+                                    <img class=\'petit_image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
+                                    <figcaption>'.$article["Nom"].'</figcaption>
+                                </figure>
+                            </article>';
+                }
+                ?>
         </div>
     </section>
     
