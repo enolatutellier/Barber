@@ -14,6 +14,10 @@ nav{
     height: 100%;
 }
 
+#burger{
+    display: none;
+}
+
 #index_retour{
     height:100%;
 }
@@ -52,7 +56,7 @@ header li {
     list-style: none;
 }
 
-#monCompte, #sous_menu_categorie a {
+#monCompte a, #sous_menu_categorie a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     border-radius: 1px 0 1px 0;
@@ -68,7 +72,8 @@ header li {
 
 #overlay{
     width:100vw;
-    height:200vh;
+    height:100vh;
+    top:0;
     display:none;
     position:fixed;
     background-color: rgba(0,0,0,0.8);
@@ -112,7 +117,6 @@ header li {
 
 .sous_menu{
     display : none;
-    flex-wrap: wrap;
     flex-wrap: nowrap;
     width: 50vw;
     top:30vh;
@@ -234,20 +238,83 @@ header li {
     border-color: transparent transparent white transparent;
 }
 
-@media screen and (max-width:1023px){
-    #quitter_menu{
-        border:1px solid black;
-        border-radius: 25px;
-        background-color: rgba(201, 29, 29, 0.5);
-    }
-    .style{
+@media screen and (max-width:1024px){
+    .style, .bouton_menu, #categorie, #monCompte, #deroulant_principal{
         display: none;
     }
+
+    #burger{
+        display: block;
+    }
+
     header{
         font-size: 0.6rem;
     }
 
-    .bouton_menu{
-        padding : 30px 10px;
+    #burger, #recherche{
+        width : 20vw;
+    }
+
+    #overlay{
+        height : 85vh;
+        top:15vh;
+    }
+    #burger a{
+        text-decoration: none;
+        color :white;
+    }
+    .sous_menu{
+        border-radius: 30px;
+        background-image: url(../img/menu\ burger\ fond.jpg);
+        background-position: bottom left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        flex-direction: column;
+        width: 29vw;
+        top:20vh;
+        margin-left: 5%;
+        padding-right: 61vw;
+        box-sizing: content-box;
+        left:0;
+        height: 35vh;
+        padding-top: 5vh;
+        padding-bottom: 30vh;
+        flex-wrap: wrap;
+    }
+    #categorie > p:after {
+        content : "";
+    }
+
+    #sous_menu_burger li{
+        padding : 2.4vh 0;
+    }
+
+    .sous_menu_burger{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top : 5vh;
+        height: 50vh;
+        left: 29vw;
+        width: 29vw;
+    }
+    .sous_menu_article{        
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top : 0;
+        height: 70vh;
+        left:29vw;
+        width:29vw;
+    }
+
+    #recherche input{
+        height: 1rem;
+        width : 100%;
+        font-size:0.6rem;
+    }
+
+    #recherche input::placeholder{
+        font-size: 0.5rem;
     }
 }
