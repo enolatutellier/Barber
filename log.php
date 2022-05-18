@@ -17,12 +17,10 @@ if(isset($_POST['mail']) && isset($_POST['pass'])) { //On verifie si l'utilisate
    $adresses = $result-> fetchAll(PDO::FETCH_ASSOC);
    
    $num_ligne = count ($adresses) ; // nombre de ligne ayant rapport à la requete sql 
-   if($num_ligne >= 1)
-   {
+   if($num_ligne >= 1){
       header("Location:index.php") ; // si le nombre de ligne est > 0 on sera dirigé a la page index
    }else{ //sinon
       echo "Adresse mail ou mot de passe incorrectes !" ;
-
    }
 
 }
