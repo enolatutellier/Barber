@@ -340,7 +340,7 @@ catch(PDOException $e){
                 </li>
 
                 <li>
-                    <a id='monCompte' href="pageconnexion.html" class="bouton_menu">
+                    <a id='monCompte' href="log.php" class="bouton_menu">
                         Mon&nbsp;compte
                     </a>
                 </li>
