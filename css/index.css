@@ -5,7 +5,8 @@ main{
 }
 
 .section0{
-    background-color: black;
+    margin : -1px;
+    background-color: #102907;
     height:50vw;
     display: flex;
     justify-content: center;
@@ -14,6 +15,8 @@ main{
 
 #carrousel{
     display: flex;
+    border-radius: 25px;
+    box-shadow: 15px 15px 50px black;
     flex-wrap: nowrap;
     overflow: hidden;
     width:80%;
@@ -22,6 +25,7 @@ main{
 }
 
 .img_carrousel{
+    display: none;
     width:50%;
     height: 100%;
     position: relative;
@@ -48,7 +52,6 @@ main{
     background-size: cover;
     height: 40vw;
     position:relative;
-    font-size: 0.3rem;
 }
 
 
@@ -57,10 +60,11 @@ main{
     background-size:cover;
     position:relative;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
+    padding-top: 10%;
     width:70%;
     height:100%;
-    align-items: center;
+    align-items: flex-start;
 }
 
 
@@ -77,19 +81,19 @@ main #titre_cont{
     background: white;
     display: flex;
     flex-direction: column;
-    position : relative;
+    position: relative;
     align-items: center;
     text-align: center;
     border-radius: 5%;
-    height: 60%;
-    width: 30%;
+    width: 33%;
     box-shadow: black -1px 0px 20px 2px;
 }
 
 .clou{
     position:absolute;
     top:-2%;
-    width:10%;
+    max-width:10%;
+    max-height: 10%;
     transform: rotate(-50deg);
 }
 
@@ -115,18 +119,20 @@ main #titre_cont{
     transform: rotate(210deg);
 }
 
- .img1{
-    max-height: 80%;
-    max-width:90%;
+.img1{
+    max-height: 30vw;
+    max-width: 90%;
     box-sizing: border-box;
-    padding:10% 3% 3%;
+    padding: 10% 3% 0;
     border-radius: 5px 5px;
     filter: contrast(90%) brightness(120%);
 }
 
+
 .carte figcaption{
     width: 80%;
     margin : 0 auto;
+    padding-bottom: 5%;
 }
 
 /* Deuxième section , carte en vrac */ 
@@ -142,7 +148,7 @@ main #titre_cont{
     justify-content: space-between;
     align-items: center;
     width:100%;
-    margin-top:10vw;
+    margin-top:15vw;
     
 }
 
@@ -179,10 +185,6 @@ main #titre_cont{
     
 }
 
-.section3{
-    font-size: 0.4rem;
-}
-
 .section3 h2{
     margin : 5%;
     text-align: end;
@@ -215,6 +217,7 @@ main #titre_cont{
 
 #presentation_soin figcaption{
     text-align: center;
+    width: 80%;
 }
 
 main .modal{
@@ -245,12 +248,12 @@ main .close{
     font-size:0.6rem;
     font-weight:bold;
     padding : 10px 20px;
+    border-radius: 50%;
 }
 
 main .close:hover{
     color : white;
     background-color: red;
-    border-radius: 50%;
     cursor:pointer;
 }
 
@@ -271,5 +274,59 @@ main .flex p{
 }
 
 @media screen and (max-width:1023px){
-    
+    main{
+        font-size: 0.6rem;
+    }
+
+    #carte3{
+        display: none;
+    }
+    .carte{
+        position : static;
+        width: 50%;
+    }
+    .conteneur{
+        justify-content: space-around;
+    }
+
+    main #titre_cont{
+        font-size: 1rem;
+        text-align: center;
+        left:auto;
+    }
+
+    #img1, #img4, #article3{
+        display: none;
+    }
+
+    #img2, #img3{
+        width : 44vw;
+    }
+
+    #img2{
+        top:0;
+        left:50%;
+    }
+
+    #img3{
+        position:relative;
+        left:5%;
+    }
+
+    #separation{
+        margin-top:5vw;
+    }
+
+    .section3 h2{
+        text-align: center;
+    }
+
+    #presentation_soin{
+        padding-right: 0;
+    }
+
+    main .close{
+        color: white;
+        background-color: red;
+    }
 }

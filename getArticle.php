@@ -2,7 +2,7 @@
 try{
     $con=new PDO("mysql:host=localhost;dbname=barber;charset=utf8", "root", "root");
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $nomArticle = addslashes($_POST["nom"]);
+    $nomArticle = htmlspecialchars_decode(addslashes($_POST["nom"]));
     $sql = $con->prepare("  SELECT * from articles
                             WHERE Nom LIKE '{$nomArticle}'");
     $sql->execute();

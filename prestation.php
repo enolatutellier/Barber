@@ -31,9 +31,14 @@ catch(PDOException $e){
     <?php include_once ('header.php');?>
     <main>
         <section id="presentation">
-            <h1>Nos Prestations</h1>
+            <div id='divImg'>
+                <img src="img/fond prestation.jpg" alt='fond' id='fond'>
+            </div>
+            <div class='over'></div>
+            <h1 id='titrePrestation'>Nos Prestations</h1>
         </section>
         <section id="sous-image">
+            
             <p class="blanc citation">
                 Nous vous proposons différents services dans nos salons répartis à travers l'Europe.
             </p>
@@ -42,6 +47,8 @@ catch(PDOException $e){
             <img id="deco3" src="img/deco3.jpg">
             <img id="deco1" src="img/deco1.svg">
             <img id="deco2" src="img/deco2.svg">
+            <img id='shampoing_tab' class="image_moyenne" src="img/soin.jpg" alt="soin">
+            <h2 id="titre_soin_tab">Soin</h2>
             <div id="soin" class="carteInfo">
                 <img id='shampoing' class="image_moyenne" src="img/soin.jpg" alt="soin">
                 <h2 id="titre_soin">Soin</h2>
@@ -51,6 +58,8 @@ catch(PDOException $e){
                     <img src="img/fleche.png">
                 </a>
             </div>
+            <img id="img_coloration_tab" class="image_moyenne" src="img/coloration.jpg" alt="coloration">
+            <h2 id="titre_coloration_tab" >Coloration</h2>
             <div id="coloration" class="carteInfo">
                 <img id="img_coloration" class="image_moyenne" src="img/coloration.jpg" alt="coloration">
                 <h2 id="titre_coloration" >Coloration</h2>
@@ -62,6 +71,8 @@ catch(PDOException $e){
                     <img src="img/fleche.png">
                 </a>
             </div>
+            <img id="img_forfait_tab" class="image_moyenne" src="img/forfait.jpg" alt="forfait">
+            <h2 id="titre_forfait_tab">Forfait</h2>
             <div id="forfait" class="carteInfo">
                 <img id="img_forfait" class="image_moyenne" src="img/forfait.jpg" alt="forfait">
                 <h2 id="titre_forfait">Forfait</h2>
@@ -83,13 +94,15 @@ catch(PDOException $e){
                                         LIMIT 3');
                 $sql->execute();
                 $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                $i = 1;
                 foreach($articles as $article){
-                    echo '  <article class=\'carte\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
+                    echo '  <article id=\'barbe'.$i.'\' class=\'carte\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
                                 <figure>
                                     <img class=\'petit_image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
                                     <figcaption>'.$article["Nom"].'</figcaption>
                                 </figure>
                             </article>';
+                    $i++;
                 }
                 ?>
                 <a href='recherche.php?categorie=barbe' class="fleche">
@@ -105,13 +118,15 @@ catch(PDOException $e){
                                         LIMIT 3');
                 $sql->execute();
                 $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                $i=1;
                 foreach($articles as $article){
-                    echo '  <article class=\'carte\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
+                    echo '  <article id=\'coiffure'.$i.'\' class=\'carte\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
                                 <figure>
                                     <img class=\'petit_image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
                                     <figcaption>'.$article["Nom"].'</figcaption>
                                 </figure>
                             </article>';
+                    $i++;
                 }
                 ?>
                 <a href='recherche.php?categorie=coiffure' class="fleche">

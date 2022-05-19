@@ -1,19 +1,36 @@
 @import url('reset.css');
 main{
-    background-image: url(../Img/fond\ prestation.jpg);
-    background-repeat: no-repeat;
-    background-size: clamp(100px, 120%, 1200px) auto;
-    background-position: 75% top;
-    font-size : clamp(18px, 0.4rem, 36px);
+    font-size : 0.3rem;
 }
 #presentation{
-    background:radial-gradient(at 60% 0%, rgba(128,128,128,0.1) 0%, black 60%);
-    height : 750px;
     display: flex;
     justify-content:center;
     align-items: center;
-    font-size: clamp(30px, 0.5rem, 58px);
+    font-size: 0.5rem;
     color : white;
+    position: relative;
+}
+#divImg{
+    display: flex;
+    position : relative;
+    justify-content: center;
+    width: 100%;
+    top:0;
+    overflow: hidden;
+}
+#fond{
+    width : clamp(100px, 120%, 1200px);
+}
+.over{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(at 60% 0%, rgba(128,128,128,0.1) 0%, black 60%);
+}
+#titrePrestation{
+    position: absolute;
 }
 #sous-image{
     margin-top: -40px;
@@ -25,13 +42,18 @@ main{
 
 .citation{
     position : absolute;
-    top:2vw;
+    top : 20%;
     left: 15%;
-    width: 30%;
+    width: 40%;
 }
 
 .blanc{
     color:white;
+    mix-blend-mode: difference;
+}
+.blanc:after{
+    color: black;
+    mix-blend-mode: difference;
 }
 
 
@@ -43,13 +65,18 @@ main{
     padding : 0 5% 5%;
 }
 
+#shampoing_tab, #titre_soin_tab,
+#img_coloration_tab, #titre_coloration_tab,
+#img_forfait_tab, #titre_forfait_tab{
+    display: none;
+}
+
 .carteInfo{
     position : relative;
     box-sizing: border-box;
     padding: 1rem 0.5rem 0.5rem;
     text-align: center;
     box-shadow: 4px 4px 60px rgba(0,0,0,0.25);
-    font-size: 0.3rem;
     background-color: white;
 }
 
@@ -153,7 +180,7 @@ main{
 }
 
 #separation{
-    background-image: url('../Img/separation.jpg');
+    background-image: url('../Img/separation-l.jpg');
     background-repeat: repeat-x;
     background-size: 10vw 10vw;
     height:10vw;
@@ -161,11 +188,10 @@ main{
 }
 
 #fin{
-    padding : 10vw 5vw 0;
+    padding : 5vw 5vw 0;
     background-image: url('../Img/dekowood.png');
     background-repeat: no-repeat;
     background-size: cover;
-    margin-top: -50px;
     display: grid;
     grid-template-columns: 5fr 1fr;
     justify-items: center;
@@ -199,7 +225,7 @@ main{
     position:absolute;
     margin : 5% 0;
     left:0;
-    top:-25%;
+    top:-15%;
     font-size: 1.2rem;
     font-family: 'police', cursive;
 }
@@ -284,4 +310,122 @@ main .flex{
 main .flex p{
     text-align: justify;
     margin: 5% 4%;
+}
+
+@media screen and (max-width:1023px){
+
+    main{
+        font-size: 0.6rem;
+    }
+
+    #deco1, #deco2, #deco3,
+    #shampoing, #titre_soin,
+    #img_coloration, #titre_coloration,
+    #img_forfait, #titre_forfait
+    {
+        display: none;
+    }
+
+    #shampoing_tab, #titre_soin_tab,
+    #img_coloration_tab, #titre_coloration_tab,
+    #img_forfait_tab, #titre_forfait_tab{
+        display: block;
+    }
+
+    #services{
+        grid-template-columns: repeat(2, 1fr);
+        align-items: flex-end;
+    }
+
+    .carteInfo{
+        padding:0.5rem 0.5rem 1.5rem;
+    }
+
+    .fleche{
+        width: 10%;
+        top:auto;
+        bottom : 0.35rem;
+        left:80%;
+    }
+
+    .image_moyenne{
+        width: 8rem;
+    }
+
+    #titre_soin_tab{
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+    
+    #soin{
+        grid-row: 2/4;
+        grid-column: 2/3;
+
+    }
+    
+    #img_coloration_tab{
+        grid-row: 4/5;
+        grid-column: 2/3;
+    }
+    
+    #titre_forfait_tab{
+        grid-row: 5/6;
+        grid-column: 2/3;
+    }
+    
+    #forfait{
+        grid-row: 6/8;
+        grid-column: 2/3;
+        margin-top: auto;
+    }
+
+    #shampoing_tab{
+        grid-row: 2/3;
+        grid-column: 1/2;   
+        
+    }
+    
+    #titre_coloration_tab{
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+    
+    #coloration{
+        grid-row: 4/6;
+        grid-column: 1/2;
+    }
+    
+    #img_forfait_tab{
+        grid-row: 6/8;
+        grid-column: 1/2;
+        align-self: center;
+    }
+
+    #titre_soin, #titre_coloration, #titre_forfait{
+        grid-column: 1/2;
+        font-size: 1.5rem;
+        width: 100%;
+    }
+
+    #barbe3, #coiffure3{
+        display: none;
+    }
+
+    .petit_image{
+        height: 6rem;
+    }
+
+    #fin{
+        display: flex;
+        flex-direction: column;
+        padding-right: 15%;
+    }
+
+    #enseigne{
+        display: none;
+    }
+
+    .presentoir .fleche{
+        bottom: auto;
+    }
 }
