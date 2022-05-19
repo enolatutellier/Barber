@@ -318,6 +318,10 @@ main .flex p{
         font-size: 0.6rem;
     }
 
+    main h1{
+        font-size: 1.5rem;
+    }
+
     #deco1, #deco2, #deco3,
     #shampoing, #titre_soin,
     #img_coloration, #titre_coloration,
@@ -413,6 +417,10 @@ main .flex p{
 
     .petit_image{
         height: 6rem;
+    }
+
+    #services h2, .presentoir h2{
+        font-size: 1.5rem;
     }
 
     #fin{

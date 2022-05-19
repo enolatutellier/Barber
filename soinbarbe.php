@@ -24,34 +24,31 @@
         <div id="modal" class="modal"> </div>
 
         <section id="presentation">
-
-            <h1>
-                Soins de la Barbe
-            </h1>
-
+            <div id='divImg'>
+                <img src="img/soinbarbe.jpg" alt='fond' id='fond'>
+            </div>
+            <div class='over'></div>
+            <h1 id='titrePrestation'>Soins de la Barbe</h1>
         </section>
 
         <section id="sous-image">
 
             <p class="blanc citation">
-                Nous vous proposons diférents services dans nos salons répartis à travers l'Europe.
+            De la crème, du baume en passant par des blaireaux, du shampoings et bien d'autre
+                cosmetique & accesoires!
             </p>
-            <p id="para1"> De la crème, du baume en passant par des blaireaux<br> du shampoings et bien d'autre
-                cosmetique & accesoires!</p>
 
-        </section>
-
-        <section class="section3">
-            
             <img src="img/deco2.svg" alt="decorationn en carré coloré" id="deco2svg">
+
         </section>
+
 
         <section class="Baume">
 
+            <p id="para2">
+                Baume à Barbe
+            </p>
             <div class="conteneur">
-                <p id="para2">
-                    Baume à Barbe
-                </p>
                 <div class="ligneGauche">
                 </div>
 
@@ -64,21 +61,25 @@
                                         LIMIT 3');
                 $sql->execute();
                 $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                $i = 1;
                 foreach($articles as $article)
                 {
                     echo ' 
-                                <figure onclick=\'recupererArticle(this.lastElementChild);\'>
+                                <figure id=\'baume'.$i.'\' onclick=\'recupererArticle(this.lastElementChild);\'>
                                 <div class=\'img-centre\'> 
                                 <img class=\'petite-image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
                                 </div>
                                     <figcaption>'.$article["Nom"].'</figcaption>
                                 </figure> ';
+                    $i++;
                 }
                 ?>
 
                 </div>
 
-                <img src="img/fleche.png" alt="fleche noir" id="fleche2">
+                <a href='recherche.php?categorie=Baumes' id="fleche2">
+                    <img src="img/fleche.png" alt="fleche noir">
+                </a>
             </div>
         </section>
 
@@ -87,12 +88,15 @@
 
         <section class="shampoing">
 
-            
+        
+            <p id="para3">
+                Shampoings
+            </p>
             <div class="conteneur" id='conteneur2'>
-                <p id="para2">
-                    Shampoings
-                </p>
-                <img src="img/fleche.png" alt="fleche noir" id="fleche3">
+
+                <a href='recherche.php?categorie=Shampoings' id="fleche3">
+                    <img src="img/fleche.png" alt="fleche noir">
+                </a>
 
                 <div class="carteBaume">
 
@@ -103,14 +107,16 @@
                                         LIMIT 3');
                 $sql->execute();
                 $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                $i=1;
                 foreach($articles as $article){
                     echo ' 
-                                <figure onclick=\'recupererArticle(this.lastElementChild);\'>
+                                <figure id=\'shampoing'.$i.'\'onclick=\'recupererArticle(this.lastElementChild);\'>
                                 <div class=\'img-centre\'> 
                                 <img class=\'petite-image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
                                 </div>
                                     <figcaption>'.$article["Nom"].'</figcaption>
                                 </figure> ';
+                    $i++;
                 }
                 ?>
 
@@ -152,20 +158,21 @@
                                 </figure> ';
                 }
                 ?> 
-                <img src="img/fleche.png" alt="fleche noir" id="fleche4">
                 </div>
-                   
-                </div>
+                <a href='recherche.php?categorie=Huiles'>
+                    <img src="img/fleche.png" alt="fleche noir" id="fleche4">
+                </a>
+            </div>
                 
                 
         </section>
-
+        <p id="para5">
+            Cire à Barbe
+        </p>
         <section class="cireBarbe">
             <img src="img/deco2.svg" alt="image de décoration orange" id="imgDeco2SVG">
 
-            <p id="para5">
-                Cire à Barbe
-            </p>
+            
             <img src="/img/bois.jpg" alt="planche en bois" id="imgBois">
             
 
@@ -188,7 +195,9 @@
                                 </figure> ';
                 }
                 ?> 
-                <img src="img/fleche.png" alt="fleche noir" id="fleche5"> 
+                <a href='recherche.php?categorie=cires'>
+                    <img src="img/fleche.png" alt="fleche noir" id="fleche5">
+                </a>
             </div>
         </section>
     </main>

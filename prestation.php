@@ -30,13 +30,13 @@ catch(PDOException $e){
 <body>
     <?php include_once ('header.php');?>
     <main>
-        <section id="presentation">
-            <div id='divImg'>
-                <img src="img/fond prestation.jpg" alt='fond' id='fond'>
-            </div>
-            <div class='over'></div>
-            <h1 id='titrePrestation'>Nos Prestations</h1>
-        </section>
+    <section id="presentation">
+        <div id='divImg'>
+            <img src="img/fond prestation.jpg" alt='fond' id='fond'>
+        </div>
+        <div class='over'></div>
+        <h1 id='titrePrestation'>Nos Prestations</h1>
+    </section>
         <section id="sous-image">
             
             <p class="blanc citation">
