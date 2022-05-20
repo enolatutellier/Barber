@@ -1,3 +1,11 @@
+    <?php 
+    //On demare la session sur sur cette page 
+                                    // $previous_name = session_name("Sylv\'Barbe");
+    session_start() ;
+    if(!empty($_POST['mail'])){
+        $mail = $_POST['mail'];
+    }
+    ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/font.css"/>
+  <!--  <meta http-equiv="refresh" content="35; url=index.php">  Permet de redirigé la page sur une page choisis -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src='js/consulterArticle.js' defer></script>
     <script src="js/carrousel.js" defer></script>

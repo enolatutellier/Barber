@@ -1,4 +1,12 @@
 <?php 
+// ouvertur de la session
+session_start();
+if(!empty($_POST['mail'])){
+   $pseudo = $_POST['mail'];
+   $_SESSION[''];
+}
+
+//date dexpiration du cookie
 if(!empty($_POST['mail'])){
    $mail = $_POST['mail'];
    setcookie('mail', $mail, time()+ 365*24*4000);
@@ -12,7 +20,6 @@ if(!empty($_POST['mail'])){
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="refresh" content="35; url=index.php"> <!-- Permet de redirigé la page sur une page choisis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/log.css" />
     <link rel="stylesheet" href="css/font.css"/>
@@ -58,6 +65,11 @@ if(!empty($_POST['mail'])){
      <?php
      if(!empty ($_COOKIE['mail'])){
         echo '<h2>Bienvenue'.htmlspecialchars ($_COOKIE['pseudo']).'</h2>';
+     }
+
+     if(!empty($_SESSION['mail']))
+     {
+         echo '<h2> Bienvenue '.htmlspecialchars($_SESSION['mail']).'</h2>' ;
      }
      ?>
 
