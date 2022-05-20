@@ -376,6 +376,12 @@ main .flex p{
 
 @media screen and (max-width:780px) {
 
-        
+        .cireBarbe{
+            height: 45vh;
+        }
+
+        #fleche5{
+            right:40%;
+        }
     
 }
