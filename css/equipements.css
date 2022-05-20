@@ -296,7 +296,7 @@ main .flex p{
     text-align: justify;
     margin: 5% 4%;
 }
-
+/* tablette */
 @media screen and (max-width:1023px) {
     main{
         font-size: 0.6rem;
@@ -404,5 +404,17 @@ main .flex p{
 
     #bijoux{
         margin-left:0;
+    }
+}
+
+/* portable responsive */ 
+
+@media screen and (max-width:780px){
+    main{
+        font-size: 0.7rem;
+    }
+
+    a{
+        font-size:0.6rem;
     }
 }
