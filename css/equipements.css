@@ -1,19 +1,37 @@
 @import url('reset.css');
 main{
-    background-image: url(../Img/fond\ equipements.jpg);
-    background-repeat: no-repeat;
-    background-size: clamp(100px, 120%, 1200px) auto;
-    background-position: 75% top;
     font-size : 0.3rem;
 }
 #presentation{
-    background:radial-gradient(at 60% 0%, rgba(128,128,128,0.1) 0%, black 60%);
-    height : 750px;
     display: flex;
     justify-content:center;
     align-items: center;
-    font-size: clamp(30px, 0.5rem, 58px);
+    font-size: 0.5rem;
     color : white;
+    position: relative;
+    text-align: center;
+}
+#divImg{
+    display: flex;
+    position : relative;
+    justify-content: center;
+    width: 100%;
+    top:0;
+    overflow: hidden;
+}
+#fond{
+    width : clamp(100px, 120%, 1200px);
+}
+.over{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(at 60% 0%, rgba(128,128,128,0.1) 0%, black 60%);
+}
+#titrePrestation{
+    position: absolute;
 }
 #sous-image{
     margin-top: -40px;
@@ -25,22 +43,28 @@ main{
 
 .citation{
     position : absolute;
-    top:2vw;
+    top : 20%;
     left: 15%;
-    width: 30%;
+    width: 50%;
 }
 
 .blanc{
     color:white;
+    mix-blend-mode: difference;
 }
-
 
 #equipements{
     display: grid;
     grid-template-columns: repeat(18,minmax(50px,1fr));
     justify-items: center;
     align-items: center;
-    padding : 0 5% 5%;
+    padding : 10vh 5%;
+}
+
+#rasoirs_tab, #titre_rasoirs_tab,
+#img_blaireau_tab, #titre_blaireau_tab,
+#img_support_tab, #titre_support_tab{
+    display: none;
 }
 
 .carteInfo{
@@ -49,7 +73,6 @@ main{
     padding: 1rem 0.5rem 0.5rem;
     text-align: center;
     box-shadow: 4px 4px 60px rgba(0,0,0,0.25);
-    font-size: 0.3rem;
     background-color: white;
 }
 
@@ -157,7 +180,7 @@ main{
 
 #fin{
     padding : 0 5vw;
-    margin-top: 5%;
+    margin: 5% 0;
     position : relative;
 }
 
@@ -182,16 +205,15 @@ main{
 }
 
 .titre_presentoir{
-    position:absolute;
-    margin : 5% 0;
+    margin-top: 10vh;
     left:0;
-    top:-10%;
-    font-family: 'police', cursive;
-    font-size: 0.6rem;
+    top:0;
+    font-family: 'titre', cursive;
 }
 
-#bijoux > .titre_presentoir{
-    left : 80%;
+#titre_presentoir_bijoux{
+    text-align: end;
+    padding-right: 20%;
 }
 
 .presentoir{
@@ -200,12 +222,11 @@ main{
     position:relative;
     justify-content: space-evenly;
     align-items: center;
-    padding:5vw 0;
 }
 
 .presentoir .fleche{
-    top:45%;
     left:100%;
+    bottom : auto;
 }
 
 .carte{
@@ -276,3 +297,112 @@ main .flex p{
     margin: 5% 4%;
 }
 
+@media screen and (max-width:1023px) {
+    main{
+        font-size: 0.6rem;
+    }
+
+    main h1{
+        font-size: 1.5rem;
+    }
+
+    #equipements{
+        grid-template-columns: repeat(2, 1fr);
+        align-items: flex-end;
+    }
+
+    .carteInfo{
+        padding:0.5rem 0.5rem 1.5rem;
+    }
+
+    .fleche{
+        width: 10%;
+        top:auto;
+        bottom : 0.35rem;
+        left:80%;
+    }
+
+    .image_moyenne{
+        width: 8rem;
+    }
+
+    #deco1, #deco2, #deco3,
+    #rasoirs, #titre_rasoirs,
+    #img_blaireau, #titre_blaireau,
+    #img_support, #titre_support{
+        display: none;
+    }
+
+    #rasoirs_tab, #titre_rasoirs_tab,
+    #img_blaireau_tab, #titre_blaireau_tab,
+    #img_support_tab, #titre_support_tab{
+        display: block;
+    }
+
+    #rasoirs_tab{
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    #titre_rasoirs_tab{
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+
+    #rasoirs-lames{
+        grid-row: 2/4;
+        grid-column: 2/3;
+    }
+
+    #img_blaireau_tab{
+        grid-row: 4/5;
+        grid-column: 2/3;
+    }
+
+    #titre_blaireau_tab{
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    #blaireau{
+        grid-row: 4/6;
+        grid-column: 1/2;
+    }
+
+    #img_support_tab{
+        grid-row: 6/8;
+        grid-column: 1/2;
+        align-self: center;
+    }
+
+    #titre_support_tab{
+        grid-row: 5/6;
+        grid-column: 2/3;
+    }
+
+    #support{
+        grid-row: 6/8;
+        grid-column: 2/3
+    }
+
+    #brosse3, #bijou3, #enseigne{
+        display: none;
+    }
+
+    .petit_image{
+        max-width: 6rem;
+        max-height: 6rem;
+    }
+
+    .presentoir{
+        width: 90%;
+    }
+
+    .fin .fleche{
+        position: static;
+    }
+
+    #bijoux{
+        margin-left:0;
+    }
+}

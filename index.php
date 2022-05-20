@@ -31,14 +31,29 @@
     <?php include_once ('header.php');?>
     <main>
         <div id='modal' class='modal'></div>
+        <?php
+            $images = [];
+            if($img_dir = @opendir('img/partage')){
+                while (false !== ($img_file = readdir($img_dir))){
+                    if($img_file !== '.' && $img_file !== '..')
+                    $images[] = $img_file;
+                }
+                closedir($img_dir);
+            }else{
+                echo '<p style=\'background-color:black;color:white;text-align:center;\'>Le dossier d\'image n\'existe pas !</p>';
+            }
+            
+        ?>
         <section class="section0">
+            
             <div id="carrousel">
-                <img class='img_carrousel' src="img/coupe8.jpg" alt="homme avec une moustache">
-                <img class='img_carrousel' src="img/coupe7.jpg" alt="homme avec une moustache">
-                <img class='img_carrousel' src="img/coupe6.jpg" alt="homme avec une moustache">
-                <img class='img_carrousel' src="img/coupe8.jpg" alt="homme avec une moustache">
-                <img class='img_carrousel' src="img/coupe7.jpg" alt="homme avec une moustache">
-                <img class='img_carrousel' src="img/coupe6.jpg" alt="homme avec une moustache">
+                <?php
+                foreach($images as $image){
+                    ?>
+                    <img class="img_carrousel" src="img/partage/<?=$image?>" alt="photo">
+                    <?php
+                }
+                ?>
             </div>
             
         </section>
@@ -52,8 +67,8 @@
                 </h2>
 
                 <?php
-                $sql = $con->prepare("  SELECT * FROM articles
-                                        WHERE exclusivite = '2'
+                $sql = $con->prepare("  SELECT a.* FROM articles as a, categories as c1, categories as c2
+                                        WHERE a.Id_categorie = c1.Id_categorie && c1.Parent = c2.Id_categorie && c2.Nom LIKE 'Prestation'
                                         ORDER BY Id_article DESC
                                         LIMIT 3");
                                 //demande sql pour récupérer les articles exclusifs
@@ -82,11 +97,25 @@
 
             <img src="img/imgVecto2.png" alt="image vectoriel en cuir" id="img4">
 
-            <img src="img/produitBarber.jpg" alt="produit pour barber"id="img2">
+            <img srcset="img/produitBarber-s.jpg 512w,
+                         img/produitBarber-l.jpg 850w"
+                 sizes="(max-width:767px) 800px,
+                        (max-width:1023px) 500px,
+                        800px"
+                 src="img/produitBarber-l.jpg"
+                 alt="produit pour barber"
+                 id="img2">
 
-            <img src="img/coupe4.jpg" alt="blaireau et accessoires" id="img1">
+            <img src="img/coupe4-l.jpg" alt="blaireau et accessoires" id="img1">
         
-            <img src="img/siegeBarber.jpg" alt="sière de barber"id="img3">
+            <img srcset="img/siegeBarber-s.jpg 512w,
+                      img/siegeBarber-l.jpg 900w"
+                  sizes="(max-width:767px) 800px,
+                         (max-width:1023px) 500px,
+                         800px"
+                  src="img/siegeBarber-l.jpg"
+                  alt="siège de barber"
+                  id="img3">
 
             
 
@@ -108,13 +137,15 @@
 
                 $sql->execute();
                 $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                $i = 1;
                 foreach($articles as $article){
-                    echo '  <article class=\'article\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
+                    echo '  <article id=\'article'.$i.'\' class=\'article\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
                                 <figure>
                                     <img class=\'petit_image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
                                     <figcaption>'.$article["Nom"].'</figcaption>
                                 </figure>
                             </article>';
+                    $i++;
                 }
                 ?>
         </div>

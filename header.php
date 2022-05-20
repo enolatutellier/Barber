@@ -1,4 +1,5 @@
 <?php
+session_start();
 try{
     $con=new PDO("mysql:host=localhost;dbname=barber;charset=utf8", "root", "root");
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -22,6 +23,146 @@ catch(PDOException $e){
         <nav>
             <ul id="menu">
                 <div id="overlay"></div>
+                <li id='burger' class="deroulant"> 
+                    <p>
+                        Menu
+                    </p>
+                    <ul id='sous_menu_burger' class="sous_menu">
+                        <li>
+                            <a href="pageconnexion.html">
+                                Mon&nbsp;compte
+                            </a>
+                        </li>
+                        <li class="deroulant_burger"> 
+                            <p>Catégorie&nbsp;▶</p>
+                            <ul class='sous_menu_burger'>
+                                <li>
+                                    <a href="prestation.php">
+                                        <p>Prestation</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href ="soinbarbe.php">
+                                        <p>Produits de soin</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="equipements.php">
+                                        <p>Equipements et accessoires</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="deroulant_burger"> 
+                            <p>
+                                Nos&nbsp;produits&nbsp;▶
+                            </p>
+                            <ul class="sous_menu_burger">
+                                <li class="deroulant_article">
+                                    <p>Prestation&nbsp;▶</p>
+                                    <ul id='prestation_sous_menu' class="sous_menu_article">
+                                        <li>
+                                            <a href='recherche.php?categorie=soin'>
+                                                <p>Soin</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='recherche.php?categorie=coloration'>
+                                                <p>Coloration</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='recherche.php?categorie=forfait'>
+                                                <p>Forfait</p>                                        
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='recherche.php?categorie=barbe'>
+                                                <p>Barbe</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='recherche.php?categorie=coiffure'>
+                                                <p>Coiffure</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="recherche.php?grandecategorie=prestation">
+                                                <p>Tous les articles</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="deroulant_article">
+                                    <p>Produits de soin&nbsp;▶</p>
+                                    <ul id='produit_sous_menu'class="sous_menu_article">
+                                        <li>
+                                            <a href='recherche.php?categorie=Baumes'>
+                                                <p>Baume à barbe</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='recherche.php?categorie=Shampoings'>
+                                                <p>Shampoings</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='recherche.php?categorie=Huiles'>
+                                                <p>Huiles</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='recherche.php?categorie=Cires'>
+                                                </p>Cire à barbe</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="recherche.php?grandecategorie=produit de soin">
+                                                <p>Tous les articles</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="deroulant_article">
+                                    <p>Equipements et accessoires&nbsp;▶</p>
+                                    <ul id='accessoire_sous_menu' class="sous_menu_article">
+                                        <li>
+                                            <a href='recherche.php?categorie=Rasoirs'>
+                                                <p>Rasoir/Lame</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='recherche.php?categorie=Blaireaux'>
+                                                <p>Blaireau</p> 
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='recherche.php?categorie=Supports'>
+                                                <p>Support</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='recherche.php?categorie=Brosses/Peignes'>
+                                                <p>Brosse/Peigne</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='recherche.php?categorie=Bijoux'>
+                                                <p>Bijoux</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="recherche.php?grandecategorie=Equipement et accessoire">
+                                                <p>Tous les articles</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
                 <li id="categorie" class="bouton_menu"> 
                     <p>Catégorie</p>
                     <ul id='sous_menu_categorie'>

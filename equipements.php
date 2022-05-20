@@ -30,9 +30,13 @@ catch(PDOException $e){
 <body>
     <?php include_once ('header.php');?>
     <main>
-        <section id="presentation">
-            <h1>Nos Equipements et accessoires</h1>
-        </section>
+    <section id="presentation">
+        <div id='divImg'>
+            <img src="img/fond equipements.jpg" alt='fond' id='fond'>
+        </div>
+        <div class='over'></div>
+        <h1 id='titrePrestation'>Nos Equipements et accessoires</h1>
+    </section>
         <section id="sous-image">
             <p class="blanc citation">
                 Rasoirs droits, blaireaux, lames ou encore perles pour barbes.<br>Notre choix est large pour vous satisfaire au mieux.
@@ -42,6 +46,8 @@ catch(PDOException $e){
             <img id="deco3" src="img/deco3.jpg">
             <img id="deco1" src="img/deco1.svg">
             <img id="deco2" src="img/deco2.svg">
+            <img id='rasoirs_tab' class="image_moyenne" src="img/rasoirs.jpg" alt="rasoirs">
+            <h2 id="titre_rasoirs_tab">Rasoirs et lames</h2>
             <div id="rasoirs-lames" class="carteInfo">
                 <img id='rasoirs' class="image_moyenne" src="img/rasoirs.jpg" alt="rasoirs">
                 <h2 id="titre_rasoirs">Rasoirs et lames</h2>
@@ -54,6 +60,8 @@ catch(PDOException $e){
                     <img src="img/fleche.png">
                 </a>
             </div>
+            <img id="img_blaireau_tab" class="image_moyenne" src="img/blaireau.webp" alt="blaireau">
+            <h2 id="titre_blaireau_tab" >Blaireaux</h2>
             <div id="blaireau" class="carteInfo">
                 <img id="img_blaireau" class="image_moyenne" src="img/blaireau.webp" alt="blaireau">
                 <h2 id="titre_blaireau" >Blaireaux</h2>
@@ -62,6 +70,8 @@ catch(PDOException $e){
                     <img src="img/fleche.png">
                 </a>
             </div>
+            <img id="img_support_tab" class="image_moyenne" src="img/support.jpg" alt="support">
+            <h2 id="titre_support_tab">Supports</h2>
             <div id="support" class="carteInfo">
                 <img id="img_support" class="image_moyenne" src="img/support.jpg" alt="support">
                 <h2 id="titre_support">Supports</h2>
@@ -74,8 +84,8 @@ catch(PDOException $e){
         <section id='fin'>
             <div id='modal' class='modal'></div>
             <img id='enseigne' src="img/enseigne avec accroche murale.png" alt="enseigne barbier">  
+            <h2 class="titre_presentoir">Brosses/Peignes</h2>
             <div id="brosses/peignes" class="presentoir">
-                <h2 class="titre_presentoir">Brosses/Peignes</h2>
                 <?php
                 $sql = $con->prepare('  SELECT a.Nom, a.Description, a.Photo FROM articles as a, categories as c
                                         WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Brosses/Peignes\'
@@ -83,21 +93,23 @@ catch(PDOException $e){
                                         LIMIT 3');
                 $sql->execute();
                 $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                $i = 1;
                 foreach($articles as $article){
-                    echo '  <article class=\'carte\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
+                    echo '  <article id=\'brosse'.$i.'\' class=\'carte\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
                                 <figure>
                                     <img class=\'petit_image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
                                     <figcaption>'.$article["Nom"].'</figcaption>
                                 </figure>
                             </article>';
+                    $i++;
                 }
                 ?>
                 <a href='recherche.php?categorie=Brosses\/Peignes' class="fleche">
                     <img src="img/fleche.png">
                 </a>
             </div>
+            <h2 id='titre_presentoir_bijoux' class="titre_presentoir">Bijoux</h2>
             <div id="bijoux" class="presentoir">
-                <h2 class="titre_presentoir">Bijoux</h2>
                 <?php
                 $sql = $con->prepare('  SELECT a.Nom, a.Description, a.Photo FROM articles as a, categories as c
                                         WHERE a.Id_categorie = c.Id_categorie AND c.Nom = \'Bijoux\'
@@ -105,13 +117,15 @@ catch(PDOException $e){
                                         LIMIT 3');
                 $sql->execute();
                 $articles = $sql->fetchAll(PDO::FETCH_ASSOC);
+                $i = 1;
                 foreach($articles as $article){
-                    echo '  <article class=\'carte\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
+                    echo '  <article id=\'bijou'.$i.'\'class=\'carte\' onclick=\'recupererArticle(this.firstElementChild.lastElementChild);\'>
                                 <figure>
                                     <img class=\'petit_image\' title=\''.$article['Nom'].'\' src=\'img/'.$article["Photo"].'\' alt =\''.$article['Nom'].'\'/>
                                     <figcaption>'.$article["Nom"].'</figcaption>
                                 </figure>
                             </article>';
+                    $i++;
                 }
                 ?>
                 <a href='recherche.php?categorie=bijoux' class="fleche">
