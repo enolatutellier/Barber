@@ -295,6 +295,8 @@ main .flex{
 main .flex p{
     text-align: justify;
     margin: 5% 4%;
+    word-wrap: break-word;
+    width: 50%;
 }
 
 @media screen and (max-width:1023px) {
