@@ -41,8 +41,6 @@ if(!empty($_POST['mail']))
 
 <main>
 
-    <!--<img src="/img/idk2.jpg" alt="image en fond avec une lampe" id="background"> --> 
-
     <form action="connexion.php" method="POST" class="formulaire">
     <p> Veuillez vous connecter</p>
 
@@ -52,22 +50,16 @@ if(!empty($_POST['mail']))
             </label>
             <input type="text" name="mail" placeholder="votremail@hotmail.fr" pattern="[0-9]{3}" min="1" max="5" />
         </div>
-       <br>
        <div class="champ">
            <label for="pass"> 
                Votre mot de passe :
             </label>
            <input type="password" name="pass"/>
        </div>
-       <div class="champ">
            <a href="#"> 
-               Mail / Mot de passe oublié ? 
+               S'inscrire
            </a>
-       </div>
-       <div class="champ">
-           <input type="submit" name="envoi">
-        </input>
-       </div>
+           <input id="envoyer" type="submit" name="envoi" value='Envoyer'>
     </form>
      <?php
      if(!empty ($_COOKIE['mail']))
@@ -82,7 +74,6 @@ if(!empty($_POST['mail']))
      ?>
 
 </main>
-    <?php include_once ('footer.php');?> 
 </body>
 </html>
 
