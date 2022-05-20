@@ -75,7 +75,7 @@ main{
     position: absolute;
     width: 30vw;
     transform: rotate(180deg);
-    left:70vw;
+    left:68vw;
     top:30%;
 }
  
@@ -88,6 +88,7 @@ main{
 }
 
 #para2{
+    display:inline-block;
     position: relative;
     left:10%;
     font-family: 'titre';
@@ -159,6 +160,7 @@ figure{
 }
 
 #para3{
+    display:inline-block;
     position: relative;
     left:30%;
     font-family: 'titre';
@@ -351,6 +353,10 @@ main .flex p{
 @media screen and (max-width:1023px){
     main{
         font-size: 0.6rem;
+    }
+
+    .citation{
+        top:0;
     }
 
     main h1{
