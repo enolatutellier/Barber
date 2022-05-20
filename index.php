@@ -1,12 +1,3 @@
-    <?php 
-    //On demare la session sur sur cette page 
-                                    // $previous_name = session_name("Sylv\'Barbe");
-    session_start() ;
-    if(!empty($_POST['mail'])){
-        $mail = $_POST['mail'];
-    }
-    ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 

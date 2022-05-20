@@ -1,6 +1,10 @@
 <?php 
 // ouvertur de la session
 session_start();
+if(isset($_SESSION['connexion']))
+{
+   header('Location:compte.php');
+}
 if(!empty($_POST['mail'])){
    $pseudo = $_POST['mail'];
    $_SESSION[''];
@@ -11,6 +15,7 @@ if(!empty($_POST['mail'])){
    $mail = $_POST['mail'];
    setcookie('mail', $mail, time()+ 365*24*4000);
 }
+
 ?>
 
 <!DOCTYPE html>
