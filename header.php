@@ -480,9 +480,22 @@ catch(PDOException $e){
                     <span id="longueur_minimum">La recherche requiert au moins 3 caractères</span>
                 </li>
 
-                <li id='monCompte'>
-                    <a href="pageconnexion.html" class="bouton_menu">
-                        Mon&nbsp;compte
+                <li>
+                    <a id='monCompte' href="log.php" class="bouton_menu">
+                        <?php
+                        if(isset($_SESSION['connexion'])){
+                            $sql = "SELECT * FROM users where Id_user = {$_SESSION['connexion']}";
+                            $result = $con->prepare($sql);
+                            $result->execute();
+                            $identification = $result->fetchAll(PDO::FETCH_ASSOC);
+                            $identification = $identification[0];
+                            echo $identification["Pseudo"];
+                        }
+                        else{
+                        
+                            echo 'Mon&nbsp;compte';
+                        }
+                        ?>
                     </a>
                 </li>
             </ul>
