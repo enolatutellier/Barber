@@ -61,3 +61,43 @@ footer .petit_logo{
         width: 60%;
     }
 }
+
+/* portable */ 
+
+@media screen and (max-width:780px) {
+
+    footer{
+        display:flex;
+        justify-content:space-around;
+        font-size: 1.1rem;
+    }
+
+    footer > * {
+        margin: 10px;
+        line-height: clamp(1em,1rem, 2em);
+    }
+
+    footer .logo {
+        width: 70%;
+    }
+
+    footer #trait_horizontal{
+        width: 4px;
+        height: 80px;
+    }
+
+    a {
+        margin-bottom: 14px;
+        justify-content: center;
+    }
+
+    footer .flex_col {
+        margin-top: -30px;
+        align-items: center;
+    }
+
+    footer #trait_horizontal {
+       display: none;
+    }
+
+}

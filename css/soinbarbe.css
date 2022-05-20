@@ -365,3 +365,11 @@ main .flex p{
         display: none;
     }
 }
+
+/* portable */ 
+
+@media screen and (max-width:780px) {
+
+        
+    
+}

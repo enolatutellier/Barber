@@ -5,13 +5,15 @@ if(isset($_SESSION['connexion']))
 {
    header('Location:compte.php');
 }
-if(!empty($_POST['mail'])){
+if(!empty($_POST['mail']))
+{
    $pseudo = $_POST['mail'];
-   $_SESSION[''];
+   $_SESSION['connexion'];
 }
 
 //date dexpiration du cookie
-if(!empty($_POST['mail'])){
+if(!empty($_POST['mail']))
+{
    $mail = $_POST['mail'];
    setcookie('mail', $mail, time()+ 365*24*4000);
 }
@@ -48,7 +50,7 @@ if(!empty($_POST['mail'])){
             <label for="mail">
                 Mail :
             </label>
-            <input type="text" name="mail" placeholder="votremail@hotmail.fr"/>
+            <input type="text" name="mail" placeholder="votremail@hotmail.fr" pattern="[0-9]{3}" min="1" max="5" />
         </div>
        <br>
        <div class="champ">
@@ -68,7 +70,8 @@ if(!empty($_POST['mail'])){
        </div>
     </form>
      <?php
-     if(!empty ($_COOKIE['mail'])){
+     if(!empty ($_COOKIE['mail']))
+     {
         echo '<h2>Bienvenue'.htmlspecialchars ($_COOKIE['pseudo']).'</h2>';
      }
 
