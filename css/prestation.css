@@ -51,11 +51,6 @@ main{
     color:white;
     mix-blend-mode: difference;
 }
-.blanc:after{
-    color: black;
-    mix-blend-mode: difference;
-}
-
 
 #services{
     display: grid;
