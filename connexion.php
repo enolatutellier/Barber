@@ -28,10 +28,10 @@
      else
      {
       //$pass = password_hash($pass, PASSWORD_DEFAULT);
-      $sql = "INSERT INTO users (mail,password) VALUES ('$email','$pass')";
-      $req = $db->prepare($sql);
-      $req->execute();
-      echo "Enregistrement effectué" ;
+      //$sql = "INSERT INTO users (mail,password) VALUES ('$email','$pass')";
+      //$req = $db->prepare($sql);
+      //$req->execute();
+      //echo "Enregistrement effectué" ;
      }
   }
 

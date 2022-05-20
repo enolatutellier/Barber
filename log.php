@@ -5,16 +5,6 @@ if(isset($_SESSION['connexion']))
 {
    header('Location:compte.php');
 }
-if(!empty($_POST['mail'])){
-   $pseudo = $_POST['mail'];
-   $_SESSION[''];
-}
-
-//date dexpiration du cookie
-if(!empty($_POST['mail'])){
-   $mail = $_POST['mail'];
-   setcookie('mail', $mail, time()+ 365*24*4000);
-}
 
 ?>
 
@@ -39,8 +29,6 @@ if(!empty($_POST['mail'])){
 
 <main>
 
-    <!--<img src="/img/idk2.jpg" alt="image en fond avec une lampe" id="background"> --> 
-
     <form action="connexion.php" method="POST" class="formulaire">
     <p> Veuillez vous connecter</p>
 
@@ -48,38 +36,21 @@ if(!empty($_POST['mail'])){
             <label for="mail">
                 Mail :
             </label>
-            <input type="text" name="mail" placeholder="votremail@hotmail.fr"/>
+            <input type="text" name="mail" placeholder="mail@"/>
         </div>
-       <br>
        <div class="champ">
            <label for="pass"> 
                Votre mot de passe :
             </label>
            <input type="password" name="pass"/>
        </div>
-       <div class="champ">
            <a href="#"> 
-               Mail / Mot de passe oublié ? 
+               S'inscrire
            </a>
-       </div>
-       <div class="champ">
-           <input type="submit" name="envoi">
-        </input>
-       </div>
+           <input id="envoyer" type="submit" name="envoi" value='Envoyer'>
     </form>
-     <?php
-     if(!empty ($_COOKIE['mail'])){
-        echo '<h2>Bienvenue'.htmlspecialchars ($_COOKIE['pseudo']).'</h2>';
-     }
-
-     if(!empty($_SESSION['mail']))
-     {
-         echo '<h2> Bienvenue '.htmlspecialchars($_SESSION['mail']).'</h2>' ;
-     }
-     ?>
 
 </main>
-    <?php include_once ('footer.php');?> 
 </body>
 </html>
 

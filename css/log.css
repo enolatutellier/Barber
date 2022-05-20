@@ -1,19 +1,13 @@
-*{
-    margin:0;
-    padding:0;
-}
-
-#background{
-    height: 74vw;
-    width: auto;
-}
+@import url(reset.css);
 
 main{
+    font-size: 0.3rem;
     background: url(/img/idk2.jpg);
     background-size: 120% auto;
-    background-position: 80% 40%;
+    background-position: 70% 30%;
     height: 100vh;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -21,26 +15,20 @@ form{
     position:relative;
     background:gray;
     background-color: rgba(192, 175, 175, 0.678);
-}
-
-.formulaire{
     display: flex;
     align-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 35%;
-    margin-left: 32vw;
     border-radius: 45px 45px 45px 45px;
-    padding:44px;
+    padding: 3% 5%;
 }
 
 p{
     position:relative;
     color:wheat;
-    bottom:22px;
     text-align: center;
-    font-family: 'police';
-    font-size: 1.4rem;
+    height: 10%;
+    margin-bottom : 5%;
 }
 
 p:hover{
@@ -50,55 +38,64 @@ p:hover{
 .champ{
     display: flex;
     justify-content: space-between;
-    padding:10px;
+    align-items: center;
+    padding:10px 0;
+    width: 100%;
 }
 
 input{
-    margin:15px;
-    font-family: 'police';
+    margin:15px auto;
     background-color: rgb(92, 66, 41);
     color: antiquewhite;
-    width:6vw;
+    padding : 0 10%;
+    max-width:50%;
     border: none;
-    padding:7px;
-    border-radius: 18px 18px 18px 18px;
+    height: 0.6rem;
+    border-radius: 25px;
+    outline: none;
+}
+
+input::placeholder{
+    font-size: 0.3rem;
+    text-align: center;
 }
 
 input:hover{
-    transform: rotateY(35deg);
-    transition: 0.3s;
     background-color:antiquewhite;
     border:none;
     color:black;
 }
 
 label{
-    font-size: 1.1rem;
-    font-family: 'police';
+    width: 50%;
     padding:12px;
     color:antiquewhite;
 }
 
-input{
-    border-radius: 18px 18px 18px 18px;
-    padding:8px;
-    border:none;
-    outline: none;
-}
-
-input:hover{
-    background: blanchedalmond;
-    border: none;
-}
-
 a{
     color:antiquewhite;
-    padding:7px;
-    font-family: 'police';
-    font-size: 0.8rem;
-    padding:6px;
+    margin : 5% auto;
 }
 
 a::after{
     color:rgba(124, 114, 114, 0.678)
+}
+
+#envoyer:hover{
+    transform: rotateY(35deg);
+    transition: 0.3s;
+}
+
+@media screen and (max-width:1023px) {
+    main{
+        font-size: 0.6rem;
+    }
+
+    input{
+        height: 1rem;
+    }
+
+    input::placeholder{
+        font-size: 0.6rem;
+    }
 }

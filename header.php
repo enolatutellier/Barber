@@ -29,8 +29,21 @@ catch(PDOException $e){
                     </p>
                     <ul id='sous_menu_burger' class="sous_menu">
                         <li>
-                            <a href="pageconnexion.html">
-                                Mon&nbsp;compte
+                            <a href="log.php">
+                                <?php
+                                if(isset($_SESSION['connexion'])){
+                                    $sql = "SELECT * FROM users where Id_user = {$_SESSION['connexion']}";
+                                    $result = $con->prepare($sql);
+                                    $result->execute();
+                                    $identification = $result->fetchAll(PDO::FETCH_ASSOC);
+                                    $identification = $identification[0];
+                                    echo $identification["Pseudo"];
+                                }
+                                else{
+                                
+                                    echo 'Mon&nbsp;compte';
+                                }
+                                ?>
                             </a>
                         </li>
                         <li class="deroulant_burger"> 
