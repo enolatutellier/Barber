@@ -17,16 +17,19 @@
         $identification = $result->fetchAll(PDO::FETCH_ASSOC); 
         $identification = $identification[0];
         print_r ($identification);
-       // echo "test";
+       echo "test";
        if($identification['Password'] == $pass)
        {
-        $_SESSION['connexion'] = $identification['Id_user'];
-        header('Location:index.php');
-       };
+          $_SESSION['connexion'] = $identification['Id_user'];
+          header('Location:index.php');
+       }else{
+         echo 'Mot de Passe incorrect';
+       }
 
      }
      else
      {
+       echo 'Mail inconnu';
       //$pass = password_hash($pass, PASSWORD_DEFAULT);
       //$sql = "INSERT INTO users (mail,password) VALUES ('$email','$pass')";
       //$req = $db->prepare($sql);
