@@ -23,6 +23,148 @@ catch(PDOException $e){
         <nav>
             <ul id="menu">
                 <div id="overlay"></div>
+                <li id="burger-s" class="deroulant"> 
+                    <p> Menu </p>
+                    <ul id="sous-menu-burger-s" class="sous_menu">
+                        <li>
+                        <a href="log.php">
+                        <?php
+                                if(isset($_SESSION['connexion'])){
+                                    $sql = "SELECT * FROM users where Id_user = {$_SESSION['connexion']}";
+                                    $result = $con->prepare($sql);
+                                    $result->execute();
+                                    $identification = $result->fetchAll(PDO::FETCH_ASSOC);
+                                    $identification = $identification[0];
+                                    echo $identification["Pseudo"];
+                                }
+                                else{
+                                
+                                    echo 'Mon&nbsp;compte';
+                                }
+                                ?>
+                            </a>
+
+                        </li>
+                        <li id = "recherche2">
+                            <input type="text" placeholder="🔍 Recherche">
+                            <span id="longueur_minimum2">La recherche requiert au moins 3 caractères</span>
+                        </li>
+                         
+                         <li class="deroulant_burger"> 
+                            <p>Catégorie&nbsp;▶</p>
+                            <ul class='sous_menu_burger'>
+                                <li>
+                                    <a href="prestation.php">
+                                        <p>Prestation</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href ="soinbarbe.php">
+                                        <p>Produits de soin</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="equipements.php">
+                                        <p>Equipements et accessoires</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="deroulant_burger"> 
+                            <p>
+                                Nos&nbsp;produits&nbsp;▶
+                            </p>
+                            <ul class="sous_menu_burger" id='sous_menu_burger_s'>
+                                <li>
+                                    <a href='recherche.php?grandecategorie=prestation'>
+                                        <p>Prestations</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='recherche.php?categorie=soin'>
+                                        <p>Soin</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='recherche.php?categorie=coloration'>
+                                        <p>Coloration</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='recherche.php?categorie=forfait'>
+                                        <p>Forfait</p>                                        
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='recherche.php?categorie=barbe'>
+                                        <p>Barbe</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='recherche.php?categorie=coiffure'>
+                                        <p>Coiffure</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="recherche.php?grandecategorie=produit de soin">
+                                        <p>Produits de soin</p>                                        
+                                    </a>
+                                <li>
+                                    <a href='recherche.php?categorie=Baumes'>
+                                        <p>Baume à barbe</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='recherche.php?categorie=Shampoings'>
+                                        <p>Shampoings</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='recherche.php?categorie=Huiles'>
+                                        <p>Huiles</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='recherche.php?categorie=Cires'>
+                                        </p>Cire à barbe</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="recherche.php?grandecategorie=Equipement et accessoire">
+                                        <p>Equipements et accessoires</p>
+                                    </a>
+                                <li>
+                                    <a href='recherche.php?categorie=Rasoirs'>
+                                        <p>Rasoir/Lame</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='recherche.php?categorie=Blaireaux'>
+                                        <p>Blaireau</p> 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='recherche.php?categorie=Supports'>
+                                        <p>Support</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='recherche.php?categorie=Brosses/Peignes'>
+                                        <p>Brosse/Peigne</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='recherche.php?categorie=Bijoux'>
+                                        <p>Bijoux</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                     </ul>
+
+                </li>
                 <li id='burger' class="deroulant"> 
                     <p>
                         Menu
@@ -177,7 +319,7 @@ catch(PDOException $e){
                     </ul>
                 </li>
                 <li id="categorie" class="bouton_menu"> 
-                    <p>Catégorie</p>
+                    <p>Catégorie&nbsp;▼</p>
                     <ul id='sous_menu_categorie'>
                         <li>
                             <a href="prestation.php">
@@ -199,7 +341,7 @@ catch(PDOException $e){
 
                 <li id='deroulant_principal' class="deroulant"> 
                     <p>
-                        Nos&nbsp;produits
+                        Nos&nbsp;produits&nbsp;▼
                     </p>
                     <ul id='sous_menu_principal' class="sous_menu">
                         <p id="quitter_menu">X</p>
@@ -489,7 +631,7 @@ catch(PDOException $e){
                 </li>
 
                 <li id = "recherche">
-                    <input id="recherche" type="text" placeholder="🔍 Recherche">
+                    <input type="text" placeholder="🔍 Recherche">
                     <span id="longueur_minimum">La recherche requiert au moins 3 caractères</span>
                 </li>
 

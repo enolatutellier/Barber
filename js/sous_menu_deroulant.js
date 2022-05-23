@@ -14,11 +14,11 @@ for(let i=0; i < deroulant.length; i++){
             
             if (sousMenu[i].style.display == "flex"){
                 sousMenu[i].style.display = 'none';
-                if(i==0){
+                if(i==0 || i==1){
                     overlay.style.display = 'none';
                 }
             }else{
-                for(let j=2; j<deroulant.length; j++){
+                for(let j=3; j<deroulant.length; j++){
                     sousMenu[j].style.display = 'none';
                 }
                 for(let j=0; j<deroulantBurger.length; j++){
@@ -28,7 +28,7 @@ for(let i=0; i < deroulant.length; i++){
                     sousMenuArticle[j].style.display = 'none';
                 }
                 sousMenu[i].style.display = 'flex';
-                if(i==0 || i==1){
+                if(i==0 || i==1 || i==2){
                     overlay.style.display = 'block';
                 }
             }
