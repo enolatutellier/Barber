@@ -78,7 +78,7 @@
                 </div>
 
                 <a href='recherche.php?categorie=Baumes' id="fleche2">
-                    <img src="img/fleche.png" alt="fleche noir">
+                    <img src="img/fleche.png" alt="fleche noir" class="fleche">
                 </a>
             </div>
         </section>
@@ -95,7 +95,7 @@
             <div class="conteneur" id='conteneur2'>
 
                 <a href='recherche.php?categorie=Shampoings' id="fleche3">
-                    <img src="img/fleche.png" alt="fleche noir">
+                    <img src="img/fleche.png" alt="fleche noir" class="fleche">
                 </a>
 
                 <div class="carteBaume">
@@ -160,7 +160,7 @@
                 ?> 
                 </div>
                 <a href='recherche.php?categorie=Huiles'>
-                    <img src="img/fleche.png" alt="fleche noir" id="fleche4">
+                    <img src="img/fleche.png" alt="fleche noir" id="fleche4" class="fleche">
                 </a>
             </div>
                 
@@ -195,8 +195,8 @@
                                 </figure> ';
                 }
                 ?> 
-                <a href='recherche.php?categorie=cires'>
-                    <img src="img/fleche.png" alt="fleche noir" id="fleche5">
+                <a href='recherche.php?categorie=cires' id="fleche5">
+                    <img src="img/fleche.png" alt="fleche noir" class="fleche">
                 </a>
             </div>
         </section>

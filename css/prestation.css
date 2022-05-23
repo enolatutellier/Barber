@@ -434,3 +434,7 @@ main .flex p{
         bottom: auto;
     }
 }
+
+@media screen and (max-width:780px){
+    
+}

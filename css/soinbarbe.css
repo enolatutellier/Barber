@@ -291,10 +291,19 @@ figcaption:hover{
 
 #fleche5{
     position:absolute;
-    height:8%;
+    
     top:105%;
     transform: rotate(270deg);
 }
+
+#fleche5 img{
+    width:5vw;
+}
+
+.fleche{
+    width:5vw;
+}
+
 main .modal{
     display:none;
     position:fixed;
@@ -377,11 +386,46 @@ main .flex p{
 @media screen and (max-width:780px) {
 
         .cireBarbe{
-            height: 45vh;
+            height: 38vh;
         }
 
-        #fleche5{
-            right:40%;
+        .Baume {
+            margin-top: 9vh;
         }
-    
+
+        .ligneGauche{
+            display:none;
+        }
+
+        .conteneur{
+            height:27vh;
+        }
+
+        #para5{
+            margin-top:8vh;
+        }
+
+        main{
+            font-size: 0.8rem;
+        }
+
+        .citation{
+            top:-45%;
+        }
+
+        .huiles{
+            margin-top:7vh;
+        }
+
+        #fleche3{
+            height:10%;
+        }
+
+        #fleche2{
+            height:10%;
+        }
+
+        .fleche{
+           width:5vw;
+        }
 }
