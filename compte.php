@@ -18,8 +18,9 @@
 </head>
 <body>
     <div class='container-fluid'>
-        <div class='row'>
+        <div class='row d-flex justify-content-between'>
             <a class='nav-link' href="index.php">Retour au site</a>
+            <a class ='nav-link' href='deconnection.php'>Se déconnecter</a>
         </div>
         <div class='row justify-content-center'>
             <p>Gestionnaire d'articles</p>

@@ -23,16 +23,15 @@ function confirmation(e) {
 
 function suppArticle(e)
 {
-    let name = e.parentElement.nextElementSibling.firstElementChild.innerHTML;
-    console.log(name);
+    let numero = e.parentElement.firstElementChild.innerHTML;
     $.ajax({
         type: 'post',
         url: 'supprimerArticle.php',
         data: {
-          nom:name
+          id:numero
         },
         success: function (response) {
-          alert('element supprimé');          
+          alert("Element supprimé");          
           GetData();
         }
     });
@@ -42,6 +41,10 @@ function suppArticle(e)
 function ajouterArticle()
 {
     let name = document.getElementById('nouveau_nom').value;
+    if (name == ""){
+      alert('Le nom de l\'article obligatoire.');
+      return;
+    }
     let description = document.getElementById('nouvelle_description').value;
     let photo = document.getElementById('nouvelle_photo').value;
     let typeCat = document.getElementById("type_principal").value;
@@ -49,7 +52,9 @@ function ajouterArticle()
     formData.append('nom', name);
     formData.append('description', description);
     formData.append('type', typeCat);
-    formData.append('photo', document.getElementById('nouvelle_photo').files[0]);
+    if(photo != ""){
+      formData.append('photo', document.getElementById('nouvelle_photo').files[0]);
+    }
     $.ajax({
         type: 'post',
         url: 'ajouterArticle.php',
@@ -57,7 +62,7 @@ function ajouterArticle()
         processData: false,
         contentType : false,
         success: function (response) {
-          alert('L\'article '.concat(response,' a bien été ajouté !'));
+          alert(''.concat(response,' a bien été ajouté !'));
           GetData();
         }
     });
@@ -72,6 +77,7 @@ function confirmerModificationArticle(e){
   } else {
     name = name.value;
   }
+  let id = e.parentElement.parentElement.firstElementChild.firstElementChild.innerHTML;
   let description = document.getElementById('new_desc').value;
   let formData = new FormData();
   if (document.getElementById('new_photo').value == ''){
@@ -80,8 +86,8 @@ function confirmerModificationArticle(e){
     formData.append('photo', document.getElementById('new_photo').files[0]);
   }
   formData.append('nom', name);
-  formData.append('oldName', oldName);
   formData.append('description', description);
+  formData.append('id', id);
   $.ajax({
     type: 'post',
     url: 'modifierArticle.php',
@@ -104,7 +110,13 @@ function modifierArticle(e) {
   let description = image.nextElementSibling;
   let oldDescription = description.cloneNode([true]);
   let oldTitleValue = title.innerHTML;
-  title.innerHTML = '<input class=\'cart-title text-center w-100\' type=\'texte\' id=\'new_name\' name=\'new_name\' placeholder =\''.concat(oldTitleValue, '\'>');
+  let new_name = document.createElement('input');
+  new_name.setAttribute('class', 'cart-title text-center w-100');  
+  new_name.setAttribute('type', 'texte');
+  new_name.setAttribute('id', 'new_name');
+  new_name.setAttribute('name', 'new_name');
+  new_name.setAttribute('placeholder', oldTitleValue);
+  title.replaceWith(new_name);
   let test = document.createElement("input");
   test.type = "file";
   test.name = "new_photo";
@@ -114,16 +126,22 @@ function modifierArticle(e) {
   centre.appendChild(test);
   image.appendChild(centre);
   let oldDescriptionValue = description.innerHTML;
-  description.innerHTML = '<textarea class=\'card-text w-100 text-justify\' id=\'new_desc\' name=\'new_desc\' rows=\'5\' >'.concat(oldDescriptionValue, '</textarea>');
+  let new_description = document.createElement('textarea');
+  new_description.setAttribute('class', 'card-text w-100 text-justify');  
+  new_description.setAttribute('id', 'new_desc');
+  new_description.setAttribute('name', 'new_desc');
+  new_description.setAttribute('rows', '5');
+  description.replaceWith(new_description);
+  new_description.innerHTML = oldDescriptionValue;
   let footer = e.parentElement;
   let oldfooter = footer.cloneNode([true]);
   let annuler = document.createElement("button");
   annuler.type = 'button';
   annuler.setAttribute('class', 'btn btn-secondary btn-lg');
   annuler.onclick = function () {
-    title.replaceWith(oldTitle);
+    new_name.replaceWith(oldTitle);
     image.replaceWith(oldImage);
-    description.replaceWith(oldDescription);
+    new_description.replaceWith(oldDescription);
     footer.replaceWith(oldfooter);
   }
   annuler.innerHTML = 'Annuler';
