@@ -12,9 +12,9 @@
             <p class="titre">
                 Mentions légales
             </p>
-            <a>
+            <a><p>
                 Conditions générales d'utilisation
-            </a>
+            </p> </a>
             <a>
                 Politique de confidentialité
             </a>

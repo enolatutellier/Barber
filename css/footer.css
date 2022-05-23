@@ -42,6 +42,10 @@ footer .petit_logo{
     width:1rem;
 }
 
+footer  a p {
+    text-align: center;
+}
+
 @media screen and (max-width:1023px){
     footer{
         font-size: 0.6rem;
@@ -86,7 +90,7 @@ footer .petit_logo{
         height: 80px;
     }
 
-    a {
+    footer a {
         margin-bottom: 14px;
         justify-content: center;
     }

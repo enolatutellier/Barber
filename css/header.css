@@ -319,3 +319,19 @@ header li {
         font-size: 0.7rem;
     }
 }
+
+@media screen and (max-width:780px){
+
+    #index_retour{
+        width:50vw;
+    }
+
+    #logoblanc{
+        width:100%;
+    }
+
+    #logoblanc img{
+        width:100%;
+    }
+}
+
