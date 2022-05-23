@@ -10,7 +10,8 @@ try{
     foreach($articles as $article){
         ?>
                 <div class='card'>
-                    <div class='card-header d-flex justify-content-end'>
+                    <div class='card-header d-flex justify-content-between'>
+                        <h2><?=$article['Id_article']?></h2>
                         <button type='button' class='btn btn-danger bt-sm rounded-circle' onclick='confirmation(this)'>X</button>
                     </div>
                     <div class='card-body d-flex flex-column align-items-center'>

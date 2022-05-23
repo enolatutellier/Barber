@@ -206,6 +206,11 @@ header li {
     font-size: 0.3rem;
 }
 
+#monCompte{
+    color : white;
+    text-decoration: none;
+}
+
 #recherche input::placeholder{
     font-size : 0.25rem;
 }

@@ -48,7 +48,7 @@ if(!empty($_POST['mail']))
             <label for="mail">
                 Mail :
             </label>
-            <input type="text" name="mail" placeholder="votremail@hotmail.fr" pattern="[0-9]{3}" min="1" max="5" />
+            <input type="text" name="mail" placeholder="votremail@hotmail.fr" pattern="*{1.}[@][a-zA-Z]{2,}\.[a-zA-Z]{2,}" min="7" max="30" />
         </div>
        <div class="champ">
            <label for="pass"> 

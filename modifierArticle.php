@@ -4,38 +4,50 @@ try{
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $nom = $_POST['nom'];
     $description = $_POST['description'];
-    $oldName = $_POST["oldName"];
     $description = htmlspecialchars(stripslashes($description));
     $nom = htmlspecialchars(stripslashes($nom));
-    if(isset($_FILES['photo'])){
-        $photo = $_FILES['photo'];
-        if(is_uploaded_file($photo['tmp_name'])){
-            $sql = $con->prepare("UPDATE articles
-                                  SET   Nom = :nom,
-                                        Description = :description,
-                                        Photo = :photo
-                                  WHERE Nom = :oldName");
+    if(isset($_FILES['photo'])){        
+        if(preg_match('/image/', $_FILES['photo']['type'])){
+            $photo = $_FILES['photo'];
+            if(is_uploaded_file($photo['tmp_name'])){
+                $sql = $con->prepare("UPDATE articles
+                                    SET   Nom = :nom,
+                                            Description = :description,
+                                            Photo = :photo
+                                    WHERE Id_article = :id");
+                $sql -> bindParam(':nom', $nom);
+                $sql -> bindParam(':description', $description);
+                $sql -> bindParam(':photo', $photo['name']);
+                $sql -> bindParam(':id', $_POST['id']);
+                $sql->execute();
+                move_uploaded_file($photo['tmp_name'], 'img/'.$photo['name']);
+                echo $nom;
+            }else{
+                echo 'fichier dangereux ?';
+            }
+        }else{
+            echo 'Le fichier n\'est pas une image. ';
+            $sql = $con->prepare("  UPDATE articles
+                                    SET Nom = :nom,
+                                    Description = :description
+                                    WHERE Id_article = :id");
             $sql -> bindParam(':nom', $nom);
             $sql -> bindParam(':description', $description);
-            $sql -> bindParam(':photo', $photo['name']);
-            $sql -> bindParam(':oldName', $oldName);
+            $sql -> bindParam(':id', $_POST['id']);
             $sql->execute();
-            move_uploaded_file($photo['tmp_name'], 'img/'.$photo['name']);
-            echo $oldName;
-        }else{
-            echo 'fichier dangereux ?';
+            echo $nom;
         }
     }
     else{
         $sql = $con->prepare("  UPDATE articles
                                 SET Nom = :nom,
                                     Description = :description
-                                WHERE Nom = :oldName");
+                                WHERE Id_article = :id");
             $sql -> bindParam(':nom', $nom);
             $sql -> bindParam(':description', $description);
-            $sql -> bindParam(':oldName', $oldName);
+            $sql -> bindParam(':id', $_POST['id']);
             $sql->execute();
-            echo $oldName;
+            echo $nom;
     };
 }
 catch(PDOException $e){
